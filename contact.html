@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim Bilgileri</title>
+
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,12 +15,47 @@
             background-color: #f4f4f4;
         }
 
-        header {
-            background-color: #0073e6;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
+        .logo {
+            position: absolute;
+            top: 5px;
+            /* Sayfanın üstünden 10px boşluk */
+            left: 20px;
+            /* Sayfanın solundan 20px boşluk */
+            z-index: 1000;
+            /* Logonun üstte kalmasını sağlar */
         }
+
+        .logo img {
+            width: 80px;
+            /* Logonun genişliği */
+            height: auto;
+            /* Oran korunsun */
+        }
+
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #bbbbbb;
+            padding: 10px 0;
+            position: relative;
+            top: 10px;
+        }
+
+        .menu button {
+            border: none;
+            background-color: #d9d9d9;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
+
 
         .contact-container {
             max-width: 800px;
@@ -31,6 +69,7 @@
         h1 {
             text-align: center;
             color: #333;
+            margin-top: 70px;
         }
 
         .contact-info {
@@ -49,18 +88,37 @@
         }
 
         footer {
-            background-color: #0073e6;
+            background-color: #bbbbbb;
+            /* Footer arka plan rengi */
             color: white;
+            /* Yazı rengi */
             text-align: center;
-            padding: 10px;
+            /* Ortaya hizalama */
+            padding: 0px 0;
+            /* Üst ve alt boşluk */
+            position: fixed;
+            /* Sayfada sabit konum */
+            left: 0;
+            /* Sol kenara hizalama */
+            bottom: 0;
+            /* Alt kısma hizalama */
+            width: 100%;
+            /* Genişlik: tam sayfa genişliği */
+            height: 5%;
+            z-index: 10;
+            /* Footer'ın üstte olmasını sağlar */
         }
     </style>
 </head>
-<body>
 
-    <header>
-        <h1>İletişim Bilgileri</h1>
-    </header>
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
+            <img src="images/logo.png" alt="Logo">
+        </a>
+    </div>
+
     <header>
         <div class="menu">
             <button onclick="window.location.href='index.html'">Ana Sayfa</button>
@@ -69,7 +127,10 @@
             <button onclick="window.location.href='contact.html'">İletişim</button>
         </div>
     </header>
-    
+    </header>
+    <h1>İletişim Bilgileri</h1>
+    </header>
+
 
 
 
@@ -87,5 +148,5 @@
     </footer>
 
 </body>
-</html>
 
+</html>
