@@ -1,0 +1,224 @@
+/* Sayfa Temel Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    /* Sayfanın taşmasını engeller */
+}
+
+/* Üst Menü */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    position: relative;
+    top: 10px;
+}
+
+.menu button {
+    border: none;
+    background-color: #d9d9d9;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu button:hover {
+    background-color: #c0c0c0;
+}
+
+/* Ana İçerik */
+h1 {
+    margin: 60px 0 20px;
+    font-size: 2.5em;
+    line-height: 1.4;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    border: 2px solid #000;
+    background-color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.start-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Dönen Görsel */
+.image-container {
+    position: absolute;
+    bottom: -50%;
+    /* Görselin yarısı görünmez */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    /* Görselin genişliğini ayarla */
+    z-index: -1;
+    /* Görseli arka plana yerleştirir */
+    overflow: hidden;
+}
+
+.rotating-image {
+    width: 100%;
+    animation: rotate-image 10s linear infinite;
+    /* 10 saniyede döner ve sonsuz tekrar eder */
+}
+
+/* Görselin dönme efekti */
+@keyframes rotate-image {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Logo Ayarları */
+.logo {
+    position: absolute;
+    top: 5px;
+    /* Sayfanın üstünden 10px boşluk */
+    left: 20px;
+    /* Sayfanın solundan 20px boşluk */
+    z-index: 1000;
+    /* Logonun üstte kalmasını sağlar */
+}
+
+.logo img {
+    width: 80px;
+    /* Logonun genişliği */
+    height: auto;
+    /* Oran korunsun */
+}
+
+/* Hakkımızda İçeriği Ayarları */
+.about-content {
+    background: rgba(255, 255, 255, 0.8);
+    /* Beyaz kutu, şeffaflık efekti */
+    backdrop-filter: blur(10px);
+    /* Blur efekti */
+    padding: 30px;
+    border-radius: 10px;
+    /* Kenarları yuvarlak */
+    margin: 50px auto;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #0073e6;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Hizmetler başlığı */
+section h2 {
+    margin: 20px 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* Hizmet kutuları */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Her bir hizmet kutusu */
+.service {
+    text-align: center;
+    width: 30%;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Modal (Popup) kutusu */
+.service-info {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.service-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.service-info p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.close-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #555;
+}
