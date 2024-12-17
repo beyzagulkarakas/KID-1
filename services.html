@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .services-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service-item h3 {
+            color: #0073e6;
+        }
+
+        .service-item p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hizmetlerimiz</h1>
+    </header>
+    <header>
+        <div class="menu">
+            <button onclick="window.location.href='index.html'">Ana Sayfa</button>
+            <button onclick="window.location.href='businesses.html'">İşletmeler</button>
+            <button onclick="window.location.href='services.html'">Hizmetler</button>
+            <button onclick="window.location.href='contact.html'">İletişim</button>
+        </div>
+    </header>
+    
+
+
+    <div class="services-container">
+        <h2>Sunmuş Olduğumuz Hizmetler</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Web Tasarım</h3>
+                <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz.</p>
+            </div>
+            <div class="service-item">
+                <h3>SEO Hizmetleri</h3>
+                <p>Sitenizi arama motorlarında daha görünür hale getirmek için SEO stratejileri sunuyoruz.</p>
+            </div>
+            <div class="service-item">
+                <h3>Uygulama Geliştirme</h3>
+                <p>Mobil ve web tabanlı uygulamalar geliştirme hizmeti veriyoruz.</p>
+            </div>
+            <div class="service-item">
+                <h3>İçerik Yönetimi</h3>
+                <p>Web siteniz için SEO uyumlu içerikler üretiyoruz.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
+
