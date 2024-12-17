@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: #f4f4f4;
     color: #000;
     text-align: center;
     position: relative;
@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 15px;
-    background-color: #f1f1f1;
+    background-color: #bbbbbb;
     padding: 10px 0;
     position: relative;
     top: 10px;
@@ -54,7 +54,7 @@ p {
 
 .start-btn {
     border: 2px solid #000;
-    background-color: #fff;
+    background-color: #f4f4f4;
     padding: 10px 25px;
     border-radius: 25px;
     font-size: 1em;
@@ -116,31 +116,44 @@ p {
     /* Oran korunsun */
 }
 
-/* Hakkımızda İçeriği Ayarları */
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* Kutu aralarındaki boşluğu eşitler */
+    align-items: flex-start;
+    /* Kutu yüksekliğini eşitler */
+}
+
 .about-content {
     background: rgba(255, 255, 255, 0.8);
-    /* Beyaz kutu, şeffaflık efekti */
     backdrop-filter: blur(10px);
-    /* Blur efekti */
-    padding: 30px;
+    padding: 100px 20px;
     border-radius: 10px;
-    /* Kenarları yuvarlak */
-    margin: 50px auto;
-    width: 80%;
+    width: 45%;
+    max-width: 1200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    top: 70px;
+    left: 30px;
 }
 
-.about-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #0073e6;
+.about-content-right {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 100px 20px;
+    border-radius: 10px;
+    top: 70px;
+    width: 45%;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    right: 30px;
+    height: 500px;
+    box-sizing: border-box;
 }
 
-.about-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
 
 /* Hizmetler başlığı */
 section h2 {
