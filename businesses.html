@@ -22,67 +22,68 @@
             color: #333;
         }
 
-   /* Kategori Dropdown Butonu */
-.category-dropdown {
-    position: relative;
-    display: inline-block;
-    margin: 20px auto;
-    text-align: center;
-    width: 100%;
-}
+        /* Kategori Dropdown Butonu */
+        .category-dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+            width: 100%;
+        }
 
-/* Dropdown Button */
-.dropdown-btn {
-    background-color: #0073e6;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-}
+        /* Dropdown Button */
+        .dropdown-btn {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
 
-/* Dropdown Arrow */
-.dropdown-btn::after {
-    content: '▼';
-    margin-left: 10px;
-    font-size: 0.8rem;
-}
+        /* Dropdown Arrow */
+        .dropdown-btn::after {
+            content: '▼';
+            margin-left: 10px;
+            font-size: 0.8rem;
+        }
 
-/* Dropdown İçeriği */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
-    margin-top: 5px;
-    left: 50%;
-    transform: translateX(-50%);  /* Ortalamayı sağlamak için */
-}
+        /* Dropdown İçeriği */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            margin-top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* Ortalamayı sağlamak için */
+        }
 
-/* Dropdown Linkleri */
-.dropdown-content a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 1rem;
-}
+        /* Dropdown Linkleri */
+        .dropdown-content a {
+            color: black;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+        }
 
-/* Hover Efekti */
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
+        /* Hover Efekti */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
 
-/* Hover Durumunda Dropdown Görünmesi */
-.category-dropdown:hover .dropdown-content {
-    display: block;
-}
+        /* Hover Durumunda Dropdown Görünmesi */
+        .category-dropdown:hover .dropdown-content {
+            display: block;
+        }
 
         /* İşletme Kutuları */
         .businesses {
@@ -134,9 +135,9 @@
 </head>
 
 <body>
-    <!-- Logo -->
-    <div class="logo" style="text-align: center; margin: 20px;">
-        <img src="images/logo.png" alt="Logo" width="150">
+    <!-- Logo Bölümü -->
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
     </div>
 
     <!-- Üst Menü -->
@@ -148,7 +149,7 @@
             <button onclick="window.location.href='contact.html'">İletişim</button>
         </div>
     </header>
-    
+
 
     <!-- Kategori Butonu -->
     <div class="category-dropdown">
