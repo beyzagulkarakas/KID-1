@@ -1,22 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:  Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(90deg,#e2e2e2,#c9d6ff);
+    flex-direction: column;
+    background: linear-gradient(90deg, #ffffff, #a0a0a0);
 }
 
 
 
 
-.kontainer{
+.kontainer {
     position: relative;
     width: 750px;
     height: 450px;
@@ -24,10 +25,15 @@ body{
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .2);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 }
-.form-box{
+
+.form-box {
     position: absolute;
-    right:0;
+    right: 0;
     width: 50%;
     height: 100%;
     background: #fff;
@@ -35,120 +41,128 @@ body{
     align-items: center;
     color: #333;
     text-align: center;
-    padding:40px;
+    padding: 40px;
     z-index: 1;
-    transition: .6s ease-in-out 1.2s, visibility 0s 1s ;
+    transition: .6s ease-in-out 1.2s, visibility 0s 1s;
 }
 
-.kontainer.active .form-box{
+.kontainer.active .form-box {
     right: 50%;
 }
 
-.form-box.register{
+.form-box.register {
     visibility: hidden;
 }
-.kontainer.active .form-box.register{
+
+.kontainer.active .form-box.register {
     visibility: visible;
 }
 
 
- form{
+form {
     width: 100%;
- }
+}
 
- .kontainer h1 {
-     font-size: 36px;
-     margin:-10px 0 ;
- }
- .input-box{
-      position: relative;
-      margin:30px 0;
- }
- .input-box input {
-     width:100%;
-     padding:13px 50px 13px 50px;
-     background:#eee;
-     border-radius:8px;
-     border:none;
-     outline: none;
-     font-size:16px;
-     color:#333;
-     font-weight:500;
- }
- .input-box input::placeholder{
-     color:#888;
-     font-weight:400;
- }
+.kontainer h1 {
+    font-size: 36px;
+    margin: -10px 0;
+}
 
- .input-box i {
-    position:absolute;
-    right:20px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:20px;
-    color:#888;
- }
+.input-box {
+    position: relative;
+    margin: 30px 0;
+}
 
- .forgot-link{
-    margin:-15px 0 15px;
- }
- .forgot-link a {
-    font-size:14.5px;
-    color:#333;
+.input-box input {
+    width: 100%;
+    padding: 13px 50px 13px 50px;
+    background: #eee;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-box input::placeholder {
+    color: #888;
+    font-weight: 400;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #888;
+}
+
+.forgot-link {
+    margin: -15px 0 15px;
+}
+
+.forgot-link a {
+    font-size: 14.5px;
+    color: #333;
     text-decoration: none;
- }
+}
 
- .btn{
-     width:100%;
-     height:48px;
-     background:#7494ec;
-     border-radius:8px;
-     box-shadow:0 0 10px rgba(0, 0, 0, .1);
-     border:none;
-     cursor:pointer;
-     font-size:16px;
-     color:#fff;
-     font-weight:600;
- }
+.btn {
+    width: 100%;
+    height: 48px;
+    background: #bbbbbb;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+}
 
 .kontainer p {
-    font-size:14.5px;
+    font-size: 14.5px;
     margin: 15px 0;
 }
+
 .social-icons a {
-    display:inline-flex;
-    padding:10px;
+    display: inline-flex;
+    padding: 10px;
     border: 2px solid #ccc;
-    border-radius:8px;
-    font-size:24px;
-    color:#333;
-    text-decoration:none;
-    margin:0 8px;
+    border-radius: 8px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    margin: 0 8px;
 }
 
-.toggle-box{
+.toggle-box {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-.toggle-box::before{
+
+.toggle-box::before {
     content: '';
     position: absolute;
     left: -250%;
     width: 300%;
     height: 100%;
-    background: #7494ec;
+    background: #bbbbbb;
     border-radius: 150px;
-    z-index: 2 ;
+    z-index: 2;
     transition: 1.8s ease-in-out;
 }
-.kontainer.active .toggle-box::before{
+
+.kontainer.active .toggle-box::before {
     left: 50%;
 
 }
 
 
-.toggle-panel{
+.toggle-panel {
     position: absolute;
     width: 50%;
     height: 100%;
@@ -160,33 +174,84 @@ body{
     z-index: 2;
     transition: .6s ease-in-out;
 }
-.toggle-panel.toggle-left{
+
+.toggle-panel.toggle-left {
     left: 0;
     transition-delay: 1.2s;
 }
-.kontainer.active .toggle-panel.toggle-left{
+
+.kontainer.active .toggle-panel.toggle-left {
     left: -50%;
     transition-delay: .6s;
 }
-.kontainer.active .toggle-panel.toggle-right{
+
+.kontainer.active .toggle-panel.toggle-right {
     right: 0;
     transition-delay: 1.2s;
 }
 
 
-.toggle-panel.toggle-right{
+.toggle-panel.toggle-right {
     right: -50%;
     transition-delay: .6s;
 
 }
 
-.toggle-panel p{
+.toggle-panel p {
     margin-bottom: 20px;
 }
-.toggle-panel .btn{
-    width:160px;
+
+.toggle-panel .btn {
+    width: 160px;
     height: 46px;
     background: transparent;
     border: 2px solid #fff;
     box-shadow: none;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #bbbbbb;
+    padding: 10px 0;
+    position: relative;
+    top: 10px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+
+
+}
+
+.menu button {
+    border: none;
+    background-color: #d9d9d9;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu button:hover {
+    background-color: #c0c0c0;
+}
+
+/* Logo Ayarları */
+.logo {
+    position: absolute;
+    top: 5px;
+    /* Sayfanın üstünden 10px boşluk */
+    left: 20px;
+    /* Sayfanın solundan 20px boşluk */
+    z-index: 1000;
+    /* Logonun üstte kalmasını sağlar */
+}
+
+.logo img {
+    width: 80px;
+    /* Logonun genişliği */
+    height: auto;
+    /* Oran korunsun */
 }

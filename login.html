@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giriş yap</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="logstyle.css">
-    <link rel="stylesheet" href="images/sytle.css">
+
 
 </head>
+
 <body>
-     <!-- login kısmı -->
-     <div class="kontainer">
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
+            <img src="images/logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Üst Menü -->
+    <header>
+        <div class="menu">
+            <button onclick="window.location.href='index.html'">Ana Sayfa</button>
+            <button onclick="window.location.href='businesses.html'">İşletmeler</button>
+            <button onclick="window.location.href='services.html'">Hizmetler</button>
+            <button onclick="window.location.href='contact.html'">İletişim</button>
+            <button onclick="window.location.href='login.html'">Giriş Yap</button>
+
+        </div>
+    </header>
+
+    <!-- login kısmı -->
+    <div class="kontainer">
         <div class="form-box login">
             <form action="">
                 <h1>Giriş yap</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username"
-                    required>
+                    <input type="text" placeholder="Username" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="password"
-                    required>
+                    <input type="password" placeholder="password" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
@@ -37,36 +56,33 @@
                 </div>
             </form>
         </div>
-         <div class="form-box register">
-             <form action="">
-                 <h1>Kayıt olun</h1>
-                 <div class="input-box">
-                     <input type="text" placeholder="Username"
-                            required>
-                     <i class='bx bxs-user'></i>
-                 </div>
-                 <div class="input-box">
-                     <input type="email" placeholder="Email"
-                            required>
-                     <i class='bx bxs-envelope'></i>
-                 </div>
-                 <div class="input-box">
-                     <input type="password" placeholder="Password"
-                            required>
-                     <i class='bx bxs-lock-alt'></i>
-                 </div>
-                 <button type="submit" class="btn">kayıt olun</button>
-                 <p>ya da sosyal medya hesabınız ile kayıt olun</p>
-                 <div class="social-icons">
-                     <a href="#"> <i class='bx bxl-google'></i> </a>
-                     <a href="#"> <i class='bx bxl-facebook'></i> </a>
-                     <a href="#"> <i class='bx bxl-apple'></i> </a>
+        <div class="form-box register">
+            <form action="">
+                <h1>Kayıt olun</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn">Kayıt Olun</button>
+                <p>ya da sosyal medya hesabınız ile kayıt olun</p>
+                <div class="social-icons">
+                    <a href="#"> <i class='bx bxl-google'></i> </a>
+                    <a href="#"> <i class='bx bxl-facebook'></i> </a>
+                    <a href="#"> <i class='bx bxl-apple'></i> </a>
 
-                 </div>
-             </form>
-         </div>
+                </div>
+            </form>
+        </div>
 
-         <div class="toggle-box">
+        <div class="toggle-box">
             <div class="toggle-panel toggle-left">
                 <h1>Merhaba,Hoşgeldiniz!</h1>
                 <p>Hesabın yok mu?</p>
@@ -77,26 +93,14 @@
                 <p>Zaten bir hesabınız var mı?</p>
                 <button class="btn login-btn"> Giriş yap</button>
             </div>
-         </div>
+        </div>
 
-    </div> 
-
-    <!-- Logo -->
-    <div class="logo">
-        <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
-            <img src="images/logo.png" alt="Logo">
-        </a>
     </div>
 
-    <header>
-        <div class="menu">
-            <button onclick="window.location.href='index.html'">Ana Sayfa</button>
-            <button onclick="window.location.href='businesses.html'">İşletmeler</button>
-            <button onclick="window.location.href='services.html'">Hizmetler</button>
-            <button onclick="window.location.href='contact.html'">İletişim</button>
-        </div>
-    </header>
+
+
 
     <script src="script.js"></script>
 </body>
+
 </html>
