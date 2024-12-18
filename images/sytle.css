@@ -83,7 +83,7 @@ p {
 
 .rotating-image {
     width: 100%;
-    animation: rotate-image 10s linear infinite;
+    animation: rotate-image 20s linear infinite;
     /* 10 saniyede döner ve sonsuz tekrar eder */
 }
 
