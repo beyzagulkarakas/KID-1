@@ -1,4 +1,4 @@
-/* Sayfa Temel Ayarları */
+/* Temel Sayfa Ayarları */
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +11,8 @@ body {
     color: #000;
     text-align: center;
     position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-    /* Sayfanın taşmasını engeller */
+    min-height: 100vh; /* Sayfa yüksekliğini minumum yüzde 100 olarak ayarla */
+    overflow-x: hidden; /* Yatay taşmayı engelle */
 }
 
 /* Üst Menü */
@@ -79,7 +78,6 @@ p {
     z-index: -1;
     /* Görseli arka plana yerleştirir */
     overflow: hidden;
-
 }
 
 .rotating-image {
@@ -103,26 +101,19 @@ p {
 .logo {
     position: absolute;
     top: 5px;
-    /* Sayfanın üstünden 10px boşluk */
     left: 20px;
-    /* Sayfanın solundan 20px boşluk */
     z-index: 1000;
-    /* Logonun üstte kalmasını sağlar */
 }
 
 .logo img {
     width: 80px;
-    /* Logonun genişliği */
     height: auto;
-    /* Oran korunsun */
 }
 
 .container {
     display: flex;
     justify-content: space-between;
-    /* Kutu aralarındaki boşluğu eşitler */
     align-items: flex-start;
-    /* Kutu yüksekliğini eşitler */
 }
 
 .about-content {
@@ -155,22 +146,8 @@ p {
     box-sizing: border-box;
 }
 
-/* Saydam logo ekleme - Sol kutu */
-.about-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('logo.png') no-repeat center center;
-    background-size: 400px;
-    opacity: 0.3;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Saydam logo ekleme - Sağ kutu */
+/* Saydam logo ekleme */
+.about-content::before,
 .about-content-right::before {
     content: "";
     position: absolute;
@@ -185,15 +162,14 @@ p {
     pointer-events: none;
 }
 
-
-/* Hizmetler başlığı */
-section h2 {
+/* Hizmetler ve Business listesi düzenlemeleri */
+section h2, .businesses h2 {
     margin: 20px 0;
     font-size: 2rem;
     text-transform: uppercase;
+    color: #333;
 }
 
-/* Hizmet kutuları */
 .services {
     display: flex;
     justify-content: center;
@@ -201,18 +177,14 @@ section h2 {
     flex-wrap: wrap;
 }
 
-/* Her bir hizmet kutusu */
 .service {
     text-align: center;
     width: 30%;
     cursor: pointer;
-    position: relative;
-    transition: transform 0.3s ease;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
 .service:hover {
@@ -227,7 +199,7 @@ section h2 {
     border-radius: 8px;
 }
 
-/* Modal (Popup) kutusu */
+/* Modal Kutusu */
 .service-info {
     display: none;
     position: fixed;
@@ -241,16 +213,13 @@ section h2 {
     width: 80%;
     max-width: 500px;
     z-index: 9999;
-    text-align: center;
 }
 
-.service-info h3 {
-    margin-bottom: 10px;
+.service-info h3, .business-info h3 {
     font-size: 1.5rem;
 }
 
 .service-info p {
-    margin-bottom: 15px;
     font-size: 1.2rem;
 }
 
@@ -266,3 +235,62 @@ section h2 {
 .close-btn:hover {
     background-color: #555;
 }
+
+/* İşletme listesi */
+.businesses {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px auto;
+    gap: 20px;
+    max-width: 800px;
+}
+
+.business {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.business:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.business img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.business-info a {
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.business-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--header-bg-color);
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
