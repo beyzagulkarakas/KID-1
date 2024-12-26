@@ -7,158 +7,72 @@
     <title>İşletme Düzenleme</title>
     <style>
         /* Genel Sayfa Düzeni */
-   /* Temel Sayfa Ayarları */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(90deg, #ffffff, #a0a0a0);
-    color: #000;
-    text-align: center;
-    position: relative;
-    min-height: 100vh; /* Sayfa yüksekliğini minumum yüzde 100 olarak ayarla */
-    overflow-x: hidden; /* Yatay taşmayı engelle */
-}
-    
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    background-color: #bbbbbb;
-    padding: 2px 0;
-    position: relative;
-    top: 100px;
-    width: 100%;
-    position: fixed;
-    left: 0;
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            color: #000;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
+        /* Üst Menü */
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #bbbbbb;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-}
+        .menu button {
+            border: none;
+            background-color: #d9d9d9;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-.menu button {
-    border: none;
-    background-color: #d9d9d9;
-    padding: 10000px 2000px;
-    border-radius: 20000px;
-    cursor: pointer;
-    font-weight: bold;
-}
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
 
-.menu button:hover {
-    background-color: #c0c0c0;
-}
-
-/* Logo Ayarları */
-.logo {
-    position: absolute;
-    top: 5px;
-    /* Sayfanın üstünden 10px boşluk */
-    left: 20px;
-    /* Sayfanın solundan 20px boşluk */
-    z-index: 1000;
-    /* Logonun üstte kalmasını sağlar */
-}
-
-.logo img {
-    width: 80px;
-    /* Logonun genişliği */
-    height: auto;
-    /* Oran korunsun */
-}
-/* Üst Menü */
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    background-color: #bbbbbb;
-    padding: 10px 0;
-    position: relative;
-    top: 10px;
-}
-
-.menu button {
-    border: none;
-    background-color: #d9d9d9;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.btn {
-    width: 100%;
-    height: 48px;
-    background: #bbbbbb;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.kontainer p {
-    font-size: 14.5px;
-    margin: 15px 0;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.menu button:hover {
-    background-color: #c0c0c0;
-}
-
-/* Ana İçerik */
-h1 {
-    margin: 60px 0 20px;
-    font-size: 2.5em;
-    line-height: 1.4;
-}
-
-p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
         /* Logo Ayarları */
-.logo {
-    position: absolute;
-    top: 5px;
-    left: 20px;
-    z-index: 1000;
-}
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 20px;
+        }
 
-.logo img {
-    width: 80px;
-    height: auto;
-}
-/* Saydam logo ekleme */
-.about-content::before,
-.about-content-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('logo.png') no-repeat center center;
-    background-size: 400px;
-    opacity: 0.3;
-    z-index: -1;
-    pointer-events: none;
-}
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
 
-      /* İşletme Düzenleme İçeriği */
+        /* Ana İçerik */
+        h1 {
+            margin: 60px 0 20px;
+            font-size: 2.5em;
+            line-height: 1.4;
+        }
+
         .container {
             display: flex;
             justify-content: space-between;
-            margin: 100px auto;
+            margin: 120px auto;
             padding: 30px;
             max-width: 1200px;
             background-color: white;
@@ -192,7 +106,7 @@ p {
         button {
             width: 100%;
             padding: 10px;
-            background-color: #5b5f63;
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 5px;
@@ -200,7 +114,7 @@ p {
         }
 
         button:hover {
-            background-color: #042e20;
+            background-color: #0056b3;
         }
 
         .profile-edit {
@@ -239,21 +153,46 @@ p {
             padding: 10px 20px;
             margin-top: 20px;
         }
-        .logo img {
-    width: 80px;
-    /* Logonun genişliği */
-    height: auto;
-    /* Oran korunsun */
-}
+
+        .business-list {
+            flex: 2;
+            margin-left: 20px;
+        }
+
+        .business-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .delete-button {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-button:hover {
+            background-color: #FF4500;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <!-- Küçültülmüş Logo Burada -->
+    <!-- Logo ve Menü -->
+    <div class="logo">
+        <a href="index.html">
             <img src="images/logo.png" alt="Logo">
-        </div>
+        </a>
+    </div>
+    <header>
         <div class="menu">
             <button onclick="window.location.href='index.html'">Ana Sayfa</button>
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
@@ -261,9 +200,11 @@ p {
             <button onclick="window.location.href='contact.html'">İletişim</button>
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
             <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
+            <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
         </div>
     </header>
 
+    <!-- Ana İçerik -->
     <div class="container">
         <div class="form-section">
             <h1>Yeni İşletme Ekle</h1>
@@ -291,7 +232,6 @@ p {
         <div class="profile-edit">
             <img src="images/profil.jpg" alt="Profil Resmi">
             <button onclick="window.location.href='profil.html'">Profil</button>
-           
         </div>
     </div>
 
@@ -309,7 +249,7 @@ p {
 
             const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
             const newBusiness = {
-                id: new Date().getTime(), // Benzersiz ID oluşturuluyor
+                id: new Date().getTime(),
                 name,
                 description,
                 link
@@ -318,9 +258,9 @@ p {
             localStorage.setItem('businesses', JSON.stringify(businesses));
 
             alert('İşletme başarıyla kaydedildi!');
-            window.location.reload(); // Sayfa yenilenir ve işletmeler gösterilir
+            window.location.reload();
         }
-
+        
         // İşletmeleri Listeleme Fonksiyonu
         function displayBusinesses() {
             const businesses = JSON.parse(localStorage.getItem('businesses')) || [];

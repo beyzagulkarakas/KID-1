@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımızda</title>
+    <title>Görme Engelli Yardım Rehberi</title>
     <style>
         /* Genel Sayfa Düzeni */
         * {
@@ -57,35 +57,27 @@
         .container {
             max-width: 800px;
             margin: 20px auto;
-            padding: 0;
-            position: relative;
-        }
-
-        .text-overlay {
-            position: relative;
-            color: black;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.7);
             padding: 20px;
+            background-color: #fff;
             border-radius: 10px;
-            font-size: 1.1em;
-            line-height: 1.6;
-            text-align: justify;
-            z-index: 2;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .about-image {
-            position: relative;
-            background-image: url('images/yardimlasma-ve-dayanisma.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
+        .container p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Liste */
+        .accessible-tips {
+            text-align: left;
+            margin: 20px 0;
+            padding: 10px;
+            list-style: disc;
+            color: #333;
+            font-size: 1em;
         }
 
         /* Footer */
@@ -107,6 +99,7 @@
             z-index: 1000;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .logo img {
@@ -137,24 +130,34 @@
         </div>
     </header>
 
-    <!-- Hakkımızda Başlığı -->
-    <h2>Hakkımızda</h2>
+    <!-- Görme Engelli Yardım Rehberi Başlığı -->
+    <h2>Görme Engelli Yardım Rehberi</h2>
 
-    <!-- Hakkımızda İçeriği -->
+    <!-- Küçük İşletmelere Destek -->
     <div class="container">
-        <div class="about-image">
-            <div class="text-overlay">
-                <p>Bizler, işletmenizi büyütmek için yenilikçi araçlar ve çözümler sunan bir ekibiz. Misyonumuz, teknoloji ve yaratıcılığı kullanarak işinizi daha ileriye taşımanıza yardımcı olmaktır.</p>
-                <p>Deneyimli kadromuz ve güçlü altyapımızla, iş dünyasında sürdürülebilir başarıyı hedefliyoruz. İşletmenizin ihtiyaçlarını anlayarak, size özel çözümler sunuyoruz.</p>
-            </div>
-        </div>
+        <h3>Küçük İşletmelere Destek</h3>
+        <p>Görme engelli bireylerin küçük işletmelerde daha etkin rol alabilmeleri için şu önerilerimizi dikkate alabilirsiniz:</p>
+        <ul class="accessible-tips">
+            <li>İş yerinde sesli uyarılar ve erişilebilir tasarım ile engelleri azaltın.</li>
+            <li>Braille etiketleri veya sesli rehberler ile ürünlerin tanıtımını yapın.</li>
+            <li>Görme engelli çalışanların veya müşterilerin ihtiyaçlarını dinleyerek hizmetlerinizi optimize edin.</li>
+            <li>Eğitim programları ve iş birliği etkinlikleri düzenleyerek farkındalık yaratın.</li>
+            <li>Görme engelli bireylerin potansiyelini tanıyın ve iş ortamınızı daha kapsayıcı hale getirin.</li>
+        </ul>
+        <p>Bu öneriler, sadece görme engelli bireylere değil, aynı zamanda iş yerinizi daha erişilebilir ve yenilikçi bir işletme haline getirmenize de yardımcı olacaktır.</p>
+
+        <h4>Özel Fırsatlar</h4>
+        <ul class="accessible-tips">
+            <li>İlk 5 ay boyunca ücretsiz danışmanlık hizmeti.</li>
+            <li>Erişilebilirlik çözümlerinde %30 indirim.</li>
+            <li>Görme engelli bireylerin çalışmasını destekleyen işletmelere özel promosyon desteği.</li>
+        </ul>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        <p>© 2024 İşletme Rehberi</p>
+        <p>© 2024 Görme Engelli Yardım Rehberi</p>
     </div>
 </body>
 
 </html>
-

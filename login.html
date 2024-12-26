@@ -17,7 +17,7 @@
         </a>
     </div>
 
-    <!-- Üst Menü -->        
+    <!-- Üst Menü -->
     <header>
         <div class="menu">
             <button onclick="window.location.href='index.html'">Ana Sayfa</button>
@@ -25,27 +25,29 @@
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
+            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
+            <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
         </div>
     </header>
 
-    <!-- Login kısmı -->
+    <!-- login kısmı -->
     <div class="kontainer">
         <div class="form-box login">
-            <form onsubmit="loginUser(event)">
+            <form action="">
                 <h1>Giriş yap</h1>
                 <div class="input-box">
-                    <input id="username" type="text" placeholder="Username" required>
+                    <input type="text" placeholder="Username" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input id="password" type="password" placeholder="Password" required>
+                    <input type="password" placeholder="password" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
-                    <a href="#">Şifremi unuttum</a>
+                    <a href="#">şifremi unuttum</a>
                 </div>
-                <button type="submit" class="btn">Giriş Yap</button>
-                <p>Veya sosyal medya hesabın ile giriş yap</p>
+                <button type="submit" class="btn">Giriş yap</button>
+                <p>veya sosyal medya hesabın ile giriş yap</p>
                 <div class="social-icons">
                     <a href="#"> <i class='bx bxl-google'></i> </a>
                     <a href="#"> <i class='bx bxl-facebook'></i> </a>
@@ -54,7 +56,7 @@
             </form>
         </div>
         <div class="form-box register">
-            <form>
+            <form action="">
                 <h1>Kayıt olun</h1>
                 <div class="input-box">
                     <input type="text" placeholder="Username" required>
@@ -69,37 +71,32 @@
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <button type="submit" class="btn">Kayıt Olun</button>
-                <p>Ya da sosyal medya hesabınız ile kayıt olun</p>
+                <p>ya da sosyal medya hesabınız ile kayıt olun</p>
                 <div class="social-icons">
                     <a href="#"> <i class='bx bxl-google'></i> </a>
                     <a href="#"> <i class='bx bxl-facebook'></i> </a>
                     <a href="#"> <i class='bx bxl-apple'></i> </a>
+
                 </div>
             </form>
         </div>
 
         <div class="toggle-box">
             <div class="toggle-panel toggle-left">
-                <h1>Merhaba, Hoşgeldiniz!</h1>
+                <h1>Merhaba,Hoşgeldiniz!</h1>
                 <p>Hesabın yok mu?</p>
-                <button class="btn register-btn">Kayıt Ol</button>
+                <button class="btn register-btn">Kayıt ol</button>
             </div>
             <div class="toggle-panel toggle-right">
                 <h1>Tekrardan Hoşgeldiniz!</h1>
                 <p>Zaten bir hesabınız var mı?</p>
-                <button class="btn login-btn"> Giriş Yap</button>
+                <button class="btn login-btn"> Giriş yap</button>
             </div>
         </div>
+
     </div>
 
-    <script>
-        function loginUser(event) {
-            event.preventDefault(); // Formun varsayılan gönderimini engelle
-            const username = document.getElementById('username').value; // Kullanıcı adını al
-            localStorage.setItem('username', username); // localStorage'a kaydet
-            window.location.href = 'profil.html'; // profil.html'e yönlendir
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
