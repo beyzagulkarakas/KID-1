@@ -15,7 +15,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background: linear-gradient(to bottom, #14192C, white);
             color: #000;
             text-align: center;
             position: relative;
@@ -23,27 +23,52 @@
             overflow-x: hidden;
         }
 
-        /* Üst Menü */
         .menu {
             display: flex;
-            justify-content: center;
             gap: 15px;
-            background-color: #bbbbbb;
-            padding: 10px 0;
+            background-color: transparent;
+            padding: 25px 0;
+            margin-left: 170px;
+            position: relative;
+            top: 10px;
+
         }
 
         .menu button {
             border: none;
-            background-color: #d9d9d9;
+            background-color: transparent;
             padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
+            color: white;
         }
 
         .menu button:hover {
             background-color: #c0c0c0;
         }
+
+        /* Giriş Yap Butonu */
+        .btn-giris {
+            position: absolute;
+            right: 70px;
+            top: 30px;
+        }
+
+        .btn-giris button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-giris button:hover {
+            background-color: #c0c0c0;
+        }
+
 
         /* Sayfa Başlığı */
         h2 {
@@ -91,19 +116,15 @@
             margin-top: 20px;
         }
 
-        /* Logo Ayarları */
         .logo {
             position: absolute;
             top: 10px;
-            left: 20px;
+            left: 70px;
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .logo img {
-            width: 80px;
+            width: 100px;
             height: auto;
         }
     </style>
@@ -124,9 +145,11 @@
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
+        </div>
+        </div>
+        <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
-            <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
+
         </div>
     </header>
 
@@ -136,7 +159,8 @@
     <!-- Küçük İşletmelere Destek -->
     <div class="container">
         <h3>Küçük İşletmelere Destek</h3>
-        <p>Görme engelli bireylerin küçük işletmelerde daha etkin rol alabilmeleri için şu önerilerimizi dikkate alabilirsiniz:</p>
+        <p>Görme engelli bireylerin küçük işletmelerde daha etkin rol alabilmeleri için şu önerilerimizi dikkate
+            alabilirsiniz:</p>
         <ul class="accessible-tips">
             <li>İş yerinde sesli uyarılar ve erişilebilir tasarım ile engelleri azaltın.</li>
             <li>Braille etiketleri veya sesli rehberler ile ürünlerin tanıtımını yapın.</li>
@@ -144,7 +168,8 @@
             <li>Eğitim programları ve iş birliği etkinlikleri düzenleyerek farkındalık yaratın.</li>
             <li>Görme engelli bireylerin potansiyelini tanıyın ve iş ortamınızı daha kapsayıcı hale getirin.</li>
         </ul>
-        <p>Bu öneriler, sadece görme engelli bireylere değil, aynı zamanda iş yerinizi daha erişilebilir ve yenilikçi bir işletme haline getirmenize de yardımcı olacaktır.</p>
+        <p>Bu öneriler, sadece görme engelli bireylere değil, aynı zamanda iş yerinizi daha erişilebilir ve yenilikçi
+            bir işletme haline getirmenize de yardımcı olacaktır.</p>
 
         <h4>Özel Fırsatlar</h4>
         <ul class="accessible-tips">

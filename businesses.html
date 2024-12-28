@@ -6,84 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İşletmeler</title>
     <style>
-        /* Genel Sayfa Düzeni */
-   /* Temel Sayfa Ayarları */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(90deg, #ffffff, #a0a0a0);
-    color: #000;
-    text-align: center;
-    position: relative;
-    min-height: 100vh; /* Sayfa yüksekliğini minumum yüzde 100 olarak ayarla */
-    overflow-x: hidden; /* Yatay taşmayı engelle */
-}
-    
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #14192C, white);
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-/* Üst Menü */
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    background-color: #bbbbbb;
-    padding: 10px 0;
-    position: relative;
-    top: 10px;
-}
 
-.menu button {
-    border: none;
-    background-color: #d9d9d9;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
+        .menu {
+            display: flex;
+            gap: 15px;
+            background-color: transparent;
+            padding: 25px 0;
+            margin-left: 170px;
+            position: relative;
+            top: 10px;
 
-.menu button:hover {
-    background-color: #c0c0c0;
-}
+        }
 
-/* Ana İçerik */
-h1 {
-    margin: 60px 0 20px;
-    font-size: 2.5em;
-    line-height: 1.4;
-}
+        .menu button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
 
-p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-        /* Logo Ayarları */
-.logo {
-    position: absolute;
-    top: 5px;
-    left: 20px;
-    z-index: 1000;
-}
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
 
-.logo img {
-    width: 80px;
-    height: auto;
-}
+        .btn-giris {
+            position: absolute;
+            right: 70px;
+            top: 30px;
+        }
+
+        .btn-giris button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-giris button:hover {
+            background-color: #c0c0c0;
+        }
+
+
+        h1 {
+            margin: 60px 0 20px;
+            font-size: 2.5em;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 70px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
 
 
         /* Buton Hover Durumu */
         .menu button:hover {
-            background-color: #888; /* Hover Durumu Buton Arka Plan Rengi */
+            background-color: #888;
+            /* Hover Durumu Buton Arka Plan Rengi */
         }
 
         /* İşletmeler Başlığı */
         h2 {
             text-align: center;
-            margin: 20px 0;
-            color: #333;
+            margin: 30px 0;
+            color: #ffffff;
         }
 
         /* Footer */
@@ -97,23 +118,30 @@ p {
             margin-top: 20px;
         }
 
-        /* İşletmeler Listesi */
+
         .businesses {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            margin: 20px auto;
+            align-items: center;
+            /* Yatay ortalama */
+            justify-content: center;
+            /* Dikey ortalama */
             gap: 20px;
             max-width: 800px;
+            margin: 0 auto;
+            /* Sayfanın yatay ortasında */
+            height: 100vh;
+            /* Tam ekran yüksekliği */
         }
 
+        /* İşletme Kartı */
         .business {
             width: 95%;
             max-width: 600px;
+            background-color: #2e3344;
             display: flex;
             align-items: center;
             padding: 15px;
-            background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -121,7 +149,7 @@ p {
         }
 
         .business:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
         }
 
         .business img {
@@ -140,7 +168,7 @@ p {
 
         .business-info a {
             text-decoration: none;
-            color: #007BFF;
+            color: #ffffff;
             font-weight: bold;
         }
 
@@ -149,7 +177,7 @@ p {
         }
 
         .business-description {
-            color: #555;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -166,9 +194,11 @@ p {
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
+        </div>
+        </div>
+        <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
-            <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
+
         </div>
     </header>
 
@@ -190,7 +220,7 @@ p {
         <div class="business">
             <img src="images/saglik.png" alt="Evde Sağlık Hizmeti">
             <div class="business-info">Evde Sağlık
-              
+
                 <p class="business-description">20 yılı aşkın bir zamandır, 7/24 evlerinize sağlık getiriyoruz.</p>
                 <a href="https://www.instagram.com/_evdesaglik34/?igsh=ZHJ5OTVjMjN3eTh1">İnstagram Sayfamız Burada</a>
             </div>
@@ -209,9 +239,10 @@ p {
         <div class="business">
             <img src="images/giyim1.png" alt="Premium Giyim">
             <div class="business-info">Wandal
-                
-            <p class="business-description">İthal giyim için bizi tercih edin!</p>
-                <a href="https://www.instagram.com/wandalmoda/?igsh=MWxhYnNydmRmbDFpag%3D%3D">İnstagram Sayfamız Burada</a>
+
+                <p class="business-description">İthal giyim için bizi tercih edin!</p>
+                <a href="https://www.instagram.com/wandalmoda/?igsh=MWxhYnNydmRmbDFpag%3D%3D">İnstagram Sayfamız
+                    Burada</a>
             </div>
         </div>
 
@@ -220,40 +251,39 @@ p {
             <img src="images/taki.png" alt="Oslo Takı">
             <div class="business-info">Oslo Takı
                 <p class="business-description">Bileklik, kolye, küpe ve istek üzerine tasarım takılar!</p>
-                <a href="https://www.instagram.com/oslo_taki/?igsh=MWFueTB5NG9iem5sNw%3D%3D">İnstagram Sayfamız Burada</a>
-       
+                <a href="https://www.instagram.com/oslo_taki/?igsh=MWFueTB5NG9iem5sNw%3D%3D">İnstagram Sayfamız
+                    Burada</a>
+
             </div>
         </div>
     </div>
 
- 
+
 </body>
 
 <div class="businesses" id="businessList">
-    <!-- İşletmeler Buraya Eklenecek -->
 </div>
 
 <script>
-    // Sayfa Yüklendiğinde İşletmeleri Listeliyoruz
-    window.onload = function() {
+    window.onload = function () {
         const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
         const businessListContainer = document.getElementById('businessList');
-        
+
         businesses.forEach((business) => {
             const businessDiv = document.createElement('div');
             businessDiv.classList.add('business');
-            
+
             const businessImage = document.createElement('img');
             businessImage.src = 'images/business-placeholder.jpg'; // Yerine geçecek bir resim
             businessDiv.appendChild(businessImage);
-            
+
             const businessInfo = document.createElement('div');
             businessInfo.classList.add('business-info');
-            
+
             const businessName = document.createElement('a');
             businessName.href = business.link;
             businessName.innerText = business.name;
-            
+
             const businessDescription = document.createElement('p');
             businessDescription.classList.add('business-description');
             businessDescription.innerText = business.description;
@@ -267,11 +297,12 @@ p {
     }
 </script>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>© 2024 İşletme Rehberi</p>
-    </div>
+<!-- Footer -->
+<div class="footer">
+    <p>© 2024 İşletme Rehberi</p>
+</div>
 </body>
 
 </body>
-</html> 
+
+</html>

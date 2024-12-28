@@ -11,43 +11,68 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            background: linear-gradient(to bottom, #14192C, white);
         }
 
         .logo {
             position: absolute;
-            top: 5px;
-            left: 20px;
+            top: 10px;
+            left: 70px;
             z-index: 1000;
         }
 
         .logo img {
-            width: 80px;
+            width: 100px;
             height: auto;
         }
 
+
         .menu {
             display: flex;
-            justify-content: center;
             gap: 15px;
-            background-color: #bbbbbb;
-            padding: 10px 0;
+            background-color: transparent;
+            padding: 25px 0;
+            margin-left: 170px;
             position: relative;
             top: 10px;
+
         }
 
         .menu button {
             border: none;
-            background-color: #d9d9d9;
+            background-color: transparent;
             padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
+            color: white;
         }
 
         .menu button:hover {
             background-color: #c0c0c0;
         }
+
+        /* Giriş Yap Butonu */
+        .btn-giris {
+            position: absolute;
+            right: 90px;
+            top: 30px;
+        }
+
+        .btn-giris button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-giris button:hover {
+            background-color: #c0c0c0;
+        }
+
 
         .contact-container {
             max-width: 800px;
@@ -108,9 +133,11 @@
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
+        </div>
+        </div>
+        <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
-            <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
+
         </div>
     </header>
 

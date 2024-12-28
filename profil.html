@@ -7,6 +7,7 @@
     <title>Profil</title>
     <link rel="stylesheet" href="profilestyle.css">
 </head>
+
 <body>
     <!-- Üst Menü -->
     <header>
@@ -19,286 +20,310 @@
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
+        </div>
+        </div>
+        <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
-           
+
         </div>
     </header>
 
-<body>
-    <header>
-        <h1>Profilinizi Düzenleyin</h1>
-        <p id="user-info"></p>
-    </header>
+    <body>
+        <header>
+            <h1>Profilinizi Düzenleyin</h1>
+            <p id="user-info"></p>
+        </header>
 
-    <script>
-        function displayUsername() {
-            const username = localStorage.getItem('username'); // Kullanıcı adını al
-            const userInfo = document.getElementById('user-info');
-            if (username) {
-                userInfo.textContent = `Hoşgeldiniz, ${username}! Profilinizi düzenleyin.`;
-            } else {
-                userInfo.textContent = 'Kullanıcı adı bulunamadı!';
+        <script>
+            function displayUsername() {
+                const username = localStorage.getItem('username'); // Kullanıcı adını al
+                const userInfo = document.getElementById('user-info');
+                if (username) {
+                    userInfo.textContent = `Hoşgeldiniz, ${username}! Profilinizi düzenleyin.`;
+                } else {
+                    userInfo.textContent = 'Kullanıcı adı bulunamadı!';
+                }
             }
-        }
-        displayUsername(); // Sayfa yüklendiğinde çalıştır
-    </script>
-</body>
+            displayUsername(); // Sayfa yüklendiğinde çalıştır
+        </script>
+    </body>
 
 </html>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        /* Genel Sayfa Düzeni */
-   /* Temel Sayfa Ayarları */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(90deg, #ffffff, #a0a0a0);
-    color: #000;
-    text-align: center;
-    position: relative;
-    min-height: 100vh; /* Sayfa yüksekliğini minumum yüzde 100 olarak ayarla */
-    overflow-x: hidden; /* Yatay taşmayı engelle */
-}
-    
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    background-color: #bbbbbb;
-    padding: 2px 0;
-    position: relative;
-    top: 100px;
-    width: 100%;
-    position: fixed;
-    left: 0;
+<style>
+    /* Genel Sayfa Düzeni */
+    /* Temel Sayfa Ayarları */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #14192C, white);
+        color: #000;
+        text-align: center;
+        position: relative;
+        min-height: 100vh;
+        /* Sayfa yüksekliğini minumum yüzde 100 olarak ayarla */
+        overflow-x: hidden;
+        /* Yatay taşmayı engelle */
+    }
+
+    .menu {
+        display: flex;
+        gap: 15px;
+        background-color: transparent;
+        padding: 25px 0;
+        margin-left: 170px;
+        position: relative;
+        top: 10px;
+
+    }
+
+    .menu button {
+        border: none;
+        background-color: transparent;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+    }
+
+    .menu button:hover {
+        background-color: #c0c0c0;
+    }
+
+    /* Giriş Yap Butonu */
+    .btn-giris {
+        position: absolute;
+        right: 70px;
+        top: 30px;
+    }
+
+    .btn-giris button {
+        border: none;
+        background-color: transparent;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+    }
+
+    .btn-giris button:hover {
+        background-color: #c0c0c0;
+    }
 
 
-}
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 70px;
+        z-index: 1000;
+    }
 
-.menu button {
-    border: none;
-    background-color: #d9d9d9;
-    padding: 10000px 2000px;
-    border-radius: 20000px;
-    cursor: pointer;
-    font-weight: bold;
-}
+    .logo img {
+        width: 100px;
+        height: auto;
+    }
 
-.menu button:hover {
-    background-color: #c0c0c0;
-}
 
-/* Logo Ayarları */
-.logo {
-    position: absolute;
-    top: 5px;
-    /* Sayfanın üstünden 10px boşluk */
-    left: 20px;
-    /* Sayfanın solundan 20px boşluk */
-    z-index: 1000;
-    /* Logonun üstte kalmasını sağlar */
-}
+    /* Üst Menü */
+    .menu {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        background-color: #bbbbbb;
+        padding: 10px 0;
+        position: relative;
+        top: 10px;
+    }
 
-.logo img {
-    width: 80px;
-    /* Logonun genişliği */
-    height: auto;
-    /* Oran korunsun */
-}
-/* Üst Menü */
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    background-color: #bbbbbb;
-    padding: 10px 0;
-    position: relative;
-    top: 10px;
-}
+    .menu button {
+        border: none;
+        background-color: #d9d9d9;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+    }
 
-.menu button {
-    border: none;
-    background-color: #d9d9d9;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
-.btn {
-    width: 100%;
-    height: 48px;
-    background: #bbbbbb;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: 600;
-}
+    .btn {
+        width: 100%;
+        height: 48px;
+        background: #bbbbbb;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 600;
+    }
 
-.kontainer p {
-    font-size: 19.5px;
-    margin: 150px 0;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
+    .kontainer p {
+        font-size: 19.5px;
+        margin: 150px 0;
+    }
 
-.menu button:hover {
-    background-color: #c0c0c0;
-}
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-/* Ana İçerik */
-h1 {
-    margin: 60px 0 20px;
-    font-size: 2.5em;
-    line-height: 1.4;
-}
+    .menu button:hover {
+        background-color: #c0c0c0;
+    }
 
-p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-        /* Logo Ayarları */
-.logo {
-    position: absolute;
-    top: 5px;
-    left: 20px;
-    z-index: 1000;
-}
+    /* Ana İçerik */
+    h1 {
+        margin: 60px 0 20px;
+        font-size: 2.5em;
+        line-height: 1.4;
+    }
 
-.logo img {
-    width: 80px;
-    height: auto;
-}
-/* Saydam logo ekleme */
-.about-content::before,
-.about-content-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('logo.png') no-repeat center center;
-    background-size: 400px;
-    opacity: 0.3;
-    z-index: -1;
-    pointer-events: none;
-}
+    p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
 
-      /* İşletme Düzenleme İçeriği */
-        .container {
-            display: flex;
-            justify-content: space-between;
-            margin: 100px auto;
-            padding: 30px;
-            max-width: 1200px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    /* Logo Ayarları */
+    .logo {
+        position: absolute;
+        top: 5px;
+        left: 20px;
+        z-index: 1000;
+    }
 
-        .form-section {
-            flex: 3;
-            margin-right: 20px;
-        }
+    .logo img {
+        width: 80px;
+        height: auto;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    /* Saydam logo ekleme */
+    .about-content::before,
+    .about-content-right::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('logo.png') no-repeat center center;
+        background-size: 400px;
+        opacity: 0.3;
+        z-index: -1;
+        pointer-events: none;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+    /* İşletme Düzenleme İçeriği */
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 100px auto;
+        padding: 30px;
+        max-width: 1200px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+    .form-section {
+        flex: 3;
+        margin-right: 20px;
+    }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #717477;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-        button:hover {
-            background-color: #222a31;
-        }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
 
-        .profile-edit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            border-left: 1px solid #ddd;
-            padding-left: 20px;
-        }
+    input,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
 
-        .profile-edit img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            border: 2px solid #ddd;
-        }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #717477;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-        .profile-edit a {
-            color: #b5b4bb;
-            text-decoration: none;
-        }
+    button:hover {
+        background-color: #222a31;
+    }
 
-        .profile-edit a:hover {
-            text-decoration: underline;
-        }
+    .profile-edit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        border-left: 1px solid #ddd;
+        padding-left: 20px;
+    }
 
-        /* Footer */
-        .footer {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #444;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 20px;
-        }
-        .logo img {
-    width: 80px;
-    /* Logonun genişliği */
-    height: auto;
-    /* Oran korunsun */
-}
+    .profile-edit img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        border: 2px solid #ddd;
+    }
 
-    </style>
+    .profile-edit a {
+        color: #b5b4bb;
+        text-decoration: none;
+    }
+
+    .profile-edit a:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #444;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+
+    .logo img {
+        width: 80px;
+        /* Logonun genişliği */
+        height: auto;
+        /* Oran korunsun */
+    }
+</style>
+
 <body>
-        <!-- Üst Menü -->
-       
-          
+    <!-- Üst Menü -->
+
+
 
     <div class="container">
- 
+
 
         <!-- Profil Düzenleme Formu -->
         <div class="profile-section">
@@ -336,7 +361,7 @@ p {
             const file = fileInput.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     image.src = e.target.result;
                 }
                 reader.readAsDataURL(file);
@@ -393,7 +418,7 @@ p {
         // Yeni İşletme Eklemeye Git
         function openeditbusiness() {
             <a href="edit-business.html">yeni işletmeİşletme</a>
-          
+
         }
 
         // İşletme Düzenleme
@@ -412,7 +437,7 @@ p {
         }
 
         // Sayfa Yüklendiğinde Profili ve İşletmeleri Göster
-        window.onload = function() {
+        window.onload = function () {
             const profile = JSON.parse(localStorage.getItem('userProfile'));
             if (profile) {
                 document.getElementById('username').value = profile.username;
@@ -424,7 +449,7 @@ p {
     </script>
     <h1>Profilinizi Düzenleyin</h1>
     <p id="user-info"></p>
-    
+
     <script>
         function displayUsername() {
             const username = localStorage.getItem('username'); // localStorage'dan kullanıcı adını al
@@ -436,7 +461,8 @@ p {
         }
         displayUsername(); // Sayfa yüklendiğinde fonksiyonu çağır
     </script>
-    
+
 
 </body>
+
 </html>

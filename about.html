@@ -23,25 +23,49 @@
             overflow-x: hidden;
         }
 
-        /* Üst Menü */
         .menu {
             display: flex;
-            justify-content: center;
             gap: 15px;
-            background-color: #bbbbbb;
-            padding: 10px 0;
+            background-color: transparent;
+            padding: 25px 0;
+            margin-left: 170px;
+            position: relative;
+            top: 10px;
+
         }
 
         .menu button {
             border: none;
-            background-color: #d9d9d9;
+            background-color: transparent;
             padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
+            color: white;
         }
 
         .menu button:hover {
+            background-color: #c0c0c0;
+        }
+
+        /* Giriş Yap Butonu */
+        .btn-giris {
+            position: absolute;
+            right: 70px;
+            top: 30px;
+        }
+
+        .btn-giris button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-giris button:hover {
             background-color: #c0c0c0;
         }
 
@@ -99,18 +123,15 @@
             margin-top: 20px;
         }
 
-        /* Logo Ayarları */
         .logo {
             position: absolute;
             top: 10px;
-            left: 20px;
+            left: 70px;
             z-index: 1000;
-            display: flex;
-            align-items: center;
         }
 
         .logo img {
-            width: 80px;
+            width: 100px;
             height: auto;
         }
     </style>
@@ -131,9 +152,11 @@
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
+        </div>
+        </div>
+        <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
-            <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
+
         </div>
     </header>
 
@@ -144,8 +167,10 @@
     <div class="container">
         <div class="about-image">
             <div class="text-overlay">
-                <p>Bizler, işletmenizi büyütmek için yenilikçi araçlar ve çözümler sunan bir ekibiz. Misyonumuz, teknoloji ve yaratıcılığı kullanarak işinizi daha ileriye taşımanıza yardımcı olmaktır.</p>
-                <p>Deneyimli kadromuz ve güçlü altyapımızla, iş dünyasında sürdürülebilir başarıyı hedefliyoruz. İşletmenizin ihtiyaçlarını anlayarak, size özel çözümler sunuyoruz.</p>
+                <p>Bizler, işletmenizi büyütmek için yenilikçi araçlar ve çözümler sunan bir ekibiz. Misyonumuz,
+                    teknoloji ve yaratıcılığı kullanarak işinizi daha ileriye taşımanıza yardımcı olmaktır.</p>
+                <p>Deneyimli kadromuz ve güçlü altyapımızla, iş dünyasında sürdürülebilir başarıyı hedefliyoruz.
+                    İşletmenizin ihtiyaçlarını anlayarak, size özel çözümler sunuyoruz.</p>
             </div>
         </div>
     </div>
@@ -157,4 +182,3 @@
 </body>
 
 </html>
-
