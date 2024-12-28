@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(90deg, #ffffff, #a0a0a0);
-    color: #000;
+    color: #ffffff;
     text-align: center;
     position: relative;
     min-height: 100vh;
@@ -43,26 +43,50 @@ body {
 /* Üst Menü */
 .menu {
     display: flex;
-    justify-content: center;
     gap: 15px;
-    background-color: #bbbbbb;
-    padding: 10px 0;
+    background-color: transparent;
+    padding: 25px 0;
+    margin-left: 170px;
     position: relative;
     top: 10px;
+
 }
 
 .menu button {
     border: none;
-    background-color: #d9d9d9;
+    background-color: transparent;
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
+    color: white;
 }
 
 .menu button:hover {
     background-color: #c0c0c0;
 }
+
+/* Giriş Yap Butonu */
+.btn-giris {
+    position: absolute;
+    right: 70px;
+    top: 30px;
+}
+
+.btn-giris button {
+    border: none;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-giris button:hover {
+    background-color: #c0c0c0;
+}
+
 
 /* Ana İçerik */
 
@@ -75,8 +99,8 @@ p {
 }
 
 .start-btn {
-    border: 2px solid #000;
-    background-color: #cdcccc;
+    border: 2px solid #cccccc;
+    background-color: #c0c0c0;
     padding: 10px 25px;
     border-radius: 25px;
     font-size: 1em;
@@ -85,10 +109,11 @@ p {
     position: relative;
     text-align: center;
     top: 280px;
+    color: white;
 }
 
 .start-btn:hover {
-    background-color: #000;
+    background-color: white;
     color: #fff;
 }
 
@@ -127,13 +152,13 @@ p {
 /* Logo Ayarları */
 .logo {
     position: absolute;
-    top: 5px;
-    left: 20px;
+    top: 10px;
+    left: 70px;
     z-index: 1000;
 }
 
 .logo img {
-    width: 80px;
+    width: 100px;
     height: auto;
 }
 
