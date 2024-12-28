@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="tr">
-    
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İşletmenizi Büyütmek İçin Buradayız</title>
     <link rel="stylesheet" href="images/sytle.css">
+    <style>
+        body {
+            min-height: 200vh;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Logo -->
-    <div class="logo">
-        <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
-            <img src="images/logo.png" alt="Logo">
-        </a>
-    </div>
 
-    <!-- Üst Menü -->
-    <header>
-        <div class="menu">
-            <button onclick="window.location.href='index.html'">Ana Sayfa</button>
-            <button onclick="window.location.href='businesses.html'">İşletmeler</button>
-            <button onclick="window.location.href='services.html'">Hizmetler</button>
-            <button onclick="window.location.href='contact.html'">İletişim</button>
-            <button onclick="window.location.href='login.html'">Giriş Yap</button>
 
+    <div id="hero">
+        <video autoplay loop muted>
+            <source src="images/video.mp4" type="video/mp4">
+
+        </video>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
+                <img src="images/logo.png" alt="Logo">
+            </a>
         </div>
-    </header>
+
+        <!-- Üst Menü -->
+        <header>
+            <div class="menu">
+                <button onclick="window.location.href='index.html'">Ana Sayfa</button>
+                <button onclick="window.location.href='businesses.html'">İşletmeler</button>
+                <button onclick="window.location.href='services.html'">Hizmetler</button>
+                <button onclick="window.location.href='contact.html'">İletişim</button>
+                <button onclick="window.location.href='login.html'">Giriş Yap</button>
+
+            </div>
+        </header>
 
 
-    <!-- Ana İçerik -->
-    <main>
-        <h1>İşletmenizi Büyütmek İçin<br> Buradayız!</h1>
-        <p>Yenilikçi araçlar ve hizmetlerle işletmenizi desteklemek için</p>
-        <button class="start-btn" onclick="window.location.href='about.html'">BAŞLAYIN</button>
-    </main>
+        <!-- Ana İçerik -->
+        <main>
+            <p>Yenilikçi araçlar ve hizmetlerle işletmenizi desteklemek için</p>
+            <button class="start-btn" onclick="window.location.href='about.html'">BAŞLAYIN</button>
+        </main>
 
-    <!-- Dönme Efekti Olan Görsel -->
-    <div class="image-container">
-        <img src="images/donen.png" alt="Dönen Görsel" class="rotating-image">
-    </div>
+        <!-- Dönme Efekti Olan Görsel -->
+        <div class="image-container">
+            <img src="images/donen.png" alt="Dönen Görsel" class="rotating-image">
+        </div>
 </body>
 
 </html>

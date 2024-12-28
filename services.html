@@ -6,31 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmetlerimiz</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Temel Sayfa Ayarları */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            color: #000;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            /* Sayfa yüksekliğini minumum yüzde 100 olarak ayarla */
+            overflow-x: hidden;
+            /* Yatay taşmayı engelle */
         }
 
-        .logo {
-            position: absolute;
-            top: 5px;
-            /* Sayfanın üstünden 10px boşluk */
-            left: 20px;
-            /* Sayfanın solundan 20px boşluk */
-            z-index: 1000;
-            /* Logonun üstte kalmasını sağlar */
-        }
-
-        .logo img {
-            width: 80px;
-            /* Logonun genişliği */
-            height: auto;
-            /* Oran korunsun */
-        }
-
-
+        /* Üst Menü */
         .menu {
             display: flex;
             justify-content: center;
@@ -53,6 +48,20 @@
         .menu button:hover {
             background-color: #c0c0c0;
         }
+
+        /* Logo Ayarları */
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
+
 
         .services-container {
             max-width: 1000px;
