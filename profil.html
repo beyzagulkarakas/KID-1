@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Düzenleme</title>
+    <title>Profil</title>
+    <link rel="stylesheet" href="profilestyle.css">
+</head>
+<body>
+    <!-- Üst Menü -->
+    <header>
+        <div class="logo">
+            <!-- Küçültülmüş Logo Burada -->
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <button onclick="window.location.href='index.html'">Ana Sayfa</button>
+            <button onclick="window.location.href='businesses.html'">İşletmeler</button>
+            <button onclick="window.location.href='services.html'">Hizmetler</button>
+            <button onclick="window.location.href='contact.html'">İletişim</button>
+            <button onclick="window.location.href='login.html'">Giriş Yap</button>
+            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
+           
+        </div>
+    </header>
+
+<body>
+    <header>
+        <h1>Profilinizi Düzenleyin</h1>
+        <p id="user-info"></p>
+    </header>
+
+    <script>
+        function displayUsername() {
+            const username = localStorage.getItem('username'); // Kullanıcı adını al
+            const userInfo = document.getElementById('user-info');
+            if (username) {
+                userInfo.textContent = `Hoşgeldiniz, ${username}! Profilinizi düzenleyin.`;
+            } else {
+                userInfo.textContent = 'Kullanıcı adı bulunamadı!';
+            }
+        }
+        displayUsername(); // Sayfa yüklendiğinde çalıştır
+    </script>
+</body>
+
+</html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
         /* Genel Sayfa Düzeni */
    /* Temel Sayfa Ayarları */
@@ -101,8 +147,8 @@ body {
 }
 
 .kontainer p {
-    font-size: 14.5px;
-    margin: 15px 0;
+    font-size: 19.5px;
+    margin: 150px 0;
 }
 .container {
     display: flex;
@@ -191,7 +237,7 @@ p {
         button {
             width: 100%;
             padding: 10px;
-            background-color: #007BFF;
+            background-color: #717477;
             color: white;
             border: none;
             border-radius: 5px;
@@ -199,7 +245,7 @@ p {
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #222a31;
         }
 
         .profile-edit {
@@ -220,7 +266,7 @@ p {
         }
 
         .profile-edit a {
-            color: #007BFF;
+            color: #b5b4bb;
             text-decoration: none;
         }
 
@@ -248,24 +294,11 @@ p {
     </style>
 <body>
         <!-- Üst Menü -->
-        <header>
-            <div class="logo">
-                <!-- Küçültülmüş Logo Burada -->
-                <img src="images/logo.png" alt="Logo">
-            </div>
-            <div class="menu">
-                <button onclick="window.location.href='index.html'">Ana Sayfa</button>
-                <button onclick="window.location.href='businesses.html'">İşletmeler</button>
-                <button onclick="window.location.href='services.html'">Hizmetler</button>
-                <button onclick="window.location.href='contact.html'">İletişim</button>
-                <button onclick="window.location.href='login.html'">Giriş Yap</button>
-                <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
-                <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
-            </div>
-        </header>
+       
+          
 
     <div class="container">
-        <h1>Profilinizi Düzenleyin</h1>
+ 
 
         <!-- Profil Düzenleme Formu -->
         <div class="profile-section">
@@ -389,6 +422,21 @@ p {
             displayBusinesses();
         }
     </script>
+    <h1>Profilinizi Düzenleyin</h1>
+    <p id="user-info"></p>
+    
+    <script>
+        function displayUsername() {
+            const username = localStorage.getItem('username'); // localStorage'dan kullanıcı adını al
+            if (username) {
+                document.getElementById('user-info').textContent = `Hoşgeldiniz, ${username}! Profilinizi düzenleyin.`;
+            } else {
+                document.getElementById('user-info').textContent = 'Kullanıcı adı bulunamadı!';
+            }
+        }
+        displayUsername(); // Sayfa yüklendiğinde fonksiyonu çağır
+    </script>
+    
 
 </body>
 </html>

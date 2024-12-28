@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görme Engelli Yardım Rehberi</title>
+    <style>
+        /* Genel Sayfa Düzeni */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #ffffff, #a0a0a0);
+            color: #000;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Üst Menü */
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #bbbbbb;
+            padding: 10px 0;
+        }
+
+        .menu button {
+            border: none;
+            background-color: #d9d9d9;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
+
+        /* Sayfa Başlığı */
+        h2 {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        /* İçerik Konteyneri */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Liste */
+        .accessible-tips {
+            text-align: left;
+            margin: 20px 0;
+            padding: 10px;
+            list-style: disc;
+            color: #333;
+            font-size: 1em;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        /* Logo Ayarları */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Üst Menü -->
+    <header>
+        <div class="menu">
+            <button onclick="window.location.href='index.html'">Ana Sayfa</button>
+            <button onclick="window.location.href='businesses.html'">İşletmeler</button>
+            <button onclick="window.location.href='services.html'">Hizmetler</button>
+            <button onclick="window.location.href='contact.html'">İletişim</button>
+            <button onclick="window.location.href='login.html'">Giriş Yap</button>
+            <button onclick="window.location.href='pinneed.html'">Görme Engelli Yardım Rehberi</button>
+            <button onclick="window.location.href='edit-business.html'">İşletme Ekleyin</button>
+        </div>
+    </header>
+
+    <!-- Görme Engelli Yardım Rehberi Başlığı -->
+    <h2>Görme Engelli Yardım Rehberi</h2>
+
+    <!-- Küçük İşletmelere Destek -->
+    <div class="container">
+        <h3>Küçük İşletmelere Destek</h3>
+        <p>Görme engelli bireylerin küçük işletmelerde daha etkin rol alabilmeleri için şu önerilerimizi dikkate alabilirsiniz:</p>
+        <ul class="accessible-tips">
+            <li>İş yerinde sesli uyarılar ve erişilebilir tasarım ile engelleri azaltın.</li>
+            <li>Braille etiketleri veya sesli rehberler ile ürünlerin tanıtımını yapın.</li>
+            <li>Görme engelli çalışanların veya müşterilerin ihtiyaçlarını dinleyerek hizmetlerinizi optimize edin.</li>
+            <li>Eğitim programları ve iş birliği etkinlikleri düzenleyerek farkındalık yaratın.</li>
+            <li>Görme engelli bireylerin potansiyelini tanıyın ve iş ortamınızı daha kapsayıcı hale getirin.</li>
+        </ul>
+        <p>Bu öneriler, sadece görme engelli bireylere değil, aynı zamanda iş yerinizi daha erişilebilir ve yenilikçi bir işletme haline getirmenize de yardımcı olacaktır.</p>
+
+        <h4>Özel Fırsatlar</h4>
+        <ul class="accessible-tips">
+            <li>İlk 5 ay boyunca ücretsiz danışmanlık hizmeti.</li>
+            <li>Erişilebilirlik çözümlerinde %30 indirim.</li>
+            <li>Görme engelli bireylerin çalışmasını destekleyen işletmelere özel promosyon desteği.</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 Görme Engelli Yardım Rehberi</p>
+    </div>
+</body>
+
+</html>
