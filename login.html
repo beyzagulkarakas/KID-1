@@ -7,6 +7,76 @@
     <title>Giriş yap</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="logstyle.css">
+    <style>
+        /* Genel Ayarlar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #14192C, white);
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+            background-color: transparent;
+            padding: 25px 0;
+            margin-left: 440px;
+            position: relative;
+            top: 10px;
+        }
+
+        .menu button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
+
+        .btn-giris {
+            position: absolute;
+            right: 88px;
+            top: 30px;
+        }
+
+        .btn-giris button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-giris button:hover {
+            background-color: #c0c0c0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 70px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,10 +95,8 @@
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
         </div>
-        </div>
         <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-
         </div>
     </header>
 
@@ -46,7 +114,7 @@
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
-                    <a href="#">şifremi unuttum</a>
+                    <a href="#">Şifremi unuttum</a>
                 </div>
                 <button type="submit" class="btn">Giriş yap</button>
                 <p>veya sosyal medya hesabın ile giriş yap</p>
@@ -78,21 +146,20 @@
                     <a href="#"> <i class='bx bxl-google'></i> </a>
                     <a href="#"> <i class='bx bxl-facebook'></i> </a>
                     <a href="#"> <i class='bx bxl-apple'></i> </a>
-
                 </div>
             </form>
         </div>
 
         <div class="toggle-box">
             <div class="toggle-panel toggle-left">
-                <h1>Merhaba,Hoşgeldiniz!</h1>
+                <h1>Merhaba, Hoşgeldiniz!</h1>
                 <p>Hesabın yok mu?</p>
                 <button class="btn register-btn">Kayıt ol</button>
             </div>
             <div class="toggle-panel toggle-right">
                 <h1>Tekrardan Hoşgeldiniz!</h1>
                 <p>Zaten bir hesabınız var mı?</p>
-                <button class="btn login-btn"> Giriş yap</button>
+                <button class="btn login-btn">Giriş yap</button>
             </div>
         </div>
 
