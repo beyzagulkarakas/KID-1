@@ -82,7 +82,7 @@
 <body>
     <!-- Logo -->
     <div class="logo">
-        <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
+        <a href="index.html">
             <img src="images/logo.png" alt="Logo">
         </a>
     </div>
@@ -103,14 +103,14 @@
     <!-- login kısmı -->
     <div class="kontainer">
         <div class="form-box login">
-            <form action="">
+            <form onsubmit="loginUser(event)">
                 <h1>Giriş yap</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input id="login-username" type="text" placeholder="Kullanıcı Adı" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="password" required>
+                    <input id="login-password" type="password" placeholder="Şifre" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
@@ -126,18 +126,18 @@
             </form>
         </div>
         <div class="form-box register">
-            <form action="">
+            <form onsubmit="registerUser(event)">
                 <h1>Kayıt olun</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input id="register-username" type="text" placeholder="Kullanıcı Adı" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input id="register-email" type="email" placeholder="E-posta" required>
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input id="register-password" type="password" placeholder="Şifre" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
                 <button type="submit" class="btn">Kayıt Olun</button>
@@ -165,7 +165,57 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const kontainer = document.querySelector('.kontainer');
+        const registerBtn = document.querySelector('.register-btn');
+        const loginBtn = document.querySelector('.login-btn');
+
+        registerBtn.addEventListener('click', () => {
+            kontainer.classList.add('active');
+        });
+
+        loginBtn.addEventListener('click', () => {
+            kontainer.classList.remove('active');
+        });
+
+        function loginUser(event) {
+            event.preventDefault();
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            if (username && password) {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', username);
+                alert('Başarıyla giriş yaptınız!');
+                window.location.href = 'profil.html';
+            } else {
+                alert('Lütfen tüm alanları doldurun!');
+            }
+        }
+
+        function registerUser(event) {
+            event.preventDefault();
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+
+            if (username && email && password) {
+                alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
+                kontainer.classList.remove('active');
+            } else {
+                alert('Lütfen tüm alanları doldurun!');
+            }
+        }
+
+        // Oturum Kontrolü
+        document.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn !== 'true') {
+                alert('Lütfen giriş yapınız!');
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
 </body>
 
 </html>

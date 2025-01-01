@@ -57,6 +57,53 @@
         .cart-button:hover {
             background-color: #c0c0c0;
         }
+
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 400px;
+        }
+
+        .cart-popup h3 {
+            margin-bottom: 15px;
+        }
+
+        .cart-popup ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cart-popup li {
+            margin-bottom: 10px;
+        }
+
+        .cart-popup .total {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .cart-popup button {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-popup button:hover {
+            background-color: #008f6b;
+        }
     </style>
 </head>
 
@@ -69,7 +116,7 @@
 
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
+            <a href="index.html">
                 <img src="images/logo.png" alt="Logo">
             </a>
         </div>
@@ -82,7 +129,7 @@
                 <button onclick="window.location.href='services.html'">Hizmetler</button>
                 <button onclick="window.location.href='contact.html'">İletişim</button>
                 <button onclick="window.location.href='purchase.html'">Satın Al</button>
-                <button class="cart-button" onclick="toggleCart()">
+                <button class="cart-button" onclick="toggleCartPopup()">
                     <img src="images/sepet.png" alt="Sepet">
                     <span>Sepet</span>
                 </button>
@@ -101,6 +148,15 @@
         <!-- Dönme Efekti Olan Görsel -->
         <div class="image-container">
             <img src="images/donen.png" alt="Dönen Görsel" class="rotating-image">
+        </div>
+
+        <!-- Sepet Pop-up -->
+        <div id="cart-popup" class="cart-popup">
+            <h3>Sepetim</h3>
+            <ul id="cart-items"></ul>
+            <p class="total">Toplam: $<span id="cart-total">0</span></p>
+            <button onclick="proceedToPayment()">Ödemeye Geç</button>
+            <button onclick="toggleCartPopup()">Kapat</button>
         </div>
 
         <footer>
@@ -122,9 +178,40 @@
         </footer>
 
         <script>
-            function toggleCart() {
-                alert('Sepet Özelliği Henüz Aktif Değil!');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+
+            function toggleCartPopup() {
+                const cartPopup = document.getElementById('cart-popup');
+                cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+                updateCartDisplay();
             }
+
+            function updateCartDisplay() {
+                const cartItemsContainer = document.getElementById('cart-items');
+                const cartTotalElement = document.getElementById('cart-total');
+                cartItemsContainer.innerHTML = '';
+
+                cart.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
+                    cartItemsContainer.appendChild(li);
+                });
+
+                cartTotalElement.textContent = total.toFixed(2);
+            }
+
+            function proceedToPayment() {
+                if (cart.length === 0) {
+                    alert('Sepetiniz boş!');
+                    return;
+                }
+                window.location.href = 'payment.html';
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                updateCartDisplay();
+            });
         </script>
     </div>
 

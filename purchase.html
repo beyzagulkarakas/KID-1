@@ -246,7 +246,7 @@
         <h3>Sepetim</h3>
         <ul id="cart-items"></ul>
         <p class="total">Toplam: $<span id="cart-total">0</span></p>
-        <button onclick="proceedToPayment()">Ödemeye Geç</button>
+        <button onclick="checkLoginStatus()">Ödemeye Geç</button>
         <button onclick="toggleCart()">Kapat</button>
     </div>
 
@@ -281,7 +281,18 @@
                 cartItems.appendChild(li);
             });
 
-            cartTotal.textContent = total;
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+            if (!isLoggedIn) {
+                alert('Lütfen önce giriş yapın!');
+                window.location.href = 'login.html';
+            } else {
+                proceedToPayment();
+            }
         }
 
         function proceedToPayment() {

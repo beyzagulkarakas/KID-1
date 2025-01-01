@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ödeme</title>
+    <title>Ödeme Sayfası</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,9 +23,20 @@
             color: white;
         }
 
+        .payment-options {
+            margin: 20px 0;
+        }
+
         .payment-options label {
             display: block;
             margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .iban-section,
+        .credit-card-section {
+            display: none;
+            margin-top: 20px;
         }
 
         .btn {
@@ -37,6 +48,24 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .btn:hover {
+            background-color: #008f6b;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #444;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="file"]:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 
@@ -46,49 +75,39 @@
         <h3>Sepetiniz</h3>
         <ul id="cart-items"></ul>
         <p><b>Toplam Tutar: $<span id="cart-total"></span></b></p>
+
         <h3>Ödeme Seçenekleri</h3>
-        <label>
-            <input type="radio" name="payment-method" value="iban" checked> IBAN ile Ödeme
-        </label>
-        <label>
-            <input type="radio" name="payment-method" value="credit-card"> Kredi Kartı ile Ödeme
-        </label>
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="payment-method" value="iban" onchange="togglePaymentOption()" checked> IBAN ile Ödeme
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="credit-card" onchange="togglePaymentOption()"> Kredi Kartı ile Ödeme
+            </label>
+        </div>
+
+        <!-- IBAN Bölümü -->
+        <div class="iban-section">
+            <p>Lütfen aşağıdaki IBAN numarasına ödemenizi yapınız:</p>
+            <p><b>TR00 0000 0000 0000 0000 0000 00</b></p>
+            <p>Ödemenizi yaptıktan sonra dekontu yükleyiniz:</p>
+            <input type="file" id="iban-receipt" accept="application/pdf">
+        </div>
+
+        <!-- Kredi Kartı Bölümü -->
+        <div class="credit-card-section">
+            <p>Kredi Kartı Bilgilerinizi Giriniz:</p>
+            <input type="text" id="card-number" placeholder="Kart Numarası"><br><br>
+            <input type="text" id="card-holder" placeholder="Kart Sahibinin Adı"><br><br>
+            <input type="text" id="expiry-date" placeholder="Son Kullanma Tarihi (MM/YY)"><br><br>
+            <input type="password" id="cvv" placeholder="CVV"><br>
+        </div>
+
         <button class="btn" onclick="completePayment()">Ödemeyi Tamamla</button>
     </div>
 
-    <script>
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
-
-        function renderCart() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartTotal = document.getElementById('cart-total');
-
-            cartItemsContainer.innerHTML = '';
-            cart.forEach((item, index) => {
-                const li = document.createElement('li');
-                li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
-                cartItemsContainer.appendChild(li);
-            });
-
-            cartTotal.textContent = total.toFixed(2);
-        }
-
-        function completePayment() {
-            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
-            if (paymentMethod === 'iban') {
-                alert('IBAN ile ödemeniz tamamlandı.');
-            } else if (paymentMethod === 'credit-card') {
-                alert('Kredi kartı ile ödeme tamamlandı.');
-            }
-
-            localStorage.removeItem('cart');
-            localStorage.removeItem('cartTotal');
-            window.location.href = 'index.html';
-        }
-
-        renderCart();
-    </script>
+    <!-- Ödeme Kontrolü JavaScript Dosyası -->
+    <script src="completePayment.js"></script>
 </body>
 
 </html>
