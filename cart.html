@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepetim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #14192C, white);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #2e3344;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        .total {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #008f6b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sepetim</h1>
+        <ul id="cart-items"></ul>
+        <p class="total">Toplam: $<span id="total">0</span></p>
+        <button onclick="proceedToPayment()">Ödemeye Geç</button>
+    </div>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+
+        function renderCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerText = `${index + 1}. ${item.service} - $${item.price}`;
+                cartItemsContainer.appendChild(li);
+            });
+            document.getElementById('total').innerText = total.toFixed(2);
+        }
+
+        function proceedToPayment() {
+            if (cart.length === 0) {
+                alert('Sepetiniz boş!');
+                return;
+            }
+            window.location.href = 'payment.html';
+        }
+
+        renderCart();
+    </script>
+</body>
+
+</html>
+

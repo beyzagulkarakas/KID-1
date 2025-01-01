@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satın Alma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #14192C, white);
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 50px;
+            background: transparent;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
+
+        .menu .cart-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu .cart-button img {
+            width: 40px;
+            height: auto;
+        }
+
+        .services-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .service-item {
+            background-color: #2e3344;
+            width: 90%;
+            max-width: 400px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: white;
+        }
+
+        .service-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .service-item button {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .service-item button:hover {
+            background-color: #008f6b;
+        }
+
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 400px;
+        }
+
+        .cart-popup h3 {
+            margin-bottom: 15px;
+        }
+
+        .cart-popup ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cart-popup li {
+            margin-bottom: 10px;
+        }
+
+        .cart-popup .total {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .cart-popup button {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-popup button:hover {
+            background-color: #008f6b;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+        </div>
+        <div class="menu">
+            <button onclick="window.location.href='index.html'">Ana Sayfa</button>
+            <button onclick="window.location.href='businesses.html'">İşletmeler</button>
+            <button onclick="window.location.href='services.html'">Hizmetler</button>
+            <button class="cart-button" onclick="toggleCart()">
+                <img src="images/sepet.png" alt="Sepet">
+                <span>Sepet</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="services-container">
+        <h2>Satın Alma Hizmetleri</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Web Tasarım</h3>
+                <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz.</p>
+                <p><b>Fiyat: $500</b></p>
+                <button onclick="addToCart('Web Tasarım', 500)">Sepete Ekle</button>
+            </div>
+            <div class="service-item">
+                <h3>SEO Hizmetleri</h3>
+                <p>Sitenizi arama motorlarında daha görünür hale getirmek için SEO stratejileri sunuyoruz.</p>
+                <p><b>Fiyat: $300</b></p>
+                <button onclick="addToCart('SEO Hizmetleri', 300)">Sepete Ekle</button>
+            </div>
+            <div class="service-item">
+                <h3>Uygulama Geliştirme</h3>
+                <p>Mobil ve web tabanlı uygulamalar geliştirme hizmeti veriyoruz.</p>
+                <p><b>Fiyat: $1000</b></p>
+                <button onclick="addToCart('Uygulama Geliştirme', 1000)">Sepete Ekle</button>
+            </div>
+            <div class="service-item">
+                <h3>İçerik Yönetimi</h3>
+                <p>Web siteniz için SEO uyumlu içerikler üretiyoruz.</p>
+                <p><b>Fiyat: $200</b></p>
+                <button onclick="addToCart('İçerik Yönetimi', 200)">Sepete Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-popup" class="cart-popup">
+        <h3>Sepetim</h3>
+        <ul id="cart-items"></ul>
+        <p class="total">Toplam: $<span id="cart-total">0</span></p>
+        <button onclick="proceedToPayment()">Ödemeye Geç</button>
+        <button onclick="toggleCart()">Kapat</button>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(service, price) {
+            cart.push({ service, price });
+            total += price;
+            updateCart();
+            alert(`${service} sepete eklendi.`);
+        }
+
+        function toggleCart() {
+            const cartPopup = document.getElementById('cart-popup');
+            cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
+                cartItems.appendChild(li);
+            });
+
+            cartTotal.textContent = total;
+        }
+
+        function proceedToPayment() {
+            if (cart.length === 0) {
+                alert('Sepetiniz boş!');
+                return;
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('cartTotal', total);
+            window.location.href = 'payment.html';
+        }
+    </script>
+</body>
+
+</html>
