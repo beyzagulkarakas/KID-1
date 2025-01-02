@@ -14,7 +14,6 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #14192C, white);
             color: #ffffff;
             text-align: center;
             position: relative;
@@ -22,6 +21,16 @@
             overflow-x: hidden;
         }
 
+        /* Arka Plan Videosu */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
 
         .menu {
             display: flex;
@@ -31,7 +40,6 @@
             margin-left: 170px;
             position: relative;
             top: 10px;
-
         }
 
         .menu button {
@@ -68,7 +76,6 @@
             background-color: #c0c0c0;
         }
 
-
         h1 {
             margin: 60px 0 20px;
             font-size: 2.5em;
@@ -92,49 +99,23 @@
             height: auto;
         }
 
-
-
-        /* Buton Hover Durumu */
-        .menu button:hover {
-            background-color: #888;
-            /* Hover Durumu Buton Arka Plan Rengi */
-        }
-
-        /* İşletmeler Başlığı */
         h2 {
             text-align: center;
             margin: 30px 0;
             color: #ffffff;
         }
 
-        /* Footer */
-        .footer {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #444;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 20px;
-        }
-
-
         .businesses {
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Yatay ortalama */
             justify-content: center;
-            /* Dikey ortalama */
             gap: 20px;
             max-width: 800px;
             margin: 0 auto;
-            /* Sayfanın yatay ortasında */
-            height: 100vh;
-            /* Tam ekran yüksekliği */
+            height: auto;
         }
 
-        /* İşletme Kartı */
         .business {
             width: 95%;
             max-width: 600px;
@@ -150,6 +131,23 @@
 
         .business:hover {
             box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+        .cart-button {
+            display: flex;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .cart-button img {
+            width: 40px;
+            height: auto;
+            margin-right: 5px;
         }
 
         .business img {
@@ -179,26 +177,43 @@
         .business-description {
             color: #ffffff;
         }
+
+        .footer {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Arka Plan Videosu -->
+    <video class="background-video" autoplay muted loop>
+        <source src="images/video.mp4" type="video/mp4">
+        Tarayıcınız bu videoyu desteklemiyor.
+    </video>
+
     <!-- Üst Menü -->
     <header>
         <div class="logo">
-            <!-- Küçültülmüş Logo Burada -->
             <img src="images/logo.png" alt="Logo">
         </div>
         <div class="menu">
             <button onclick="window.location.href='index.html'">Ana Sayfa</button>
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
-            <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
-        </div>
+            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+            <button class="cart-button" onclick="toggleCartPopup()">
+                <img src="images/sepet.png" alt="Sepet">
+                <span>Sepet</span>
+            </button>
         </div>
         <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-
         </div>
     </header>
 
@@ -219,90 +234,44 @@
         <!-- İşletme 1 -->
         <div class="business">
             <img src="images/saglik.png" alt="Evde Sağlık Hizmeti">
-            <div class="business-info">Evde Sağlık
-
+            <div class="business-info">
+                <a href="https://www.instagram.com/_evdesaglik34/?igsh=ZHJ5OTVjMjN3eTh1">Evde Sağlık</a>
                 <p class="business-description">20 yılı aşkın bir zamandır, 7/24 evlerinize sağlık getiriyoruz.</p>
-                <a href="https://www.instagram.com/_evdesaglik34/?igsh=ZHJ5OTVjMjN3eTh1">İnstagram Sayfamız Burada</a>
             </div>
         </div>
 
         <!-- İşletme 2 -->
         <div class="business">
             <img src="images/sanat.png" alt="Neon Led Tasarımı">
-            <div class="business-info">The Neon
+            <div class="business-info">
+                <a href="https://www.instagram.com/karbakss/?igsh=N3MycWtpd3Z2eHBs">The Neon</a>
                 <p class="business-description">Neon ışıklı tabelalar, dilediğiniz tasarımlar için hizmetinizdeyiz.</p>
-                <a href="https://www.instagram.com/karbakss/?igsh=N3MycWtpd3Z2eHBs">İnstagram Sayfamız Burada</a>
             </div>
         </div>
 
         <!-- İşletme 3 -->
         <div class="business">
             <img src="images/giyim1.png" alt="Premium Giyim">
-            <div class="business-info">Wandal
-
+            <div class="business-info">
+                <a href="https://www.instagram.com/wandalmoda/?igsh=MWxhYnNydmRmbDFpag%3D%3D">Wandal</a>
                 <p class="business-description">İthal giyim için bizi tercih edin!</p>
-                <a href="https://www.instagram.com/wandalmoda/?igsh=MWxhYnNydmRmbDFpag%3D%3D">İnstagram Sayfamız
-                    Burada</a>
             </div>
         </div>
 
         <!-- İşletme 4 -->
         <div class="business">
             <img src="images/taki.png" alt="Oslo Takı">
-            <div class="business-info">Oslo Takı
+            <div class="business-info">
+                <a href="https://www.instagram.com/oslo_taki/?igsh=MWFueTB5NG9iem5sNw%3D%3D">Oslo Takı</a>
                 <p class="business-description">Bileklik, kolye, küpe ve istek üzerine tasarım takılar!</p>
-                <a href="https://www.instagram.com/oslo_taki/?igsh=MWFueTB5NG9iem5sNw%3D%3D">İnstagram Sayfamız
-                    Burada</a>
-
             </div>
         </div>
     </div>
 
-
-</body>
-
-<div class="businesses" id="businessList">
-</div>
-
-<script>
-    window.onload = function () {
-        const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
-        const businessListContainer = document.getElementById('businessList');
-
-        businesses.forEach((business) => {
-            const businessDiv = document.createElement('div');
-            businessDiv.classList.add('business');
-
-            const businessImage = document.createElement('img');
-            businessImage.src = 'images/business-placeholder.jpg'; // Yerine geçecek bir resim
-            businessDiv.appendChild(businessImage);
-
-            const businessInfo = document.createElement('div');
-            businessInfo.classList.add('business-info');
-
-            const businessName = document.createElement('a');
-            businessName.href = business.link;
-            businessName.innerText = business.name;
-
-            const businessDescription = document.createElement('p');
-            businessDescription.classList.add('business-description');
-            businessDescription.innerText = business.description;
-
-            businessInfo.appendChild(businessName);
-            businessInfo.appendChild(businessDescription);
-            businessDiv.appendChild(businessInfo);
-
-            businessListContainer.appendChild(businessDiv);
-        });
-    }
-</script>
-
-<!-- Footer -->
-<div class="footer">
-    <p>© 2024 İşletme Rehberi</p>
-</div>
-</body>
-
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2024 İşletme Rehberi</p>
+    </div>
 </body>
 
 </html>

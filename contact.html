@@ -18,6 +18,17 @@
             padding-bottom: 6.74rem;
         }
 
+        /* Arka Plan Videosu */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
         .logo {
             position: absolute;
             top: 10px;
@@ -30,7 +41,6 @@
             height: auto;
         }
 
-
         .menu {
             display: flex;
             gap: 15px;
@@ -39,7 +49,6 @@
             margin-left: 170px;
             position: relative;
             top: 10px;
-
         }
 
         .menu button {
@@ -55,8 +64,24 @@
         .menu button:hover {
             background-color: #c0c0c0;
         }
+        .cart-button {
+            display: flex;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
 
-        /* Giriş Yap Butonu */
+        .cart-button img {
+            width: 40px;
+            height: auto;
+            margin-right: 5px;
+        }
+
         .btn-giris {
             position: absolute;
             right: 90px;
@@ -76,7 +101,6 @@
         .btn-giris button:hover {
             background-color: #c0c0c0;
         }
-
 
         .contact-container {
             max-width: 800px;
@@ -106,11 +130,12 @@
 
         .contact-info p {
             font-size: 1.1rem;
-            color: #555;
+            color: #ffffff; /* Yazı rengi beyaz yapıldı */
         }
 
         .contact-info i {
             margin-right: 10px;
+            color: #ffffff; /* İkon rengi beyaz yapıldı */
         }
 
         footer {
@@ -126,32 +151,9 @@
             z-index: 10;
         }
 
-        /* görüş ve öneri kısmı */
         .container {
             width: 80%;
             margin: 0 auto;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-info div {
-            flex: 1;
-            margin: 10px;
-            max-width: 250px;
-        }
-
-        .contact-info p {
-            margin: 0;
-        }
-
-        .contact-title {
-            font-weight: bold;
-            color: #ffffff;
         }
 
         .contact-form {
@@ -162,24 +164,6 @@
             width: 100%;
             margin: 0 auto;
             transition: box-shadow 0.3s ease;
-
-        }
-
-        .contact-form h1 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-family: Poppins, Arial, sans-serif;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #fff;
-            font-size: 2.5rem;
-            background-color: #ffffff;
-            text-align: center;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            margin: 0 auto;
         }
 
         .contact-form label {
@@ -187,11 +171,6 @@
             color: #ffffff;
             display: flex;
             align-items: center;
-        }
-
-        .contact-form label i {
-            margin-right: 10px;
-            color: #ffffff;
         }
 
         .contact-form input,
@@ -227,10 +206,15 @@
 </head>
 
 <body>
+    <!-- Arka Plan Videosu -->
+    <video class="background-video" autoplay muted loop>
+        <source src="images/video.mp4" type="video/mp4">
+        Tarayıcınız bu videoyu desteklemiyor.
+    </video>
 
     <!-- Logo -->
     <div class="logo">
-        <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
+        <a href="index.html">
             <img src="images/logo.png" alt="Logo">
         </a>
     </div>
@@ -239,74 +223,51 @@
         <div class="menu">
             <button onclick="window.location.href='index.html'">Ana Sayfa</button>
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
-            <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
-        </div>
+            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+            <button class="cart-button" onclick="toggleCartPopup()">
+                <img src="images/sepet.png" alt="Sepet">
+                <span>Sepet</span>
+            </button>
         </div>
         <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-
         </div>
     </header>
 
     <h1>İletişim Bilgileri</h1>
 
-
-    <!-- iletişim bilgilerinin yazdığı kısım  -->
+    <!-- İletişim Bilgileri -->
     <div class="contact-container">
         <h2>Bizimle İletişime Geçin</h2>
 
         <div class="contact-info">
-            <p><i class='bx bxs-phone'></i></i><i class="fas fa-phone-alt" style="color: #ffffff;"></i> <span
-                    class="contact-title"><strong style="color: #ffffff;">Telefon:</strong> </span> <a
-                    href="tel: XXX XXX XX" style="color: #ffffff; text-decoration: none;">+90 123 456 78 90</p>
-            <p><i class='bx bxs-envelope'></i></i><i class="fas fa-envelope" style="color: #ffffff;"></i> <span
-                    class="contact-title"><strong style="color: #ffffff;">E-posta:</strong> </span> <a
-                    href="mailto:info@biruniuniveresitesi.co" style="color: #ffffff; text-decoration: none;">
-                    info@example.com</p>
-            <p><i class='bx bxs-location-plus'></i><i class="fas fa-map-marker-alt" style="color: #ffffff;"></i> <span
-                    class="contact-title"><strong style="color: #ffffff;">Adres:</strong> </span> <a
-                    href="https://www.google.com/maps/dir//Merkezefendi,+75+Sk+No:1-13+M.+G,+34015+Zeytinburnu%2F%C4%B0stanbul/@41.0178629,28.8340248,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x14cabbb1ade07b4d:0x41372ea4b54356d2!2m2!1d28.9164256!2d41.0178922?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank" style="color: #ffffff; text-decoration: none;"> Adres: Örnek Mah. No: 123, İstanbul,
-                    Türkiye</p>
+            <p><i class='bx bxs-phone'></i> <strong>Telefon:</strong> +90 123 456 78 90</p>
+            <p><i class='bx bxs-envelope'></i> <strong>E-posta:</strong> info@example.com</p>
+            <p><i class='bx bxs-location-plus'></i> <strong>Adres:</strong> Örnek Mah. No: 123, İstanbul, Türkiye</p>
         </div>
     </div>
-    <!-- görüş ve öneri kısmı  -->
+
+    <!-- Görüş ve Öneri -->
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <form action="mail/gonder2.php" method="POST" class="contact-form">
-                    <br>
-                    <input type="hidden" name="form_type" value="iletisim">
-                    <label><i style="color: #ffffff;"></i> Ad Soyad:</label>
-                    <input class="form-control" type="text" name="isim" required>
-                    <label><br><i style="color: #ffffff;"></i> E-posta Adresi:</label>
-                    <input class="form-control" type="email" name="email" required>
-                    <label><br><i style="color: #ffffff;"></i> Telefon Numarası:</label>
-                    <input class="form-control" type="number" name="tel" required>
-                    <label><br><i style="color:#ffffff;"></i> Görüşlerinizi Bizimle Paylaşın:</label>
-                    <textarea required class="form-control" name="gorev" maxlength="500"></textarea>
-                    <br>
-                    <div style="display: flex; align-items: center;">
-                        <span style="font-size: 14px;">
-                            <span style="color: rgb(255, 0, 0);"><strong>Uyarı</strong></span>:
-                            6698 Sayılı Kişisel Verileri Koruma Kanunu Kapsamında kişisel verileriniz işlenecektir.
-                            Gönder butonuna tıklayarak <a href="https://www.biruni.edu.tr/"
-                                style="color: #ffffff;">Aydınlatma Metni</a>'ni okumuş ve kabul etmiş sayılırsınız.
-                        </span>
-                    </div>
-                    <div><span><br></span></div>
-                    <button class="btn btn-success" name="gonder" type="submit">Gönder</button>
-                    <button class="btn btn-danger" name="temizle" type="reset">Temizle</button>
-                </form>
-            </div>
-        </div>
+        <form action="mail/gonder2.php" method="POST" class="contact-form">
+            <input type="hidden" name="form_type" value="iletisim">
+            <label>Ad Soyad:</label>
+            <input type="text" name="isim" required>
+            <label>E-posta Adresi:</label>
+            <input type="email" name="email" required>
+            <label>Telefon Numarası:</label>
+            <input type="number" name="tel" required>
+            <label>Görüşlerinizi Bizimle Paylaşın:</label>
+            <textarea name="gorev" maxlength="500" required></textarea>
+            <button class="btn btn-success" name="gonder" type="submit">Gönder</button>
+            <button class="btn btn-danger" name="temizle" type="reset">Temizle</button>
+        </form>
     </div>
 
     <footer>
         <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
     </footer>
-
 </body>
 
 </html>

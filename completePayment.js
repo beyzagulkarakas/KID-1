@@ -1,21 +1,22 @@
-// completePayment.js
-
+// Giriş Kontrolü
 document.addEventListener('DOMContentLoaded', () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
     if (!isLoggedIn) {
-        alert('Lütfen önce giriş yapınız.');
-        window.location.href = 'login.html'; // Giriş sayfasına yönlendir
+        localStorage.setItem('redirectAfterLogin', 'payment.html');
+        alert('Lütfen önce giriş yapın.');
+        window.location.href = 'login.html';
+        return; // Giriş yapılmadıysa geri kalan kod çalışmaz.
     }
 
     renderCart();
     togglePaymentOption();
 });
 
-function renderCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+// Sepeti Görüntüle
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
 
+function renderCart() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
 
@@ -29,6 +30,7 @@ function renderCart() {
     cartTotal.textContent = total.toFixed(2);
 }
 
+// Ödeme Seçeneklerini Kontrol Et
 function togglePaymentOption() {
     const selectedMethod = document.querySelector('input[name="payment-method"]:checked').value;
     const ibanSection = document.querySelector('.iban-section');
@@ -43,14 +45,8 @@ function togglePaymentOption() {
     }
 }
 
+// Ödeme Tamamlama
 function completePayment() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (!isLoggedIn) {
-        alert('Ödeme yapmadan önce giriş yapmanız gerekiyor!');
-        window.location.href = 'login.html';
-        return;
-    }
-
     const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
 
     if (paymentMethod === 'iban') {
@@ -77,3 +73,23 @@ function completePayment() {
     localStorage.removeItem('cartTotal');
     window.location.href = 'index.html';
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const username = localStorage.getItem('username') || 'Misafir';
+    const payments = JSON.parse(localStorage.getItem('userPayments')) || {};
+    const userPayments = payments[username] || [];
+
+    const paymentHistoryContainer = document.getElementById('payment-history');
+    paymentHistoryContainer.innerHTML = '';
+
+    if (userPayments.length === 0) {
+        paymentHistoryContainer.textContent = 'Henüz bir ödeme yapılmadı.';
+    } else {
+        const ul = document.createElement('ul');
+        userPayments.forEach((payment, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${index + 1}. Yöntem: ${payment.method}, Tutar: $${payment.amount}, Tarih: ${payment.date}`;
+            ul.appendChild(li);
+        });
+        paymentHistoryContainer.appendChild(ul);
+    }
+});

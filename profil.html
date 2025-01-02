@@ -363,7 +363,7 @@
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     image.src = e.target.result;
-                }
+                };
                 reader.readAsDataURL(file);
             }
         }
@@ -415,15 +415,8 @@
             }
         }
 
-        // Yeni İşletme Eklemeye Git
-        function openeditbusiness() {
-            <a href="edit-business.html">yeni işletmeİşletme</a>
-
-        }
-
         // İşletme Düzenleme
         function editBusiness(id) {
-            // İşletme düzenleme kodları
             alert('İşletmeyi düzenleme: ' + id);
         }
 
@@ -445,23 +438,8 @@
                 document.getElementById('profileImage').src = profile.profileImage;
             }
             displayBusinesses();
-        }
+        };
     </script>
-    <h1>Profilinizi Düzenleyin</h1>
-    <p id="user-info"></p>
-
-    <script>
-        function displayUsername() {
-            const username = localStorage.getItem('username'); // localStorage'dan kullanıcı adını al
-            if (username) {
-                document.getElementById('user-info').textContent = `Hoşgeldiniz, ${username}! Profilinizi düzenleyin.`;
-            } else {
-                document.getElementById('user-info').textContent = 'Kullanıcı adı bulunamadı!';
-            }
-        }
-        displayUsername(); // Sayfa yüklendiğinde fonksiyonu çağır
-    </script>
-
 
 </body>
 
