@@ -19,18 +19,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: url('images/background.png');
+            background-size: cover;
         }
 
-        /* Video arka plan */
-        #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
 
         .menu {
             display: flex;
@@ -56,6 +48,7 @@
         .menu button:hover {
             background-color: #c0c0c0;
         }
+
         .cart-button {
             display: flex;
             align-items: center;
@@ -109,11 +102,6 @@
 </head>
 
 <body>
-    <!-- Video arka plan -->
-    <video autoplay muted loop id="background-video">
-        <source src="images/video.mp4" type="video/mp4">
-        Tarayıcınız video etiketini desteklemiyor.
-    </video>
 
     <!-- Logo -->
     <div class="logo">
@@ -251,119 +239,14 @@
             }
         }
 
-<<<<<<< HEAD
-        document.addEventListener('DOMContentLoaded', () => {
-=======
         // Oturum Kontrolü
         /*document.addEventListener('DOMContentLoaded', () => {
->>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
             const isLoggedIn = localStorage.getItem('isLoggedIn');
             if (isLoggedIn !== 'true' && localStorage.getItem('redirectAfterLogin')) {
                 alert('Ödeme sayfasına erişim için lütfen giriş yapınız!');
                 window.location.href = 'login.html';
             }
-<<<<<<< HEAD
-        });
-        // Centralized Login Check
-function checkLoginStatus() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (!isLoggedIn) {
-        alert('Lütfen önce giriş yapınız!');
-        localStorage.setItem('redirectAfterLogin', window.location.pathname); // Save the current page for post-login redirect
-        window.location.href = 'login.html';
-    }
-}
-
-// On Page Load: Restrict Access to Protected Pages
-document.addEventListener('DOMContentLoaded', () => {
-    const protectedPages = ['profil.html', 'payment.html']; // Add protected pages here
-    const currentPath = window.location.pathname.split('/').pop();
-
-    if (protectedPages.includes(currentPath)) {
-        checkLoginStatus();
-    }
-
-    // Load User Data on Profile Page
-    const username = localStorage.getItem('username');
-    if (username && currentPath === 'profil.html') {
-        const userData = localStorage.getItem(`user_${username}`);
-        if (userData) {
-            const { email } = JSON.parse(userData);
-            console.log(`Profil yüklendi: ${username}, ${email}`);
-        }
-    }
-});
-
-// Login User Function
-function loginUser(event) {
-    event.preventDefault();
-    const username = document.getElementById('login-username').value;
-    const password = document.getElementById('login-password').value;
-
-    if (username && password) {
-        if (verifyUser(username, password)) {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('username', username);
-
-            alert('Başarıyla giriş yaptınız!');
-
-            const redirectPage = localStorage.getItem('redirectAfterLogin');
-            if (redirectPage) {
-                localStorage.removeItem('redirectAfterLogin');
-                window.location.href = redirectPage;
-            } else {
-                window.location.href = 'profil.html';
-            }
-        } else {
-            alert('Kullanıcı adı veya şifre hatalı!');
-        }
-    } else {
-        alert('Lütfen tüm alanları doldurun!');
-    }
-}
-
-// Registration Logic
-function registerUser(event) {
-    event.preventDefault();
-    const username = document.getElementById('register-username').value;
-    const email = document.getElementById('register-email').value;
-    const password = document.getElementById('register-password').value;
-
-    if (username && email && password) {
-        const userExists = localStorage.getItem(`user_${username}`);
-        if (userExists) {
-            alert('Bu kullanıcı adı zaten mevcut. Farklı bir kullanıcı adı seçin.');
-        } else {
-            localStorage.setItem(`user_${username}`, JSON.stringify({ email, password }));
-            alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
-            document.querySelector('.kontainer').classList.remove('active');
-        }
-    } else {
-        alert('Lütfen tüm alanları doldurun!');
-    }
-}
-
-// Verify User Credentials
-function verifyUser(username, password) {
-    const userData = localStorage.getItem(`user_${username}`);
-    if (userData) {
-        const user = JSON.parse(userData);
-        return user.password === password;
-    }
-    return false;
-}
-
-// Logout User
-function logout() {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('username');
-    alert('Başarıyla çıkış yaptınız!');
-    window.location.href = 'login.html';
-}
-
-=======
         });*/
->>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
     </script>
 </body>
 

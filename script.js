@@ -48,21 +48,6 @@ if (registerForm) {
         const email = registerForm.querySelector('input[type="email"]').value;
         const password = registerForm.querySelector('input[type="password"]').value;
 
-<<<<<<< HEAD
-    if (username && email && password) {
-        const userExists = localStorage.getItem(`user_${username}`);
-        if (userExists) {
-            alert('Bu kullanıcı adı zaten mevcut. Farklı bir kullanıcı adı seçin.');
-        } else {
-            localStorage.setItem(`user_${username}`, JSON.stringify({ email, password })); // Kullanıcı bilgilerini sakla
-            alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
-            kontainer.classList.remove('active'); // Giriş yap ekranına geçiş
-        }
-    } else {
-        alert('Lütfen tüm alanları doldurun!');
-    }
-});
-=======
         if (username && email && password) {
             localStorage.setItem(`user_${username}`, JSON.stringify({ email, password }));
             alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
@@ -72,7 +57,6 @@ if (registerForm) {
         }
     });
 }
->>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
 
 // Oturum Kontrolü
 function checkLoginStatus() {
@@ -83,8 +67,6 @@ function checkLoginStatus() {
     }
 }
 
-<<<<<<< HEAD
-=======
 document.addEventListener('DOMContentLoaded', function () {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (isLoggedIn) {
@@ -93,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
->>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
 // Çıkış Yapma İşlemi
 function logout() {
     localStorage.removeItem('isLoggedIn');

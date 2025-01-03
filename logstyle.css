@@ -10,7 +10,8 @@ body {
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
-    background: linear-gradient(to bottom, #14192C, white);
+    background-image: url('images/background.png');
+    background-size: cover;
 }
 
 

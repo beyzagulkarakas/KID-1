@@ -8,7 +8,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #14192C, white);
+            background-image: url('images/background.png');
+            background-size: cover;
             color: white;
             text-align: center;
             padding: 20px;
@@ -79,10 +80,12 @@
         <h3>Ödeme Seçenekleri</h3>
         <div class="payment-options">
             <label>
-                <input type="radio" name="payment-method" value="iban" onchange="togglePaymentOption()" checked> IBAN ile Ödeme
+                <input type="radio" name="payment-method" value="iban" onchange="togglePaymentOption()" checked> IBAN
+                ile Ödeme
             </label>
             <label>
-                <input type="radio" name="payment-method" value="credit-card" onchange="togglePaymentOption()"> Kredi Kartı ile Ödeme
+                <input type="radio" name="payment-method" value="credit-card" onchange="togglePaymentOption()"> Kredi
+                Kartı ile Ödeme
             </label>
         </div>
 
