@@ -7,7 +7,6 @@
     <title>Profil Düzenle</title>
     <link rel="stylesheet" href="profilestyle.css">
     <style>
-        /* General Styles */
         * {
             margin: 0;
             padding: 0;
@@ -16,53 +15,75 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #14192C, white);
-            color: #000;
+            background-image: url('images/background.png');
             text-align: center;
-            min-height: 100vh;
+            position: relative;
+            margin: 0;
+            min-height: 100%;
+            /* Sayfa yüksekliğini minumum yüzde 100 olarak ayarla */
             overflow-x: hidden;
+            /* Yatay taşmayı engelle */
+
         }
 
-        header {
+        /* Üst Menü */
+        .menu {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background: #444;
+            gap: 15px;
+            background-color: transparent;
+            padding: 25px 0;
+            margin-left: 170px;
+            position: relative;
+            top: 10px;
+
+        }
+
+        .menu button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
             color: white;
         }
 
-        header .logo img {
-            width: 80px;
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 70px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
             height: auto;
         }
 
-        header .menu button {
-            background: transparent;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
 
-        header .menu button:hover {
-            background: #666;
-            border-radius: 20px;
+
+        .btn-giris {
+            position: absolute;
+            right: 70px;
+            top: 30px;
         }
 
         .btn-giris button {
-            background: #bbb;
             border: none;
+            background-color: transparent;
             padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            color: #fff;
+            color: white;
         }
 
         .btn-giris button:hover {
-            background: #888;
+            background-color: #c0c0c0;
         }
 
         .container {
@@ -75,6 +96,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             max-width: 1200px;
             margin: 20px auto;
+            margin-top: 100px;
         }
 
         .profile-section,
