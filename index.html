@@ -117,16 +117,12 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            /* Video en arkada olacak */
         }
 
-        /* Üstteki içerikler için düzenleme */
         #hero {
             position: relative;
             z-index: 1;
-            /* İçerik videonun üzerinde olacak */
             color: white;
-            /* Yazılar daha net görünmesi için */
             text-align: center;
             min-height: 2500px;
         }
@@ -134,9 +130,7 @@
 
         .swiper-container {
             width: 90%;
-            /* Genişlik daha büyük olacak şekilde ayarlandı */
             margin: 50px auto;
-            /* Üstten ve alttan boşluk */
             padding: 20px 0;
         }
 
@@ -151,7 +145,6 @@
 
         .swiper-slide img {
             width: 100%;
-            /* Daha geniş resimler */
             height: auto;
             border-radius: 10px;
         }
@@ -183,7 +176,6 @@
             background-color: transparent;
         }
 
-        /* Navigasyon butonları */
         .swiper-button-next,
         .swiper-button-prev {
             color: #d3d3d3;
@@ -222,9 +214,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            /* Öğeleri yukarıya yasla */
             height: 250px;
-            /* Daha kısa kutu */
         }
 
         .team-member img {
@@ -240,13 +230,11 @@
             align-items: center;
             justify-content: flex-start;
             margin-top: 5px;
-            /* Resim ile başlık arasındaki boşluğu daraltalım */
         }
 
         .info h3 {
             font-size: 1.2rem;
             margin: 0;
-            /* Başlık ile diğer öğeler arasındaki boşluğu sıfırladık */
             color: #ffffff;
         }
 
@@ -255,13 +243,11 @@
             color: #ffffff;
             margin: 2px 0;
             top: 50px;
-            /* Görev ve LinkedIn arasındaki boşluğu kısalt */
         }
 
         .info a {
             display: inline-block;
             margin: 3px 0 0 0;
-            /* LinkedIn linki ile görev arasındaki boşluğu azaltalım */
             color: #ffffff;
             text-decoration: none;
             top: 20px;
@@ -317,7 +303,6 @@
 
         .footer-menu a:hover {
             color: #143f6e;
-            /* Link üzerine gelindiğinde sarı renk */
         }
 
         .social-media {
@@ -357,6 +342,7 @@
             <div class="menu">
                 <button onclick="window.location.href='index.html'">Ana Sayfa</button>
                 <button onclick="window.location.href='businesses.html'">İşletmeler</button>
+                <button onclick="window.location.href='services.html'">Hizmetler</button>
                 <button onclick="window.location.href='contact.html'">İletişim</button>
                 <button onclick="window.location.href='purchase.html'">Satın Al</button>
                 <button class="cart-button" onclick="toggleCartPopup()">
@@ -369,7 +355,6 @@
             </div>
         </header>
 
-        <!-- Ana İçerik -->
         <main>
             <p>Yenilikçi araçlar ve hizmetlerle işletmenizi desteklemek için</p>
             <button class="start-btn" onclick="window.location.href='about.html'">BAŞLAYIN</button>
@@ -401,7 +386,6 @@
         <body>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <!-- Her duyuru için bir slide -->
                     <div class="swiper-slide">
                         <img src="images/anons.png" alt=>
                         <h3>Afete Hazır Biruni Ailesi</h3>
