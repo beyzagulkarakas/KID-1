@@ -72,8 +72,6 @@ function checkLoginStatus() {
     }
 }
 
-<<<<<<< HEAD
-=======
 document.addEventListener('DOMContentLoaded', function () {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (isLoggedIn) {
@@ -82,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
->>>>>>> bf7a521b3595067c0f35fc0cd3c1ae18baaa1d52
 // Çıkış Yapma İşlemi
 function logout() {
     localStorage.removeItem('isLoggedIn');
