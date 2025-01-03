@@ -54,6 +54,15 @@
             background-color: #008f6b;
         }
 
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
         input[type="file"] {
             margin-top: 10px;
             padding: 5px;
@@ -76,6 +85,7 @@
         <h3>Sepetiniz</h3>
         <ul id="cart-items"></ul>
         <p><b>Toplam Tutar: $<span id="cart-total"></span></b></p>
+        <button class="btn-secondary" onclick="goBack()">Geri Dön</button>
 
         <h3>Ödeme Seçenekleri</h3>
         <div class="payment-options">
@@ -107,23 +117,22 @@
         </div>
 
         <button class="btn" onclick="completePayment()">Ödemeyi Tamamla</button>
+        <button class="btn-secondary" onclick="clearCart()">Sepeti Temizle</button>
     </div>
 
     <script>
-         src="scripts/completePayment.js">
-
-        // Giriş Kontrol etsin
+        // Giriş Kontrolü
         document.addEventListener('DOMContentLoaded', () => {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
             if (!isLoggedIn) {
                 localStorage.setItem('redirectAfterLogin', 'payment.html');
                 alert('Lütfen önce giriş yapın.');
                 window.location.href = 'login.html';
-                return; // Giriş yapılmadıysa geri kalan kod çalışmaz.
+                return;
             }
         });
 
-        // Sepeti Görüntülesin
+        // Sepeti Görüntüle
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
 
@@ -141,7 +150,7 @@
             cartTotal.textContent = total.toFixed(2);
         }
 
-        // Ödeme Seçeneklerine bakıcak
+        // Ödeme Seçeneklerini Kontrol Et
         function togglePaymentOption() {
             const selectedMethod = document.querySelector('input[name="payment-method"]:checked').value;
             const ibanSection = document.querySelector('.iban-section');
@@ -183,6 +192,19 @@
             localStorage.removeItem('cart');
             localStorage.removeItem('cartTotal');
             window.location.href = 'index.html';
+        }
+
+        // Sepeti Temizle
+        function clearCart() {
+            localStorage.removeItem('cart');
+            localStorage.removeItem('cartTotal');
+            alert('Sepet temizlendi.');
+            window.location.reload();
+        }
+
+        // Geri Dön
+        function goBack() {
+            window.history.back();
         }
 
         // Sayfa Yüklendiğinde Sepeti Göster
