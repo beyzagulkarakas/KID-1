@@ -48,31 +48,20 @@ if (registerForm) {
         const email = registerForm.querySelector('input[type="email"]').value;
         const password = registerForm.querySelector('input[type="password"]').value;
 
-<<<<<<< HEAD
-    if (username && email && password) {
-        const userExists = localStorage.getItem(`user_${username}`);
-        if (userExists) {
-            alert('Bu kullanıcı adı zaten mevcut. Farklı bir kullanıcı adı seçin.');
-        } else {
-            localStorage.setItem(`user_${username}`, JSON.stringify({ email, password })); // Kullanıcı bilgilerini sakla
-            alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
-            kontainer.classList.remove('active'); // Giriş yap ekranına geçiş
-        }
-    } else {
-        alert('Lütfen tüm alanları doldurun!');
-    }
-});
-=======
         if (username && email && password) {
-            localStorage.setItem(`user_${username}`, JSON.stringify({ email, password }));
-            alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
-            kontainer.classList.remove('active'); // Giriş yap ekranına geçiş
+            const userExists = localStorage.getItem(`user_${username}`);
+            if (userExists) {
+                alert('Bu kullanıcı adı zaten mevcut. Farklı bir kullanıcı adı seçin.');
+            } else {
+                localStorage.setItem(`user_${username}`, JSON.stringify({ email, password }));
+                alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
+                kontainer.classList.remove('active');
+            }
         } else {
             alert('Lütfen tüm alanları doldurun!');
         }
     });
 }
->>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
 
 // Oturum Kontrolü
 function checkLoginStatus() {
@@ -83,17 +72,6 @@ function checkLoginStatus() {
     }
 }
 
-<<<<<<< HEAD
-=======
-document.addEventListener('DOMContentLoaded', function () {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (isLoggedIn) {
-        const username = localStorage.getItem('username');
-        alert(`Hoşgeldiniz, ${username}!`);
-    }
-});
-
->>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
 // Çıkış Yapma İşlemi
 function logout() {
     localStorage.removeItem('isLoggedIn');
@@ -112,13 +90,8 @@ function verifyUser(username, password) {
     return false;
 }
 
-// Ödeme sayfasına erişim kontrolü
-if (window.location.pathname.includes('payment.html')) {
-    checkLoginStatus();
-}
-
 // Kullanıcı Profili Yükleme
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const username = localStorage.getItem('username');
     if (username) {
         const profileData = localStorage.getItem(`user_${username}`);
@@ -127,14 +100,15 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(`Profil yüklendi: ${username}, ${email}`);
         }
     }
-});
 
-// Swiper Başlatma
-document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.pathname.includes('payment.html')) {
+        checkLoginStatus();
+    }
+
     const swiperContainer = document.querySelector('.swiper-container');
     if (swiperContainer) {
         const swiper = new Swiper('.swiper-container', {
-            loop: true, // Sonsuz döngü
+            loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -143,17 +117,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            slidesPerView: 3, // Aynı anda 3 duyuru göster
-            spaceBetween: 20, // Kartlar arasında boşluk
+            slidesPerView: 3,
+            spaceBetween: 20,
             breakpoints: {
                 1024: {
-                    slidesPerView: 3, // Geniş ekranlarda 3 duyuru
+                    slidesPerView: 3,
                 },
                 768: {
-                    slidesPerView: 2, // Orta ekranlarda 2 duyuru
+                    slidesPerView: 2,
                 },
                 480: {
-                    slidesPerView: 1, // Küçük ekranlarda 1 duyuru
+                    slidesPerView: 1,
                 }
             }
         });
