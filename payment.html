@@ -112,7 +112,7 @@
     <script>
          src="scripts/completePayment.js">
 
-        // Giriş Kontrolü
+        // Giriş Kontrol etsin
         document.addEventListener('DOMContentLoaded', () => {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
             if (!isLoggedIn) {
@@ -123,7 +123,7 @@
             }
         });
 
-        // Sepeti Görüntüle
+        // Sepeti Görüntülesin
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
 
@@ -141,7 +141,7 @@
             cartTotal.textContent = total.toFixed(2);
         }
 
-        // Ödeme Seçeneklerini Kontrol Et
+        // Ödeme Seçeneklerine bakıcak
         function togglePaymentOption() {
             const selectedMethod = document.querySelector('input[name="payment-method"]:checked').value;
             const ibanSection = document.querySelector('.iban-section');

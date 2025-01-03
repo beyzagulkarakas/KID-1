@@ -46,7 +46,7 @@ function toggleCartPopup() {
     const cartPopup = document.getElementById('cart-popup');
     if (cartPopup) {
         cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
-        updateCart(); // Popup açıldığında içeriği günceller
+        updateCart(); // Popup açıldığında içeriği güncelleiceeek
     }
 }
 

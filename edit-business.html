@@ -265,7 +265,7 @@
     </div>
 
     <script>
-        // İşletme Kaydetme Fonksiyonu
+        // kaydedicek işletmelrde ekleyevek
         function saveBusiness() {
             const name = document.getElementById('businessName').value;
             const description = document.getElementById('businessDescription').value;
@@ -290,7 +290,7 @@
             window.location.reload();
         }
 
-        // İşletmeleri Listeleme Fonksiyonu
+        // Listeleme 
         function displayBusinesses() {
             const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
             const businessesContainer = document.getElementById('businessesContainer');
@@ -316,7 +316,7 @@
             });
         }
 
-        // İşletme Silme Fonksiyonu
+        // Silme 
         function deleteBusiness(id) {
             let businesses = JSON.parse(localStorage.getItem('businesses')) || [];
             businesses = businesses.filter(business => business.id !== id); // Seçilen işletmeyi çıkarıyoruz
@@ -326,7 +326,7 @@
             displayBusinesses(); // Listeyi tekrar göster
         }
 
-        // Sayfa Yüklendiğinde İşletmeleri Göster
+        // Sayfa Yüklendiğinde İşletmeleri Göstercek
         window.onload = function () {
             displayBusinesses();
         }

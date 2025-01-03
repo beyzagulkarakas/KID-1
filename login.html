@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Login User Function
+// giriş yapma fonk
 function loginUser(event) {
     event.preventDefault();
     const username = document.getElementById('login-username').value;
@@ -372,7 +372,7 @@ function loginUser(event) {
     }
 }
 
-// Registration Logic
+// kaydolmaaa
 function registerUser(event) {
     event.preventDefault();
     const username = document.getElementById('register-username').value;
@@ -393,7 +393,7 @@ function registerUser(event) {
     }
 }
 
-// Verify User Credentials
+// onaylamaa
 function verifyUser(username, password) {
     const userData = localStorage.getItem(`user_${username}`);
     if (userData) {
@@ -403,7 +403,7 @@ function verifyUser(username, password) {
     return false;
 }
 
-// Logout User
+// çıkış yaptırıyo
 function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
