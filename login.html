@@ -19,18 +19,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: url('images/background.png');
+            background-size: cover;
         }
 
-        /* Video arka plan */
-        #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
 
         .menu {
             display: flex;
@@ -56,6 +48,7 @@
         .menu button:hover {
             background-color: #c0c0c0;
         }
+
         .cart-button {
             display: flex;
             align-items: center;
@@ -109,11 +102,6 @@
 </head>
 
 <body>
-    <!-- Video arka plan -->
-    <video autoplay muted loop id="background-video">
-        <source src="images/video.mp4" type="video/mp4">
-        Tarayıcınız video etiketini desteklemiyor.
-    </video>
 
     <!-- Logo -->
     <div class="logo">
@@ -251,12 +239,18 @@
             }
         }
 
+<<<<<<< HEAD
         document.addEventListener('DOMContentLoaded', () => {
+=======
+        // Oturum Kontrolü
+        /*document.addEventListener('DOMContentLoaded', () => {
+>>>>>>> bf7a521b3595067c0f35fc0cd3c1ae18baaa1d52
             const isLoggedIn = localStorage.getItem('isLoggedIn');
             if (isLoggedIn !== 'true' && localStorage.getItem('redirectAfterLogin')) {
                 alert('Ödeme sayfasına erişim için lütfen giriş yapınız!');
                 window.location.href = 'login.html';
             }
+<<<<<<< HEAD
         });
         // Centralized Login Check
 function checkLoginStatus() {
@@ -355,6 +349,9 @@ function logout() {
     window.location.href = 'login.html';
 }
 
+=======
+        });*/
+>>>>>>> bf7a521b3595067c0f35fc0cd3c1ae18baaa1d52
     </script>
 </body>
 

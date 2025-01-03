@@ -11,7 +11,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #14192C, white);
+            background-image: url('images/background.png');
+            background-size: cover;
             position: relative;
             min-height: 100%;
             padding-bottom: 6.74rem;
@@ -19,16 +20,7 @@
             text-align: center;
         }
 
-        /* Arka Plan Videosu */
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
+
 
         .logo {
             position: absolute;
@@ -199,11 +191,6 @@
 </head>
 
 <body>
-    <!-- Arka Plan Videosu -->
-    <video class="background-video" autoplay muted loop>
-        <source src="images/video.mp4" type="video/mp4">
-        Tarayıcınız bu videoyu desteklemiyor.
-    </video>
 
     <!-- Logo -->
     <div class="logo">
