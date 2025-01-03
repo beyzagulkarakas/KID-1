@@ -40,9 +40,14 @@ registerForm.addEventListener('submit', (e) => {
     const password = registerForm.querySelector('input[type="password"]').value;
 
     if (username && email && password) {
-        localStorage.setItem(`user_${username}`, JSON.stringify({ email, password })); // Kullanıcı bilgilerini sakla
-        alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
-        kontainer.classList.remove('active'); // Giriş yap ekranına geçiş
+        const userExists = localStorage.getItem(`user_${username}`);
+        if (userExists) {
+            alert('Bu kullanıcı adı zaten mevcut. Farklı bir kullanıcı adı seçin.');
+        } else {
+            localStorage.setItem(`user_${username}`, JSON.stringify({ email, password })); // Kullanıcı bilgilerini sakla
+            alert(`Başarıyla kayıt oldunuz, ${username}! Lütfen giriş yapın.`);
+            kontainer.classList.remove('active'); // Giriş yap ekranına geçiş
+        }
     } else {
         alert('Lütfen tüm alanları doldurun!');
     }
@@ -56,14 +61,6 @@ function checkLoginStatus() {
         window.location.href = 'login.html';
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (isLoggedIn) {
-        const username = localStorage.getItem('username');
-        alert(`Hoşgeldiniz, ${username}!`);
-    }
-});
 
 // Çıkış Yapma İşlemi
 function logout() {
