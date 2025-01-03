@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İşletmenizi Büyütmek İçin Buradayız</title>
-    <link rel="stylesheet" href="images/sytle.css">
+    <link rel="stylesheet" href="images/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
+
+
     <style>
         body {
-            min-height: 200vh;
+            min-height: 3000px;
         }
 
         .menu {
             display: flex;
             gap: 15px;
             background-color: transparent;
+
             padding: 25px 0;
             margin-left: 170px;
             position: relative;
@@ -104,6 +108,233 @@
         .cart-popup button:hover {
             background-color: #008f6b;
         }
+
+        #hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            /* Video en arkada olacak */
+        }
+
+        /* Üstteki içerikler için düzenleme */
+        #hero {
+            position: relative;
+            z-index: 1;
+            /* İçerik videonun üzerinde olacak */
+            color: white;
+            /* Yazılar daha net görünmesi için */
+            text-align: center;
+            min-height: 3000px;
+        }
+
+
+        .swiper-container {
+            width: 90%;
+            /* Genişlik daha büyük olacak şekilde ayarlandı */
+            margin: 50px auto;
+            /* Üstten ve alttan boşluk */
+            padding: 20px 0;
+        }
+
+        /* Kart tasarımı */
+        .swiper-slide {
+            text-align: center;
+            background: transparent;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            /* Daha geniş resimler */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .swiper-slide h3 {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .swiper-slide p {
+            font-size: 14px;
+            color: #777;
+
+        }
+
+        .swiper-slide .details {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .swiper-slide .details:hover {
+            background-color: transparent;
+        }
+
+        /* Navigasyon butonları */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #d3d3d3;
+        }
+
+        .swiper-pagination {
+            margin-top: 10px;
+        }
+
+        #team {
+            background-color: transparent;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #team h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background: transparent;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Öğeleri yukarıya yasla */
+            height: 250px;
+            /* Daha kısa kutu */
+        }
+
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 5px;
+            /* Resim ile başlık arasındaki boşluğu daraltalım */
+        }
+
+        .info h3 {
+            font-size: 1.2rem;
+            margin: 0;
+            /* Başlık ile diğer öğeler arasındaki boşluğu sıfırladık */
+            color: #ffffff;
+        }
+
+        .info p {
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin: 2px 0;
+            top: 50px;
+            /* Görev ve LinkedIn arasındaki boşluğu kısalt */
+        }
+
+        .info a {
+            display: inline-block;
+            margin: 3px 0 0 0;
+            /* LinkedIn linki ile görev arasındaki boşluğu azaltalım */
+            color: #ffffff;
+            text-decoration: none;
+            top: 20px;
+        }
+
+        .info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: transparent;
+            padding: 35px;
+            text-align: left;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-top: auto;
+            z-index: 1;
+
+
+            h4 {
+                text-align: center;
+            }
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            max-width: 100px;
+        }
+
+        .footer-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer-menu a:hover {
+            color: #143f6e;
+            /* Link üzerine gelindiğinde sarı renk */
+        }
+
+        .social-media {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            display: inline-block;
+            color: #fff;
+            /* Sosyal medya ikonları beyaz */
+            font-size: 1.5em;
+        }
     </style>
 </head>
 
@@ -158,62 +389,161 @@
             <button onclick="proceedToPayment()">Ödemeye Geç</button>
             <button onclick="toggleCartPopup()">Kapat</button>
         </div>
+        <!DOCTYPE html>
+        <html lang="en">
 
-        <footer>
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="Logo">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Modern Slider</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+
+        <body>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Her duyuru için bir slide -->
+                    <div class="swiper-slide">
+                        <img src="images/anons.png" alt=>
+                        <h3>Afete Hazır Biruni Ailesi</h3>
+                        <a href="#" class="details">Detaylar</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/anons1.png" alt=>
+                        <h3>Afete Hazır Biruni Ailesi</h3>
+                        <a href="#" class="details">Detaylar</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/anons2.png" alt="">
+                        <h3>Rektörümüz, Lisansüstü Öğrencilerle Buluştu</h3>
+                        <a href="#" class="details">Detaylar</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/anons3.png" alt="Meslek Yüksekokulu Öğrencileri Beyaz Önlük Töreni">
+                        <h3>Meslek Yüksekokulu Öğrencileri Beyaz Önlük Töreni</h3>
+                        <a href="#" class="details">Detaylar</a>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+
+                <!-- Navigasyon butonları -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <div class="swiper-scrollbar"></div>
+
             </div>
-            <div class="footer-menu">
-                <a href="index.html">ANASAYFA</a>
-                <a href="businesses.html">İŞLETMELER</a>
-                <a href="services.html">HİZMETLER</a>
-                <a href="contact.html">İLETİŞİM</a>
-                <a href="about.html">HAKKIMIZDA</a>
-            </div>
-            <div class="social-media">
-                <a href="https://twitter.com"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.instagram.com"><i class='bx bxl-instagram'></i></a>
-                <a href="https://www.linkedin.com"><i class='bx bxl-linkedin'></i></a>
-            </div>
-        </footer>
 
-        <script>
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+            <script src="node_modules/swiper/swiper-bundle.min.js"></script>
 
-            function toggleCartPopup() {
-                const cartPopup = document.getElementById('cart-popup');
-                cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
-                updateCartDisplay();
-            }
+            <section id="team">
+                <h2>Kadromuz</h2>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img src="images/serra.png" alt="Üye 1 Fotoğrafı">
+                        <div class="info">
+                            <h3>Serra Gücük</h3>
+                            <p><strong>Görev:</strong> Yazılım Geliştirici</p>
+                            <a href="https://linkedin.com" target="_blank">LinkedIn Profil</a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/beyza.png" alt="Üye 2 Fotoğrafı">
+                        <div class="info">
+                            <h3>Beyza Gül Karakaş</h3>
+                            <p><strong>Görev:</strong> Tasarımcı</p>
+                            <a href="https://linkedin.com" target="_blank">LinkedIn Profil</a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/betul.png" alt="Üye 2 Fotoğrafı">
+                        <div class="info">
+                            <h3>Betül Sazak</h3>
+                            <p><strong>Görev:</strong> Tasarımcı</p>
+                            <a href="https://linkedin.com" target="_blank">LinkedIn Profil</a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/safa.png" alt="Üye 2 Fotoğrafı">
+                        <div class="info">
+                            <h3>Safa Al-Galedi</h3>
+                            <p><strong>Görev:</strong> Tasarımcı</p>
+                            <a href="https://linkedin.com" target="_blank">LinkedIn Profil</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            function updateCartDisplay() {
-                const cartItemsContainer = document.getElementById('cart-items');
-                const cartTotalElement = document.getElementById('cart-total');
-                cartItemsContainer.innerHTML = '';
-
-                cart.forEach((item, index) => {
-                    const li = document.createElement('li');
-                    li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
-                    cartItemsContainer.appendChild(li);
-                });
-
-                cartTotalElement.textContent = total.toFixed(2);
-            }
-
-            function proceedToPayment() {
-                if (cart.length === 0) {
-                    alert('Sepetiniz boş!');
-                    return;
-                }
-                window.location.href = 'payment.html';
-            }
-
-            document.addEventListener('DOMContentLoaded', () => {
-                updateCartDisplay();
-            });
-        </script>
     </div>
+    </section>
+
+
+</body>
+
+
+
+</html>
+
+
+
+<footer>
+    <div class="footer-logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+    <div class="footer-menu">
+        <a href="index.html">ANASAYFA</a>
+        <a href="businesses.html">İŞLETMELER</a>
+        <a href="services.html">HİZMETLER</a>
+        <a href="contact.html">İLETİŞİM</a>
+        <a href="about.html">HAKKIMIZDA</a>
+    </div>
+    <div class="social-media">
+        <a href="https://twitter.com"><i class='bx bxl-twitter'></i></a>
+        <a href="https://www.instagram.com"><i class='bx bxl-instagram'></i></a>
+        <a href="https://www.linkedin.com"><i class='bx bxl-linkedin'></i></a>
+    </div>
+</footer>
+
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+
+    function toggleCartPopup() {
+        const cartPopup = document.getElementById('cart-popup');
+        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+        cartItemsContainer.innerHTML = '';
+
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
+            cartItemsContainer.appendChild(li);
+        });
+
+        cartTotalElement.textContent = total.toFixed(2);
+    }
+
+    function proceedToPayment() {
+        if (cart.length === 0) {
+            alert('Sepetiniz boş!');
+            return;
+        }
+        window.location.href = 'payment.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCartDisplay();
+    });
+</script>
+<script src="script.js"></script>
+</div>
 
 </body>
 
