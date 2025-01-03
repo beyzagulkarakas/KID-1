@@ -152,18 +152,63 @@
         }
 
         .container {
-            width: 80%;
+            width: 88%;
             margin: 0 auto;
         }
 
+<<<<<<< HEAD
+=======
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info div {
+            flex: 1;
+            margin: 100px;
+            max-width: 250px;
+        }
+
+        .contact-info p {
+            margin: 1;
+        }
+
+        .contact-title {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+>>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
         .contact-form {
             background-color: #2e3344;
-            padding: 20px;
+            padding: 200px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             margin: 0 auto;
             transition: box-shadow 0.3s ease;
+<<<<<<< HEAD
+=======
+        }
+
+        .contact-form h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-family: Poppins, Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #fff;
+            font-size: 2.5rem;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin: 0 auto;
+>>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
         }
 
         .contact-form label {
@@ -178,12 +223,12 @@
             width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #999999;
+            border: 1opx solid #999999;
             border-radius: 4px;
         }
 
         .contact-form button {
-            width: calc(50% - 10px);
+            width: calc(10% - 1000px);
             padding: 10px;
             margin-bottom: 10px;
             border: none;
@@ -201,6 +246,57 @@
 
         .btn-danger:hover {
             background-color: #c82333;
+        }
+
+        /* Yeni Görüş/Şikayet Bildirimi */
+        .gorus-bildir {
+            margin-top: 3opx;
+            background-color: #2e3344;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 55%;
+            margin: 20px auto;
+        }
+
+        .gorus-bildir label {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .gorus-bildir input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 10px solid #999999;
+            border-radius: 50px; /* Oval yapıldı */
+        }
+
+        .gorus-bildir .checkbox {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .gorus-bildir textarea {
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 10px solid #999999;
+            border-radius: 20px; /* Oval dikdörtgen yapıldı */
+        }
+
+        .gorus-bildir button {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            background-color: #c95757;
+            color: white;
+            border-radius: 20px; /* Oval kare yapıldı */
+            cursor: pointer;
+        }
+
+        .gorus-bildir button:hover {
+            background-color: #c0c0c0;
         }
     </style>
 </head>
@@ -237,11 +333,16 @@
 
     <h1>İletişim Bilgileri</h1>
 
+<<<<<<< HEAD
     <!-- İletişim Bilgileri -->
+=======
+    <!-- iletişim bilgilerinin yazdığı kısım -->
+>>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
     <div class="contact-container">
         <h2>Bizimle İletişime Geçin</h2>
 
         <div class="contact-info">
+<<<<<<< HEAD
             <p><i class='bx bxs-phone'></i> <strong>Telefon:</strong> +90 123 456 78 90</p>
             <p><i class='bx bxs-envelope'></i> <strong>E-posta:</strong> info@example.com</p>
             <p><i class='bx bxs-location-plus'></i> <strong>Adres:</strong> Örnek Mah. No: 123, İstanbul, Türkiye</p>
@@ -262,12 +363,48 @@
             <textarea name="gorev" maxlength="500" required></textarea>
             <button class="btn btn-success" name="gonder" type="submit">Gönder</button>
             <button class="btn btn-danger" name="temizle" type="reset">Temizle</button>
+=======
+            <p><i class='bx bxs-phone'></i> <span class="contact-title"><strong style="color: #ffffff;">Telefon:</strong> </span> <a href="tel: XXX XXX XX" style="color: #ffffff; text-decoration: none;">+90 123 456 78 90</p>
+            <p><i class='bx bxs-envelope'></i> <span class="contact-title"><strong style="color: #ffffff;">E-posta:</strong> </span> <a href="mailto:info@biruniuniveresitesi.co" style="color: #ffffff; text-decoration: none;"> info@example.com</p>
+            <p><i class='bx bxs-location-plus'></i> <span class="contact-title"><strong style="color: #ffffff;">Adres:</strong> </span> Adres: Örnek Mah. No: 123, İstanbul, Türkiye</p>
+        </div>
+    </div>
+
+    <!-- Görüş/Öneri/Şikayet Bildirme Kısmı -->
+    <div class="gorus-bildir">
+        <h2 style="color: #ffffff;">Görüş, Öneri veya Şikayet Bildirimi</h2>
+        <form>
+            <label><i style="color: #ffffff;"></i>**  Ad Soyad:</label>
+            <input type="text" name="adsoyad" placeholder="   Adınızı girin" class="form-control" required>
+            <label><i style="color: #ffffff;"></i>**Anonim Olarak Bildirmek İstiyorum</label>
+            <input type="checkbox" name="anonim" class="checkbox" style="color: #ffffff;" onclick="toggleAdField()"> Evet, anonim olmak istiyorum.
+            <label><i style="color: #ffffff;"></i> Bildiriminiz:</label>
+            <textarea class="form-control" name="bildirim" maxlength="500" placeholder="Bildiriminizi buraya yazın" required></textarea>
+            <button type="submit" class="btn btn-success">Gönder</button>
+>>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
         </form>
     </div>
 
     <footer>
         <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
     </footer>
+<<<<<<< HEAD
+=======
+
+    <script>
+        function toggleAdField() {
+            var adField = document.querySelector('input[name="adsoyad"]');
+            var anonimCheckbox = document.querySelector('input[name="anonim"]');
+            if (anonimCheckbox.checked) {
+                adField.disabled = true;
+                adField.value = '';
+            } else {
+                adField.disabled = false;
+            }
+        }
+    </script>
+
+>>>>>>> f20a39c7a64c5d6a55209ed2ceeca2eaf4590f3a
 </body>
 
 </html>
