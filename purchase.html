@@ -20,8 +20,6 @@
             text-align: center;
         }
 
-
-
         .logo {
             position: absolute;
             top: 10px;
@@ -288,16 +286,16 @@
             cartTotal.textContent = total.toFixed(2);
         }
 
-        /*function checkLoginStatus() {
+        function checkLoginStatus() {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-            /*if (!isLoggedIn) {
+            if (!isLoggedIn) {
                 alert('Lütfen önce giriş yapın!');
                 window.location.href = 'login.html';
             } else {
                 proceedToPayment();
             }
-        }*/
+        }
 
         function proceedToPayment() {
             if (cart.length === 0) {
