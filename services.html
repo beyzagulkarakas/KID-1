@@ -28,7 +28,6 @@
             margin-left: 170px;
             position: relative;
             top: 10px;
-
         }
 
         .menu button {
@@ -45,7 +44,7 @@
             background-color: #c0c0c0;
         }
 
-        /* Giriş Yap Butonu */
+      
         .btn-giris {
             position: absolute;
             right: 88px;
@@ -66,7 +65,6 @@
             background-color: #c0c0c0;
         }
 
-
         .logo {
             position: absolute;
             top: 10px;
@@ -79,12 +77,10 @@
             height: auto;
         }
 
-
-
         .services-container {
             max-width: 1000px;
             margin: 20px auto;
-            background-color: white;
+            background-color: rgb(176, 171, 196);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -104,11 +100,15 @@
         }
 
         .service-item {
-            background-color: #f9f9f9;
+            background-color: #d3d3d3;
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .service-item h3 {
@@ -118,6 +118,50 @@
         .service-item p {
             color: #555;
         }
+
+        /* Popup container */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333; /* Opak arka plan */
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            display: none;
+            z-index: 1001;
+        }
+
+        .popup h3 {
+            margin-bottom: 15px;
+        }
+
+        .service-item.active .popup {
+            display: block; /* Sadece aktif öğede popup gösterilsin */
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            background-color: #5d6cc5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .popup button:hover {
+            background-color: #03334e;
+        }
+        .popup h3, .popup p {
+    font-weight: bold; /* Yazıları kalın yapar */
+    color: #f0f0f0; /* Açık beyaz renk */
+}
+
 
         footer {
             background-color: #bbbbbb;
@@ -137,7 +181,7 @@
 <body>
     <!-- Logo -->
     <div class="logo">
-        <a href="index.html"> <!-- Ana sayfaya yönlendirme -->
+        <a href="index.html">
             <img src="images/logo.png" alt="Logo">
         </a>
     </div>
@@ -150,28 +194,59 @@
         </div>
         <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
-
         </div>
     </header>
 
     <div class="services-container">
         <h2>Sunmuş Olduğumuz Hizmetler</h2>
         <div class="service-list">
-            <div class="service-item">
+            <div class="service-item" onclick="togglePopup(this)">
                 <h3>Web Tasarım</h3>
-                <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz.</p>
+                <div class="popup">
+                    <h3>Web Tasarım Hizmeti</h3>
+                    <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz. Hedef kitlenize özel çözümler sunuyoruz.</p>
+                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" onclick="togglePopup(this)">
                 <h3>SEO Hizmetleri</h3>
-                <p>Sitenizi arama motorlarında daha görünür hale getirmek için SEO stratejileri sunuyoruz.</p>
+                <div class="popup">
+                    <h3>SEO Hizmetleri</h3>
+                    <p>Sitenizin arama motorlarında daha iyi sıralamalar alabilmesi için SEO analizleri ve iyileştirmeleri sağlıyoruz.</p>
+                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" onclick="togglePopup(this)">
                 <h3>Uygulama Geliştirme</h3>
-                <p>Mobil ve web tabanlı uygulamalar geliştirme hizmeti veriyoruz.</p>
+                <div class="popup">
+                    <h3>Uygulama Geliştirme</h3>
+                    <p>Mobil ve web uygulamaları geliştiriyor, iş süreçlerinizi dijitalleştiriyoruz.</p>
+                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                </div>
             </div>
-            <div class="service-item">
+            <div class="service-item" onclick="togglePopup(this)">
                 <h3>İçerik Yönetimi</h3>
-                <p>Web siteniz için SEO uyumlu içerikler üretiyoruz.</p>
+                <div class="popup">
+                    <h3>İçerik Yönetimi</h3>
+                    <p>SEO uyumlu içerikler üretiyor, web sitenizin görünürlüğünü artırıyoruz.</p>
+                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                </div>
+            </div>
+            <div class="service-item" onclick="togglePopup(this)">
+                <h3>Eğitim ve Mentorluk</h3>
+                <div class="popup">
+                    <h3>Eğitim ve Mentorluk</h3>
+                    <p>İşletme sahiplerine yönelik eğitimler ve çalışanlara yönelik mentorluk fırsatları sağlıyoruz.</p>
+                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                </div>
+            </div>
+            <div class="service-item" onclick="togglePopup(this)">
+                <h3>İnsan Kaynakları ve İstihdam Desteği</h3>
+                <div class="popup">
+                    <h3>İnsan Kaynakları ve İstihdam Desteği</h3>
+                    <p>İşe alım süreçlerini kolaylaştırmak ve iş gücü verimliliğini artırmak için araçlar sağlıyoruz.</p>
+                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                </div>
             </div>
         </div>
     </div>
@@ -180,6 +255,17 @@
         <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
     </footer>
 
+    <script>
+        function togglePopup(serviceItem) {
+            const allPopups = document.querySelectorAll('.service-item');
+            allPopups.forEach(item => {
+                if (item !== serviceItem) {
+                    item.classList.remove('active');
+                }
+            });
+            serviceItem.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>
