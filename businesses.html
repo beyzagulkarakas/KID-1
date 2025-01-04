@@ -94,33 +94,145 @@
             color: #ffffff;
         }
 
-        .businesses {
+        .services-container {
+            min-width: 100vh;
+            width: 100%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px #2e3344;
+            margin-top: 100px;
+            text-align: center;
+            height: 400px;
+            
+        }
+
+
+        .service-list {
+            padding: 5% 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .service {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            height: auto;
         }
 
-        .business {
-            width: 95%;
-            max-width: 600px;
-            background-color: #2e3344;
+        h1 {
+            color: white;
+            font-size: 5rem;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: transparent;
+            letter-spacing: 4px;
+            background-color: rgb(8, 52, 83, 1);
+            background: linear-gradient(8deg, rgb(8, 52, 83, 1) 0%, rgba(0, 230, 173, 1) 41%, rgba(41, 17, 45, 1)100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        h1:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 10%;
+            height: 8px;
+            width: 80%;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        h1 span {
+            position: absolute;
+            top: 100%;
+            left: 10%;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background-color: #72e2ae;
+            animation: anim 5s linear infinite;
+        }
+
+         /* hizmetler kısmında hareket eden topcuk*/
+         @keyframes anim {
+            95% {
+                opacity: 1;
+
+            }
+
+            100% {
+                opacity: 0;
+                left: 90%;
+            }
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 80px;
+        }
+
+        .card {
+            height: 300px;
+            width: 500px;
+            background-color: #1c2335;
+            padding: 3% 8%;
+            border: 0.2px solid rgba(114, 226, 174, 0.2);
+            border-radius: 8px;
+            transition: .6s;
             display: flex;
             align-items: center;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
 
-        .business:hover {
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        .card:after {
+            content: "";
+            position: absolute;
+            top: 150%;
+            left: -200px;
+            width: 120%;
+            transform: rotate(50deg);
+            background-color: white;
+            height: 18px;
+            filter: blur(30px);
+            opacity: 0.5;
+            transition: 1s;
         }
+
+        .card:hover:after {
+            width: 225%;
+            top: -100%;
+        }
+
+        .card i {
+            color: #72e2ae;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 4.8rem;
+        }
+
+        .card a {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            text-align: left;
+            width: 100%;
+            margin: 12px 0;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
 
         .cart-popup {
             display: none;
@@ -187,7 +299,7 @@
             margin-right: 5px;
         }
 
-        .business img {
+        .card img {
             width: 100px;
             height: 100px;
             object-fit: cover;
@@ -195,23 +307,23 @@
             margin-right: 20px;
         }
 
-        .business-info {
+        .card-info {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
 
-        .business-info a {
+        .card-info a {
             text-decoration: none;
             color: #ffffff;
             font-weight: bold;
         }
 
-        .business-info a:hover {
+        .card-info a:hover {
             text-decoration: underline;
         }
 
-        .business-description {
+        .card-description {
             color: #ffffff;
         }
 
@@ -255,12 +367,15 @@
     </header>
 
     <!-- İşletmeler Başlığı -->
-    <h2>İşletmeler</h2>
+    <div class="services-container">
+        <div class="service-list">
+            <div class="service">
+                <h1> İşletmeler <span></span></h1>
+                <div class="cards"> 
 
-    <!-- İşletme Listesi -->
-    <div class="businesses">
+
         <!-- Örnek İşletme -->
-        <div class="business">
+        <div class="card">
             <img src="images/ornek.jpg" alt="Örnek İşletme">
             <div class="business-info">
                 <a href="edit-business.html">Örnek İşletme</a>
@@ -269,7 +384,7 @@
         </div>
 
         <!-- İşletme 1 -->
-        <div class="business">
+        <div class="card">
             <img src="images/saglik.png" alt="Evde Sağlık Hizmeti">
             <div class="business-info">
                 <a href="https://www.instagram.com/_evdesaglik34/?igsh=ZHJ5OTVjMjN3eTh1">Evde Sağlık</a>
@@ -278,7 +393,7 @@
         </div>
 
         <!-- İşletme 2 -->
-        <div class="business">
+        <div class="card">
             <img src="images/sanat.png" alt="Neon Led Tasarımı">
             <div class="business-info">
                 <a href="https://www.instagram.com/karbakss/?igsh=N3MycWtpd3Z2eHBs">The Neon</a>
@@ -287,7 +402,7 @@
         </div>
 
         <!-- İşletme 3 -->
-        <div class="business">
+        <div class="card">
             <img src="images/giyim1.png" alt="Premium Giyim">
             <div class="business-info">
                 <a href="https://www.instagram.com/wandalmoda/?igsh=MWxhYnNydmRmbDFpag%3D%3D">Wandal</a>
@@ -296,14 +411,19 @@
         </div>
 
         <!-- İşletme 4 -->
-        <div class="business">
+        <div class="card">
             <img src="images/taki.png" alt="Oslo Takı">
             <div class="business-info">
                 <a href="https://www.instagram.com/oslo_taki/?igsh=MWFueTB5NG9iem5sNw%3D%3D">Oslo Takı</a>
                 <p class="business-description">Bileklik, kolye, küpe ve istek üzerine tasarım takılar!</p>
             </div>
-        </div>
+         </div>
+      </div>
+       </div>
+     </div>
     </div>
+
+
  <!-- pop up içinnn -->
     <div id="cart-popup" class="cart-popup">
         <h3>Sepetim</h3>
