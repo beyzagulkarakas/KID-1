@@ -92,11 +92,11 @@ body {
 /* Ana İçerik */
 
 p {
-    font-size: 1.1em;
+    font-size: 1.4em;
     margin-bottom: 20px;
     position: relative;
     text-align: center;
-    top: 280px;
+    top: 150px;
 }
 
 .start-btn {
@@ -109,7 +109,7 @@ p {
     font-weight: bold;
     position: relative;
     text-align: center;
-    top: 280px;
+    top: 150px;
     color: white;
 }
 
