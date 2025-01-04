@@ -7,8 +7,11 @@
 
 body {
     font-family: Arial, sans-serif;
+    /* yazı tipi */
     background-image: url('images/background.png');
+    /*arka plana görsel*/
     text-align: center;
+    /* metni ortala */
     position: relative;
     margin: 0;
     min-height: 100%;
@@ -18,7 +21,7 @@ body {
 
 }
 
-
+/* Videonun arka planda tam ekran olarak görünmesi için */
 #hero video {
     position: absolute;
     top: 0;
@@ -26,6 +29,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Görüntüyü kutuya uygun şekilde sığdır */
     z-index: -1;
     /* Video en arkada olacak */
 }
@@ -44,11 +48,16 @@ body {
 /* Üst Menü */
 .menu {
     display: flex;
+    /*öğeleri yatayda düzenle */
     gap: 15px;
+    /* Öğeler arasına boşluk bırak */
     background-color: transparent;
+    /* Arka planı şeffaf yap */
     padding: 25px 0;
     margin-left: 170px;
+    /* Soldan 170px boşluk bırak */
     position: relative;
+    /* Pozisyonu ayarla */
     top: 10px;
 
 }
@@ -57,13 +66,18 @@ body {
     border: none;
     background-color: transparent;
     padding: 10px 20px;
+    /* Buton içindeki boşluk */
     border-radius: 20px;
+    /* Buton köşelerini yuvarla */
     cursor: pointer;
+    /* Fare işaretçisini 'pointer' yap */
     font-weight: bold;
+    /* Yazıyı kalın yap */
     color: white;
 }
 
 .menu button:hover {
+    /*üzerine gelindiğinde arka plan rengini değiştir */
     background-color: #c0c0c0;
 }
 
@@ -122,11 +136,13 @@ body {
 /* Görselin dönme efekti */
 @keyframes rotate-image {
     0% {
+        /* Başlangıçta dönüş açısı sıfır */
         transform: rotate(0deg);
     }
 
     100% {
         transform: rotate(360deg);
+        /* Dönüş 360 dereceye kadar devam etsin */
     }
 }
 
@@ -136,17 +152,23 @@ body {
     top: 10px;
     left: 70px;
     z-index: 1000;
+    /* Logoyu ön planda tut */
 }
 
 .logo img {
     width: 100px;
+    /* Logoyu ön planda tut */
     height: auto;
+    /* Yüksekliğini otomatik ayarla */
 }
 
+/* İçerik kutularını düzenleyen container */
 .container {
     display: flex;
     justify-content: space-between;
+    /* Aralarına eşit boşluk bırak */
     align-items: flex-start;
+    /* Üstten hizala */
 }
 
 .about-content {
@@ -163,44 +185,14 @@ body {
     left: 30px;
 }
 
-.about-content-right {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 100px 20px;
-    border-radius: 10px;
-    top: 70px;
-    width: 45%;
-    max-width: 1200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 1;
-    right: 30px;
-    height: 500px;
-    box-sizing: border-box;
-}
-
-/* Saydam logo ekleme */
-.about-content::before,
-.about-content-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('logo.png') no-repeat center center;
-    background-size: 400px;
-    opacity: 0.3;
-    z-index: -1;
-    pointer-events: none;
-}
-
 /* Hizmetler ve Business listesi düzenlemeleri */
 section h2,
 .businesses h2 {
     margin: 20px 0;
     font-size: 2rem;
+    /* Yazı boyutunu büyüt */
     text-transform: uppercase;
+    /* Yazıyı büyük harfe çevir */
     color: #333;
 }
 
@@ -208,7 +200,9 @@ section h2,
     display: flex;
     justify-content: center;
     gap: 20px;
+    /* Öğeler arasına boşluk bırak */
     flex-wrap: wrap;
+    /* İçeriğin taşması durumunda alt satıra geçmesini sağla */
 }
 
 .service {
@@ -219,11 +213,13 @@ section h2,
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Gölgeleme efekti ekle */
 }
 
 .service:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Gölgeleme efekti arttır */
 }
 
 .service img {
@@ -236,6 +232,7 @@ section h2,
 /* Modal Kutusu */
 .service-info {
     display: none;
+    /* Başlangıçta gizle */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -249,6 +246,7 @@ section h2,
     z-index: 9999;
 }
 
+/* Modal başlıkları için stil */
 .service-info h3,
 .business-info h3 {
     font-size: 1.5rem;
@@ -288,30 +286,37 @@ section h2,
     padding: 15px;
     background-color: #fff;
     border: 1px solid #ccc;
+    /* Hafif gri kenarlık */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+    /* Geçiş efekti ekle */
 }
 
 .business:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* İşletme logosu için stil */
 .business img {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    /* Resmin içeriği kesmeden sığdır */
     border-radius: 10px;
     margin-right: 20px;
 }
 
+/* İşletme linki düzenlemeleri */
 .business-info a {
     font-size: 1.1rem;
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
+    /* Yazıyı kalın yap */
 }
 
 .business-info a:hover {
     text-decoration: underline;
+    /* üzerine gelindiğinde altını çiz */
 }

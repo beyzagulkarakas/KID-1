@@ -13,12 +13,13 @@
 
     <style>
         :root {
-  --primary-color: #5db88e;
-  --secondary-color: #212429;
-  --text-light: #d1d5db;
-  --white: #ffffff;
-  --max-width: 1200px;
-}
+            --primary-color: #5db88e;
+            --secondary-color: #212429;
+            --text-light: #d1d5db;
+            --white: #ffffff;
+            --max-width: 1200px;
+        }
+
         body {
             min-height: 2500px;
         }
@@ -48,111 +49,112 @@
             background: #d3d3d3;
         }
 
-    .header__container {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  padding-block: 5rem 2rem;
-  padding-inline: 1rem;
-  display: grid;
-  gap: 2rem;
-  justify-content: space-between;
-}
+        .header__container {
+            max-width: var(--max-width);
+            margin-inline: auto;
+            padding-block: 5rem 2rem;
+            padding-inline: 1rem;
+            display: grid;
+            gap: 2rem;
+            justify-content: space-between;
+        }
 
-.header__image img {
-  width: 100%;
-  max-width: 500px;
-  margin-inline: auto;
-  display: flex;
-  
-}
+        .header__image img {
+            width: 100%;
+            max-width: 500px;
+            margin-inline: auto;
+            display: flex;
 
-.header__content {
-  overflow: hidden;
-  text-align: center;
-  padding: 0 20px;
-}
+        }
 
-.header__content h2 {
-  position: relative;
-  isolation: isolate;
-  max-width:fit-content ;
-  margin-left: auto;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--primary-color);
-  text-align: center;
-}
+        .header__content {
+            overflow: hidden;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-.header__content h2::before {
-  position: absolute;
-  content: "";
-  top: 30%;
-  left: 0;
-  transform: translate(calc(-100% - 1rem), -50%);
-  height: 2px;
-  width: 150%;
-  background-color: var(--white);
-}
+        .header__content h2 {
+            position: relative;
+            isolation: isolate;
+            max-width: fit-content;
+            margin-left: auto;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            text-align: center;
+        }
 
-.header__content h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--white);
-  line-height: 5rem;
-}
+        .header__content h2::before {
+            position: absolute;
+            content: "";
+            top: 30%;
+            left: 0;
+            transform: translate(calc(-100% - 1rem), -50%);
+            height: 2px;
+            width: 150%;
+            background-color: var(--white);
+        }
 
-.h1__span-1 {
-  font-size: 1rem;
-  color: var(--primary-color);
-}
+        .header__content h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 5rem;
+        }
 
-.h1__span-2 {
-  font-size: 1rem;
-  font-weight: 400;
-}
+        .h1__span-1 {
+            font-size: 1rem;
+            color: var(--primary-color);
+        }
 
-.header__content p {
-  margin: 0 auto 7rem auto;
-  margin-bottom: 7rem;
-  color: var(--text-light);
-  text-align: left;
-  
-}
+        .h1__span-2 {
+            font-size: 1rem;
+            font-weight: 400;
+        }
 
-.header__content .btn {
-  padding: 0.75rem 1.5rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  color: var(--white);
-  background-color: var(--primary-color);
-  border-radius: 5rem;
-  transition: 0.3s;
-  cursor: pointer;
-}
+        .header__content p {
+            margin: 0 auto 7rem auto;
+            margin-bottom: 7rem;
+            color: var(--text-light);
+            text-align: left;
 
-.header__content .btn:hover {
-  color: var(--primary-color);
-  background-color: var(--white);
-}
+        }
 
-.header__bar {
-  font-size: 0.9rem;
-  color: var(--text-light);
-}
-.header__image {
-    grid-area: 1/2/2/3;
-  }
+        .header__content .btn {
+            padding: 0.75rem 1.5rem;
+            outline: none;
+            border: none;
+            font-size: 1rem;
+            color: var(--white);
+            background-color: var(--primary-color);
+            border-radius: 5rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-  .header__content {
-    text-align: left;
-  }
+        .header__content .btn:hover {
+            color: var(--primary-color);
+            background-color: var(--white);
+        }
 
-  .header__container{
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-  }
+        .header__bar {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .header__image {
+            grid-area: 1/2/2/3;
+        }
+
+        .header__content {
+            text-align: left;
+        }
+
+        .header__container {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
 
 
         .cart-button {
@@ -471,27 +473,27 @@
         <!-- Üst Menü -->
         <header class="header__container">
             <div class="header__image">
-                <img src="images/donen.png" alt="header" class="rotating-image"/>
-              </div>
-              <div class="header__content">
+                <img src="images/donen.png" alt="header" class="rotating-image" />
+            </div>
+            <div class="header__content">
                 <h2>KÜÇÜK İŞLETMELERE DESTEK</h2>
                 <h1>
                     İhtiyacınız olan tüm hizmetleri<br /><span class="h1__span-1">tek bir platformda sunuyoruz</span>
-                  <span class="h1__span-2">Teknoloji, destek ve danışmanlık!</span>
+                    <span class="h1__span-2">Teknoloji, destek ve danışmanlık!</span>
                 </h1>
                 <p>
-                    Küçük işletmelere destek platformumuz, girişimcilerin ve küçük ölçekli işletmelerin büyümesini ve 
+                    Küçük işletmelere destek platformumuz, girişimcilerin ve küçük ölçekli işletmelerin büyümesini ve
                     sürdürülebilirliğini desteklemek için tasarlanmıştır. İş geliştirme, finansman, dijital dönüşüm ve
-                    pazarlama gibi konularda uzman rehberlik ve kaynaklar sunuyoruz. 
+                    pazarlama gibi konularda uzman rehberlik ve kaynaklar sunuyoruz.
                     Başarıya giden yolda yanınızdayız!
                 </p>
                 <div class="header__btn">
-                  <button class="btn" onclick="window.location.href='services.html'">BAŞLAYIN</button>
+                    <button class="btn" onclick="window.location.href='services.html'">BAŞLAYIN</button>
                 </div>
-              </div>
+            </div>
         </header>
 
-        
+
 
 
 
@@ -518,23 +520,23 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="images/anons.png" alt=>
-                        <h3>Afete Hazır Biruni Ailesi</h3>
-                        <a href="#" class="details">Detaylar</a>
+                        <h3></h3>
+                        <a href="#" class="details"></a>
                     </div>
                     <div class="swiper-slide">
                         <img src="images/anons1.png" alt=>
-                        <h3>Afete Hazır Biruni Ailesi</h3>
-                        <a href="#" class="details">Detaylar</a>
+                        <h3></h3>
+                        <a href="#" class="details"></a>
                     </div>
                     <div class="swiper-slide">
                         <img src="images/anons2.png" alt="">
-                        <h3>Rektörümüz, Lisansüstü Öğrencilerle Buluştu</h3>
-                        <a href="#" class="details">Detaylar</a>
+                        <h3></h3>
+                        <a href="#" class="details"></a>
                     </div>
                     <div class="swiper-slide">
-                        <img src="images/anons3.png" alt="Meslek Yüksekokulu Öğrencileri Beyaz Önlük Töreni">
-                        <h3>Meslek Yüksekokulu Öğrencileri Beyaz Önlük Töreni</h3>
-                        <a href="#" class="details">Detaylar</a>
+                        <img src="images/anons3.png" alt=>
+                        <h3></h3>
+                        <a href="#" class="details"></a>
                     </div>
                 </div>
 
@@ -574,7 +576,7 @@
                         <img src="images/betul.png" alt="Üye 2 Fotoğrafı">
                         <div class="info">
                             <h3>Betül Sazak</h3>
-                            <p><strong>Görev:</strong> Tasarımcı</p>
+                            <p><strong>Görev:</strong> İK Uzmanı</p>
                             <a href="https://linkedin.com" target="_blank">LinkedIn Profil</a>
                         </div>
                     </div>
@@ -582,7 +584,7 @@
                         <img src="images/safa.png" alt="Üye 2 Fotoğrafı">
                         <div class="info">
                             <h3>Safa Al-Galedi</h3>
-                            <p><strong>Görev:</strong> Tasarımcı</p>
+                            <p><strong>Görev:</strong> Finsans Uzmanı</p>
                             <a href="https://linkedin.com" target="_blank">LinkedIn Profil</a>
                         </div>
                     </div>

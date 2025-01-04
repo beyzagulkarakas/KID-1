@@ -57,33 +57,7 @@
             height: auto;
         }
 
-        .card {
-            background: #f0f0f0; /* Gri Arka Plan */
-            border-radius: 8px; /* Kenar Yuvarlatma */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif Gölge */
-            padding: 20px; /* İç Boşluk */
-            width: 100%;
-            max-width: 500px;
-            margin: 20px auto; /* Dikey Hizalama */
-        }
 
-        .cart-button {
-            display: flex;
-            align-items: center;
-            border: none;
-            background-color: transparent;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-        }
-
-        .cart-button img {
-            width: 40px;
-            height: auto;
-            margin-right: 5px;
-        }
 
         .btn-giris {
             position: absolute;
@@ -110,21 +84,31 @@
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 20px;
+            padding: 40px;
+            background: #1c2335;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
             max-width: 1200px;
             margin: 50px auto;
+        }
+
+        .container h2 {
+            color: white;
         }
 
         .profile-section img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 2px solid #ddd;
+            border: 2px solid #000000;
             margin-bottom: 15px;
         }
 
         .form-group {
             margin-bottom: 15px;
             text-align: left;
+            color: white;
         }
 
         .form-group label {
@@ -167,6 +151,20 @@
         .business-item button:hover {
             background: #222a31;
         }
+
+        #profileImage {
+            background-color: #000;
+            /* İsteğe bağlı, beyaz yazıyı daha görünür yapmak için */
+            color: #fff;
+            /* Yazı rengini beyaz yapar */
+        }
+
+        #businessesContainer p {
+            color: white;
+
+        }
+    </style>
+
     </style>
 </head>
 
