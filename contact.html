@@ -90,7 +90,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 55%;
             margin: 20px auto;
-            transition: box-shadow 0.3s ease;
         }
 
         .gorus-bildir:hover {
@@ -109,12 +108,6 @@
             margin-bottom: 10px;
             border: 2px solid #999999;
             border-radius: 50px;
-            transition: border-color 0.3s ease;
-        }
-
-        .gorus-bildir input[type="text"]:focus,
-        .gorus-bildir textarea:focus {
-            border-color: #72e2ae;
         }
 
         .gorus-bildir button {
@@ -125,18 +118,8 @@
             color: white;
             border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .gorus-bildir button:hover {
-            background-color: #008f6b;
-        }
-
-        .gorus-bildir h2 {
-            color: white;
-        }
-
-        /* İletişim Bilgileri Kartı */
         .iletisim {
             margin-top: 40px;
             background-color: #1c2335;
@@ -145,35 +128,21 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 55%;
             margin: 20px auto;
-            transition: box-shadow 0.3s ease;
         }
 
-        .iletisim:hover {
-            box-shadow: 0 0 15px rgba(114, 226, 174, 0.6);
-        }
-
-        .iletisim h3 {
-            font-size: 22px;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
+        .iletisim h3,
         .iletisim p {
-            font-size: 16px;
-            color: #dddddd;
+            color: white;
         }
 
         footer {
             background-color: transparent;
             color: white;
             text-align: center;
-            padding: 0px 0;
             position: absolute;
-            left: 0;
             bottom: 0;
             width: 100%;
             height: 5%;
-            z-index: 10;
         }
     </style>
 </head>
@@ -204,169 +173,54 @@
 
     <!-- Görüş/Öneri/Şikayet Bildirimi Kartı -->
     <div class="gorus-bildir">
-        <h2>Görüş, Öneri veya Şikayet Bildirimi </h2>
+        <h2>Görüş, Öneri veya Şikayet Bildirimi</h2>
         <form>
             <label>Ad Soyad:</label>
-            <input type="text" name="adsoyad" placeholder="Adınızı girin" class="form-control">
-            <label><input type="checkbox" name="anonim" class="checkbox" onclick="toggleAdField()"> Anonim olarak
-                bildirmek istiyorum</label>
+            <input type="text" name="adsoyad" placeholder="Adınızı girin">
+            <label><input type="checkbox" name="anonim" onclick="toggleAdField()"> Anonim olarak bildirmek istiyorum</label>
             <label>Bildiriminiz:</label>
             <textarea name="bildirim" maxlength="500" placeholder="Bildiriminizi buraya yazın"></textarea>
-            <button type="submit" class="btn btn-success">Gönder</button>
+            <button type="submit">Gönder</button>
         </form>
     </div>
 
-    <!-- İletişim Bilgileri Kartı -->
+    <!-- İletişim Bilgileri -->
     <div class="iletisim">
         <h3>İletişim Bilgilerimiz</h3>
         <p><strong>Telefon:</strong> +90 123 456 7890</p>
         <p><strong>E-posta:</strong> iletisim@kid.harikasite.com</p>
         <p><strong>Adres:</strong> Cevizlibağ, İstanbul, Türkiye</p>
-        <p><strong>Sosyal Medya:</strong></p>
-        <p> <a href="https://twitter.com/" style="color: #72e2ae;">Twitter</a><i class="bx bxl-twitter"></i></a>
-            <a href="https://facebook.com/" style="color: #72e2ae;">Facebook</a><i class="bx bxl-facebook"></i></a>
-            <a href="https://instagram.com/" style="color: #72e2ae;">Instagram</a>
-            <i class="bx bxl-instagram"></i></a>
-        </p>
     </div>
 
     <footer>
         <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
     </footer>
 
-    <<<<<<< HEAD <script>
-        function login() {
-        localStorage.setItem('isLoggedIn', 'true');
-        updateAuthButtons();
-        }
-
+    <script>
         function loginOrRedirect() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+            } else {
+                window.location.href = 'profil.html';
+            }
+        }
 
-        if (!isLoggedIn) {
-        window.location.href = 'login.html';
-        } else {
-        updateAuthButtons();
-        }
-        }
-
-        function updateAuthButtons() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-        const authButtons = document.getElementById('auth-buttons');
-
-        if (isLoggedIn) {
-        authButtons.innerHTML = '<button onclick="window.location.href=\'profil.html\'">Profilim</button>';
-        } else {
-        authButtons.innerHTML = '<button id="login-button" onclick="loginOrRedirect()">Giriş Yap</button>';
-        }
-        }
         function toggleAdField() {
-        var adField = document.querySelector('input[name="adsoyad"]');
-        var anonimCheckbox = document.querySelector('input[name="anonim"]');
-        if (anonimCheckbox.checked) {
-        adField.disabled = true;
-        adField.value = '';
-        } else {
-        adField.disabled = false;
-        }
+            const adField = document.querySelector('input[name="adsoyad"]');
+            const anonimCheckbox = document.querySelector('input[name="anonim"]');
+            adField.disabled = anonimCheckbox.checked;
+            if (anonimCheckbox.checked) adField.value = '';
         }
 
-        function toggleCartPopup() {
-        const cartPopup = document.getElementById('cart-popup');
-        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
-        updateCart();
-        }
-
-        function updateCart() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
-
-        const cartItems = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
-
-        if (cartItems) {
-        cartItems.innerHTML = '';
-        cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
-        cartItems.appendChild(li);
+        document.addEventListener('DOMContentLoaded', () => {
+            const authButtons = document.getElementById('auth-buttons');
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            authButtons.innerHTML = isLoggedIn
+                ? '<button onclick="window.location.href=\'profil.html\'">Profilim</button>'
+                : '<button id="login-button" onclick="loginOrRedirect()">Giriş Yap</button>';
         });
-        }
-
-        if (cartTotal) {
-        cartTotal.textContent = total.toFixed(2);
-        }
-        }
-
-        function proceedToPayment() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        if (cart.length === 0) {
-        alert('Sepetiniz boş!');
-        return;
-        }
-        window.location.href = 'payment.html';
-        }
-
-        document.addEventListener('DOMContentLoaded', updateAuthButtons);
-        </script>
-
-        =======
-        >>>>>>> dca02210601393fbf45776348e974e8d5100cb56
-</body>
-
-</html>
-
-
-
-<script>
-    function toggleAdField() {
-        var adField = document.querySelector('input[name="adsoyad"]');
-        var anonimCheckbox = document.querySelector('input[name="anonim"]');
-        if (anonimCheckbox.checked) {
-            adField.disabled = true;
-            adField.value = '';
-        } else {
-            adField.disabled = false;
-        }
-    }
-
-    function toggleCartPopup() {
-        const cartPopup = document.getElementById('cart-popup');
-        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
-        updateCart();
-    }
-
-    function updateCart() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
-
-        const cartItems = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
-
-        if (cartItems) {
-            cartItems.innerHTML = '';
-            cart.forEach((item, index) => {
-                const li = document.createElement('li');
-                li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
-                cartItems.appendChild(li);
-            });
-        }
-
-        if (cartTotal) {
-            cartTotal.textContent = total.toFixed(2);
-        }
-    }
-
-    function proceedToPayment() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        if (cart.length === 0) {
-            alert('Sepetiniz boş!');
-            return;
-        }
-        window.location.href = 'payment.html';
-    }
-</script>
-
+    </script>
 </body>
 
 </html>
