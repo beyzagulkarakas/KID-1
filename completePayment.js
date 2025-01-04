@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('redirectAfterLogin', 'payment.html');
         alert('Lütfen önce giriş yapın.');
         window.location.href = 'login.html';
-        return; // Giriş yapılmadıysa geri kalan kod çalışmaz.
+        return; // Giriş yapılmadıysa geri kalan kod çalışmayacak
     }
 
     renderCart();
     togglePaymentOption();
 });
 
-// Sepeti Görüntüle
+// Sepeti Görüntüleyecek burası
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
 
@@ -30,7 +30,7 @@ function renderCart() {
     cartTotal.textContent = total.toFixed(2);
 }
 
-// Ödeme Seçeneklerini Kontrol Et
+// Ödeme Seçeneklerini Kontrol Ediyo
 function togglePaymentOption() {
     const selectedMethod = document.querySelector('input[name="payment-method"]:checked').value;
     const ibanSection = document.querySelector('.iban-section');
@@ -45,7 +45,7 @@ function togglePaymentOption() {
     }
 }
 
-// Ödeme Tamamlama
+// Ödeme Tamamlamandı
 function completePayment() {
     const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
 

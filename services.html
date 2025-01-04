@@ -79,6 +79,62 @@
             width: 100px;
             height: auto;
         }
+        .cart-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cart-button img {
+            width: 40px;
+            height: auto;
+        }
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 400px;
+        }
+
+        .cart-popup h3 {
+            margin-bottom: 15px;
+        }
+
+        .cart-popup ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cart-popup li {
+            margin-bottom: 10px;
+        }
+
+        .cart-popup .total {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .cart-popup button {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-popup button:hover {
+            background-color: #008f6b;
+        }
 
         .services-container {
             min-height: 100vh;
@@ -86,7 +142,7 @@
             margin: 20px auto;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px #2e3344;
             margin-top: 100px;
             text-align: center;
         }
@@ -256,7 +312,7 @@
         .popup h3,
         .popup p {
             font-weight: bold;
-            /* Yazıları kalın yapar */
+            /* Yazılar böyle kalın oluyo*/
             color: #f0f0f0;
             /* Açık beyaz renk */
         }
@@ -291,12 +347,25 @@
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
             <button onclick="window.location.href='purchase.html'">Satın Al</button>
+            <button class="cart-button" onclick="toggleCartPopup()">
+                <img src="images/sepet.png" alt="Sepet">
+                <span>Sepet</span>
+            </button>
         </div>
         <div class="btn-giris">
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
         </div>
     </header>
     
+
+    <!-- Sepet Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <h3>Sepetim</h3>
+        <ul id="cart-items"></ul>
+        <p class="total">Toplam: $<span id="cart-total">0</span></p>
+        <button onclick="proceedToPayment()">Ödemeye Geç</button>
+        <button onclick="toggleCartPopup()">Kapat</button>
+    </div>
 
     <div class="services-container">
         <div class="service-list">
@@ -408,6 +477,42 @@
                 }
             });
             serviceItem.classList.toggle('active');
+        }
+
+        function toggleCartPopup() {
+            const cartPopup = document.getElementById('cart-popup');
+            cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+            updateCart();
+        }
+
+        function updateCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            if (cartItems) {
+                cartItems.innerHTML = '';
+                cart.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
+                    cartItems.appendChild(li);
+                });
+            }
+
+            if (cartTotal) {
+                cartTotal.textContent = total.toFixed(2);
+            }
+        }
+
+        function proceedToPayment() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert('Sepetiniz boş!');
+                return;
+            }
+            window.location.href = 'payment.html';
         }
     </script>
 </body>

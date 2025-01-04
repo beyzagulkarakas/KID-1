@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Düzenle</title>
-    <link rel="stylesheet" href="profilestyle.css">
     <style>
-        /* General Styles */
+        /* CSS Kuralları */
         * {
             margin: 0;
             padding: 0;
@@ -16,71 +15,103 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #14192C, white);
-            color: #000;
+            background-image: url('images/background.png');
             text-align: center;
-            min-height: 100vh;
+            margin: 0;
+            min-height: 100%;
             overflow-x: hidden;
         }
 
-        header {
+        .menu {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background: #444;
+            gap: 15px;
+            padding: 25px 0;
+            margin-left: 170px;
+            position: relative;
+            top: 10px;
+        }
+
+        .menu button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
             color: white;
         }
 
-        header .logo img {
-            width: 80px;
+        .menu button:hover {
+            background-color: #c0c0c0;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 70px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
             height: auto;
         }
 
-        header .menu button {
-            background: transparent;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: bold;
+        .card {
+            background: #f0f0f0; /* Gri Arka Plan */
+            border-radius: 8px; /* Kenar Yuvarlatma */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif Gölge */
+            padding: 20px; /* İç Boşluk */
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto; /* Dikey Hizalama */
         }
 
-        header .menu button:hover {
-            background: #666;
+        .cart-button {
+            display: flex;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
             border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .cart-button img {
+            width: 40px;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        .btn-giris {
+            position: absolute;
+            right: 70px;
+            top: 30px;
         }
 
         .btn-giris button {
-            background: #bbb;
             border: none;
+            background-color: transparent;
             padding: 10px 20px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            color: #fff;
+            color: white;
         }
 
         .btn-giris button:hover {
-            background: #888;
+            background-color: #c0c0c0;
         }
 
         .container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             gap: 20px;
-            padding: 40px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             max-width: 1200px;
-            margin: 20px auto;
-        }
-
-        .profile-section,
-        .business-list {
-            flex: 1;
-            padding: 20px;
+            margin: 50px auto;
         }
 
         .profile-section img {
@@ -88,24 +119,27 @@
             height: 100px;
             border-radius: 50%;
             border: 2px solid #ddd;
-        }
-
-        .profile-section .form-group {
             margin-bottom: 15px;
         }
 
-        .profile-section label {
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
 
-        .profile-section input,
-        .profile-section textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
         }
 
         .business-list h2 {
@@ -156,8 +190,8 @@
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Profile Section -->
-        <div class="profile-section">
+        <!-- Profil Düzenleme -->
+        <div class="card profile-section">
             <h2>Profilinizi Düzenleyin</h2>
             <div>
                 <img src="images/default-profile.png" id="profileImage" alt="Profil Fotoğrafı">
@@ -174,10 +208,12 @@
             <button onclick="saveProfile()">Kaydet</button>
         </div>
 
-        <!-- Business List -->
-        <div class="business-list">
+        <!-- İşletmeleriniz -->
+        <div class="card business-list">
             <h2>İşletmeleriniz</h2>
-            <div id="businessesContainer"></div>
+            <div id="businessesContainer">
+                <p>Henüz kaydedilmiş işletme yok.</p>
+            </div>
             <button onclick="window.location.href='edit-business.html'">Yeni İşletme Ekle</button>
         </div>
     </div>
@@ -187,80 +223,15 @@
         <p>&copy; 2025 Tüm Hakları Saklıdır.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script>
-        function changeProfileImage() {
-            const fileInput = document.getElementById('profileImageInput');
-            const image = document.getElementById('profileImage');
-            const file = fileInput.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (e) => image.src = e.target.result;
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function saveProfile() {
-            const username = document.getElementById('username').value;
-            const bio = document.getElementById('bio').value;
-            const profileImage = document.getElementById('profileImage').src;
-
-            if (!username || !bio) {
-                alert('Lütfen kullanıcı adı ve bio giriniz!');
-                return;
-            }
-
-            const profile = { username, bio, profileImage };
-            localStorage.setItem('userProfile', JSON.stringify(profile));
-            alert('Profil başarıyla kaydedildi!');
-        }
-
-        function displayBusinesses() {
-            const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
-            const container = document.getElementById('businessesContainer');
-            container.innerHTML = businesses.length ? '' : '<p>Henüz kaydedilmiş işletme yok.</p>';
-
-            businesses.forEach(business => {
-                const div = document.createElement('div');
-                div.classList.add('business-item');
-                div.innerHTML = `
-                    <h3>${business.name}</h3>
-                    <p>${business.description}</p>
-                    <button onclick="editBusiness(${business.id})">Düzenle</button>
-                    <button onclick="deleteBusiness(${business.id})">Sil</button>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function editBusiness(id) {
-            alert('İşletmeyi düzenle: ' + id);
-        }
-
-        function deleteBusiness(id) {
-            const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
-            const updated = businesses.filter(b => b.id !== id);
-            localStorage.setItem('businesses', JSON.stringify(updated));
-            alert('İşletme silindi!');
-            displayBusinesses();
-        }
-
         function logout() {
+            // Kullanıcının giriş durumu temizleniyor
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('username');
-            alert('Başarıyla çıkış yaptınız!');
-            window.location.href = 'login.html';
+            alert('Başarıyla çıkış yaptınız.');
+            window.location.href = 'login.html'; // Giriş sayfasına yönlendirme
         }
-
-        window.onload = function () {
-            const profile = JSON.parse(localStorage.getItem('userProfile'));
-            if (profile) {
-                document.getElementById('username').value = profile.username;
-                document.getElementById('bio').value = profile.bio;
-                document.getElementById('profileImage').src = profile.profileImage;
-            }
-            displayBusinesses();
-        };
     </script>
 </body>
 

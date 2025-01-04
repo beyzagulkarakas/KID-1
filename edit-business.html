@@ -15,20 +15,23 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #14192C, white);
-            color: #000;
+            background-image: url('images/background.png');
             text-align: center;
             position: relative;
-            min-height: 100vh;
+            margin: 0;
+            min-height: 100%;
             overflow-x: hidden;
+
+
         }
 
+        /* Üst Menü */
         .menu {
             display: flex;
             gap: 15px;
             background-color: transparent;
             padding: 25px 0;
-            margin-left: 170px;
+            margin-left: 60px;
             position: relative;
             top: 10px;
 
@@ -42,6 +45,8 @@
             cursor: pointer;
             font-weight: bold;
             color: white;
+            left: 30px;
+            top: 30px;
         }
 
         .menu button:hover {
@@ -260,7 +265,7 @@
     </div>
 
     <script>
-        // İşletme Kaydetme Fonksiyonu
+        // kaydedicek işletmelrde ekleyevek
         function saveBusiness() {
             const name = document.getElementById('businessName').value;
             const description = document.getElementById('businessDescription').value;
@@ -285,7 +290,7 @@
             window.location.reload();
         }
 
-        // İşletmeleri Listeleme Fonksiyonu
+        // Listeleme 
         function displayBusinesses() {
             const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
             const businessesContainer = document.getElementById('businessesContainer');
@@ -311,7 +316,7 @@
             });
         }
 
-        // İşletme Silme Fonksiyonu
+        // Silme 
         function deleteBusiness(id) {
             let businesses = JSON.parse(localStorage.getItem('businesses')) || [];
             businesses = businesses.filter(business => business.id !== id); // Seçilen işletmeyi çıkarıyoruz
@@ -321,7 +326,7 @@
             displayBusinesses(); // Listeyi tekrar göster
         }
 
-        // Sayfa Yüklendiğinde İşletmeleri Göster
+        // Sayfa Yüklendiğinde İşletmeleri Göstercek
         window.onload = function () {
             displayBusinesses();
         }

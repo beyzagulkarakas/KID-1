@@ -42,6 +42,14 @@ function updateCart() {
     }
 }
 
+function toggleCartPopup() {
+    const cartPopup = document.getElementById('cart-popup');
+    if (cartPopup) {
+        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+        updateCart(); // Popup açıldığında içeriği güncelleiceeek
+    }
+}
+
 function proceedToPayment() {
     checkLogin();
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
