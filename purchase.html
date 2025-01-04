@@ -88,9 +88,13 @@
         }
 
         .services-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
         h2 {
@@ -99,17 +103,9 @@
             margin-bottom: 20px;
         }
 
-        .service-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
         .service-item {
             background-color: #2e3344;
-            width: 90%;
-            max-width: 400px;
+            width: 30%;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -138,7 +134,7 @@
         .service-item button:hover {
             background-color: #008f6b;
         }
-  /*alışveriş sepeti pop up yapsın*/
+
         .cart-popup {
             display: none;
             position: fixed;
@@ -190,7 +186,6 @@
 
 <body>
 
-    <!-- Logo -->
     <div class="logo">
         <a href="index.html">
             <img src="images/logo.png" alt="Logo">
@@ -215,32 +210,42 @@
     </header>
 
     <div class="services-container">
-        <h2>Satın Alma Hizmetleri</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>Web Tasarım</h3>
-                <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz.</p>
-                <p><b>Fiyat: $500</b></p>
-                <button onclick="addToCart('Web Tasarım', 500)">Sepete Ekle</button>
-            </div>
-            <div class="service-item">
-                <h3>SEO Hizmetleri</h3>
-                <p>Sitenizi arama motorlarında daha görünür hale getirmek için SEO stratejileri sunuyoruz.</p>
-                <p><b>Fiyat: $300</b></p>
-                <button onclick="addToCart('SEO Hizmetleri', 300)">Sepete Ekle</button>
-            </div>
-            <div class="service-item">
-                <h3>Uygulama Geliştirme</h3>
-                <p>Mobil ve web tabanlı uygulamalar geliştirme hizmeti veriyoruz.</p>
-                <p><b>Fiyat: $1000</b></p>
-                <button onclick="addToCart('Uygulama Geliştirme', 1000)">Sepete Ekle</button>
-            </div>
-            <div class="service-item">
-                <h3>İçerik Yönetimi</h3>
-                <p>Web siteniz için SEO uyumlu içerikler üretiyoruz.</p>
-                <p><b>Fiyat: $200</b></p>
-                <button onclick="addToCart('İçerik Yönetimi', 200)">Sepete Ekle</button>
-            </div>
+        
+        <div class="service-item">
+            <h3>Web Tasarım</h3>
+            <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz.</p>
+            <p><b>Fiyat: $500</b></p>
+            <button onclick="addToCart('Web Tasarım', 500)">Sepete Ekle</button>
+        </div>
+        <div class="service-item">
+            <h3>SEO Hizmetleri</h3>
+            <p>Sitenizi arama motorlarında daha görünür hale getirmek için SEO stratejileri sunuyoruz.</p>
+            <p><b>Fiyat: $300</b></p>
+            <button onclick="addToCart('SEO Hizmetleri', 300)">Sepete Ekle</button>
+        </div>
+        <div class="service-item">
+            <h3>Uygulama Geliştirme</h3>
+            <p>Mobil ve web tabanlı uygulamalar geliştirme hizmeti veriyoruz.</p>
+            <p><b>Fiyat: $1000</b></p>
+            <button onclick="addToCart('Uygulama Geliştirme', 1000)">Sepete Ekle</button>
+        </div>
+        <div class="service-item">
+            <h3>İçerik Yönetimi</h3>
+            <p>Web siteniz için SEO uyumlu içerikler üretiyoruz.</p>
+            <p><b>Fiyat: $200</b></p>
+            <button onclick="addToCart('İçerik Yönetimi', 200)">Sepete Ekle</button>
+        </div>
+        <div class="service-item">
+            <h3>Eğitim ve Mentorluk</h3>
+            <p>Profesyonel rehberlik ve eğitim programlarımızla gelişiminize destek oluyoruz.</p>
+            <p><b>Fiyat: $400</b></p>
+            <button onclick="addToCart('Eğitim ve Mentorluk', 400)">Sepete Ekle</button>
+        </div>
+        <div class="service-item">
+            <h3>İnsan Kaynakları ve İstihdam Desteği</h3>
+            <p>İş bulma ve işe alım süreçlerinizde yanınızdayız.</p>
+            <p><b>Fiyat: $700</b></p>
+            <button onclick="addToCart('İnsan Kaynakları ve İstihdam Desteği', 700)">Sepete Ekle</button>
         </div>
     </div>
 
