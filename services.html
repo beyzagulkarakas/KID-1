@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: poppins;
+            font-family: Arial, sans-serif;
         }
 
         body {
@@ -164,24 +164,27 @@
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
         }
-        .service{
+
+        .service {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        h1{
-            color: white ;
+
+        h1 {
+            color: white;
             font-size: 5rem;
             -webkit-text-stroke-width: 2px;
-            -webkit-text-stroke-color:transparent;
+            -webkit-text-stroke-color: transparent;
             letter-spacing: 4px;
-            background-color: rgb(8, 52, 83,1) ;
-            background: linear-gradient(8deg,rgb(8, 52, 83,1) 0%, rgba(0, 230, 173, 1) 41%,rgba(41, 17, 45, 1)100%);
+            background-color: rgb(8, 52, 83, 1);
+            background: linear-gradient(8deg, rgb(8, 52, 83, 1) 0%, rgba(0, 230, 173, 1) 41%, rgba(41, 17, 45, 1)100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        h1:after{
+
+        h1:after {
             content: "";
             position: absolute;
             top: 100%;
@@ -191,7 +194,8 @@
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.05);
         }
-        h1 span{
+
+        h1 span {
             position: absolute;
             top: 100%;
             left: 10%;
@@ -201,28 +205,32 @@
             background-color: #72e2ae;
             animation: anim 5s linear infinite;
         }
+
         /* hizmetler kısmında hareket eden topcuk*/
-        @keyframes anim{
-            95%{
+        @keyframes anim {
+            95% {
                 opacity: 1;
-            
+
             }
-            100%{
+
+            100% {
                 opacity: 0;
                 left: 90%;
             }
         }
-        .cards{
+
+        .cards {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap:30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             margin-top: 80px;
         }
-        .card{
+
+        .card {
             height: 330px;
             width: 370px;
             background-color: #1c2335;
-            padding:3% 8% ;
+            padding: 3% 8%;
             border: 0.2px solid rgba(114, 226, 174, 0.2);
             border-radius: 8px;
             transition: .6s;
@@ -232,7 +240,8 @@
             position: relative;
             overflow: hidden;
         }
-        .card:after{
+
+        .card:after {
             content: "";
             position: absolute;
             top: 150%;
@@ -245,32 +254,35 @@
             opacity: 0.5;
             transition: 1s;
         }
-        .card:hover:after{
+
+        .card:hover:after {
             width: 225%;
             top: -100%;
         }
+
         .card i {
             color: #72e2ae;
             margin-top: 30px;
             margin-bottom: 20px;
             font-size: 4.8rem;
         }
-        .card h2{
+
+        .card h2 {
             color: white;
             font-size: 20px;
             font-weight: 600;
             letter-spacing: 1px;
         }
 
-        .card p{
+        .card p {
             text-align: left;
             width: 100%;
-            margin: 12px 0 ;
+            margin: 12px 0;
             color: rgba(255, 255, 255, 0.6);
         }
-       
 
-       
+
+
         /* Popup container */
         .popup {
             position: fixed;
@@ -310,7 +322,7 @@
 
         .popup button {
             padding: 10px 20px;
-            background-color:  #5db88e;
+            background-color: #5db88e;
             color: white;
             border: none;
             border-radius: 5px;
@@ -334,7 +346,7 @@
 
 
         footer {
-            background: rgb(65, 63, 63);
+            background: transparent;
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -371,7 +383,7 @@
             <button onclick="window.location.href='login.html'">Giriş Yap</button>
         </div>
     </header>
-    
+
 
     <!-- Sepet Popup -->
     <div id="cart-popup" class="cart-popup">
@@ -384,98 +396,119 @@
 
     <div class="services-container">
         <div class="service-list">
-         <div class="service">
-            <h1> Hizmetlerimiz <span></span></h1>
-         <div class="cards">
-            <div class="card" onclick="togglePopup(this)">
-                    
-                    
+            <div class="service">
+                <h1> Hizmetlerimiz <span></span></h1>
+                <div class="cards">
+                    <div class="card" onclick="togglePopup(this)">
+
+
                         <i class="fa-brands fa-chromecast"></i>
                         <h2>web tasarımı</h2>
-                        <p>Web sitesi tasarımı hizmetimiz, işletmenizin dijital dünyada güçlü bir varlık oluşturmasını sağlar. Modern ve kullanıcı dostu tasarımlarımızla, ziyaretçilerinize etkileyici bir deneyim sunarak, markanızın değerini ön plana çıkarır. İhtiyaçlarınıza özel, responsive (mobil uyumlu) ve SEO dostu web siteleri tasarlıyoruz.</p>
+                        <p>Web sitesi tasarımı hizmetimiz, işletmenizin dijital dünyada güçlü bir varlık oluşturmasını
+                            sağlar. Modern ve kullanıcı dostu tasarımlarımızla, ziyaretçilerinize etkileyici bir deneyim
+                            sunarak, markanızın değerini ön plana çıkarır. İhtiyaçlarınıza özel, responsive (mobil
+                            uyumlu) ve SEO dostu web siteleri tasarlıyoruz.</p>
 
-                   
-                <div class="popup">
-                    <h3>Web Tasarım Hizmeti</h3>
-                    <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz. Hedef kitlenize özel çözümler
-                        sunuyoruz.</p>
-                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
+
+                        <div class="popup">
+                            <h3>Web Tasarım Hizmeti</h3>
+                            <p>Özel web siteleri ve kullanıcı dostu tasarımlar oluşturuyoruz. Hedef kitlenize özel
+                                çözümler
+                                sunuyoruz.</p>
+                            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                        </div>
+                    </div>
+                    <div class="card" onclick="togglePopup(this)">
+
+
+                        <i class="fa-solid fa-layer-group"></i>
+                        <h2>SEO hizmetleri</h2>
+                        <p>SEO hizmetlerimiz, web sitenizin arama motorlarında üst sıralarda yer almasını sağlayarak,
+                            daha fazla görünürlük ve organik trafik kazanmanıza yardımcı olur. Anahtar kelime
+                            araştırması, site içi optimizasyon, içerik stratejileri ve backlink çalışmaları ile web
+                            sitenizin SEO performansını artırıyoruz.</p>
+
+
+                        <div class="popup">
+                            <h3>SEO Hizmetleri</h3>
+                            <p>Sitenizin arama motorlarında daha iyi sıralamalar alabilmesi için SEO analizleri ve
+                                iyileştirmeleri sağlıyoruz.</p>
+                            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                        </div>
+                    </div>
+                    <div class="card" onclick="togglePopup(this)">
+
+
+                        <i class="fa-solid fa-desktop "></i>
+                        <h2>Uygulama Geliştirme</h2>
+                        <p>Uygulama geliştirme hizmetimiz, işletmenizin ihtiyaçlarına özel, yenilikçi ve kullanıcı dostu
+                            mobil ve web uygulamaları sunar. İster Android, ister iOS platformları için çözümler
+                            üretelim, güçlü altyapılar ve modern teknolojilerle tasarladığımız uygulamalar, kullanıcı
+                            deneyimini ön planda tutar.</p>
+
+
+                        <div class="popup">
+                            <h3>Uygulama Geliştirme</h3>
+                            <p>Mobil ve web uygulamaları geliştiriyor, iş süreçlerinizi dijitalleştiriyoruz.</p>
+                            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                        </div>
+                    </div>
+                    <div class="card" onclick="togglePopup(this)">
+
+
+                        <i class="fa-solid fa-desktop"></i>
+                        <h2>içerik Yönetimi</h2>
+                        <p>İçerik yönetimi hizmetimiz, web sitenizdeki içeriklerin düzenli, etkili ve SEO uyumlu bir
+                            şekilde yönetilmesini sağlar. İçerik stratejisi oluşturma, güncelleme, düzenleme ve
+                            yayımlama süreçlerinde profesyonel desteğimizle, hedef kitlenize hitap eden kaliteli
+                            içerikler üretiriz.</p>
+
+
+                        <div class="popup">
+                            <h3>İçerik Yönetimi</h3>
+                            <p>SEO uyumlu içerikler üretiyor, web sitenizin görünürlüğünü artırıyoruz.</p>
+                            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                        </div>
+                    </div>
+                    <div class="card" onclick="togglePopup(this)">
+
+
+                        <i class="fa-solid fa-desktop"></i>
+                        <h2>eğitim ve mentorluk</h2>
+                        <p>Eğitim ve mentorluk hizmetimiz, bireylerin ve işletmelerin yetkinliklerini geliştirmelerine
+                            yardımcı olur. Alanında uzman eğitmenlerimiz ve mentorlarımız, kişisel gelişimden iş
+                            dünyasına kadar geniş bir yelpazede rehberlik sağlar. Katılımcılara, ihtiyaçlarına göre
+                            özelleştirilmiş eğitimler ve uygulamalı mentorluk programları sunarız. </p>
+
+
+                        <div class="popup">
+                            <h3>Eğitim ve Mentorluk</h3>
+                            <p>İşletme sahiplerine yönelik eğitimler ve çalışanlara yönelik mentorluk fırsatları
+                                sağlıyoruz.</p>
+                            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                        </div>
+                    </div>
+                    <div class="card" onclick="togglePopup(this)">
+
+
+                        <i class="fa-solid fa-user-group"></i>
+                        <h2>insan kaynakları ve istihdam Desteği</h2>
+                        <p>İnsan kaynakları ve istihdam desteği hizmetimiz, işletmenizin doğru yeteneklerle buluşmasını
+                            ve iş gücü verimliliğini artırmasını sağlar. İşe alım, performans değerlendirme, eğitim ve
+                            gelişim gibi süreçlerde profesyonel destek sunarak, organizasyonel yapınızın güçlenmesine
+                            yardımcı oluruz.</p>
+
+
+                        <div class="popup">
+                            <h3>İnsan Kaynakları ve İstihdam Desteği</h3>
+                            <p>İşe alım süreçlerini kolaylaştırmak ve iş gücü verimliliğini artırmak için araçlar
+                                sağlıyoruz.
+                            </p>
+                            <button onclick="window.location.href='purchase.html'">Satın Al</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card" onclick="togglePopup(this)">
-                
-                
-                    <i class="fa-solid fa-layer-group"></i>
-                    <h2>SEO hizmetleri</h2>
-                    <p>SEO hizmetlerimiz, web sitenizin arama motorlarında üst sıralarda yer almasını sağlayarak, daha fazla görünürlük ve organik trafik kazanmanıza yardımcı olur. Anahtar kelime araştırması, site içi optimizasyon, içerik stratejileri ve backlink çalışmaları ile web sitenizin SEO performansını artırıyoruz.</p>
-
-                
-                <div class="popup">
-                    <h3>SEO Hizmetleri</h3>
-                    <p>Sitenizin arama motorlarında daha iyi sıralamalar alabilmesi için SEO analizleri ve
-                        iyileştirmeleri sağlıyoruz.</p>
-                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
-                </div>
-            </div>
-            <div class="card" onclick="togglePopup(this)">
-                
-                
-                    <i class="fa-solid fa-desktop "></i>
-                    <h2>Uygulama Geliştirme</h2>
-                    <p>Uygulama geliştirme hizmetimiz, işletmenizin ihtiyaçlarına özel, yenilikçi ve kullanıcı dostu mobil ve web uygulamaları sunar. İster Android, ister iOS platformları için çözümler üretelim, güçlü altyapılar ve modern teknolojilerle tasarladığımız uygulamalar, kullanıcı deneyimini ön planda tutar.</p>
-
-                
-                <div class="popup">
-                    <h3>Uygulama Geliştirme</h3>
-                    <p>Mobil ve web uygulamaları geliştiriyor, iş süreçlerinizi dijitalleştiriyoruz.</p>
-                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
-                </div>
-            </div>
-            <div class="card" onclick="togglePopup(this)">
-                
-                
-                    <i class="fa-solid fa-desktop"></i>
-                    <h2>içerik Yönetimi</h2>
-                    <p>İçerik yönetimi hizmetimiz, web sitenizdeki içeriklerin düzenli, etkili ve SEO uyumlu bir şekilde yönetilmesini sağlar. İçerik stratejisi oluşturma, güncelleme, düzenleme ve yayımlama süreçlerinde profesyonel desteğimizle, hedef kitlenize hitap eden kaliteli içerikler üretiriz.</p>
-
-                
-                <div class="popup">
-                    <h3>İçerik Yönetimi</h3>
-                    <p>SEO uyumlu içerikler üretiyor, web sitenizin görünürlüğünü artırıyoruz.</p>
-                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
-                </div>
-            </div>
-            <div class="card" onclick="togglePopup(this)">
-                
-                
-                    <i class="fa-solid fa-desktop"></i>
-                    <h2>eğitim ve mentorluk</h2>
-                    <p>Eğitim ve mentorluk hizmetimiz, bireylerin ve işletmelerin yetkinliklerini geliştirmelerine yardımcı olur. Alanında uzman eğitmenlerimiz ve mentorlarımız, kişisel gelişimden iş dünyasına kadar geniş bir yelpazede rehberlik sağlar. Katılımcılara, ihtiyaçlarına göre özelleştirilmiş eğitimler ve uygulamalı mentorluk programları sunarız. </p>
-
-                
-                <div class="popup">
-                    <h3>Eğitim ve Mentorluk</h3>
-                    <p>İşletme sahiplerine yönelik eğitimler ve çalışanlara yönelik mentorluk fırsatları sağlıyoruz.</p>
-                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
-                </div>
-            </div>
-            <div class="card" onclick="togglePopup(this)">
-                
-                
-                    <i class="fa-solid fa-user-group"></i>
-                    <h2>insan kaynakları ve istihdam Desteği</h2>
-                    <p>İnsan kaynakları ve istihdam desteği hizmetimiz, işletmenizin doğru yeteneklerle buluşmasını ve iş gücü verimliliğini artırmasını sağlar. İşe alım, performans değerlendirme, eğitim ve gelişim gibi süreçlerde profesyonel destek sunarak, organizasyonel yapınızın güçlenmesine yardımcı oluruz.</p>
-
-                
-                <div class="popup">
-                    <h3>İnsan Kaynakları ve İstihdam Desteği</h3>
-                    <p>İşe alım süreçlerini kolaylaştırmak ve iş gücü verimliliğini artırmak için araçlar sağlıyoruz.
-                    </p>
-                    <button onclick="window.location.href='purchase.html'">Satın Al</button>
-                </div>
-            </div>
-          </div>
-         </div>
         </div>
     </div>
 
