@@ -17,24 +17,18 @@
             font-family: Arial, sans-serif;
             background-image: url('images/background.png');
             text-align: center;
-            position: relative;
             margin: 0;
             min-height: 100%;
             overflow-x: hidden;
-
-
         }
 
-        /* Üst Menü */
         .menu {
             display: flex;
             gap: 15px;
-            background-color: transparent;
             padding: 25px 0;
-            margin-left: 60px;
+            margin-left: 170px;
             position: relative;
             top: 10px;
-
         }
 
         .menu button {
@@ -45,35 +39,11 @@
             cursor: pointer;
             font-weight: bold;
             color: white;
-            left: 30px;
-            top: 30px;
         }
 
         .menu button:hover {
             background-color: #c0c0c0;
         }
-
-        /* Giriş Yap Butonu */
-        .btn-giris {
-            position: absolute;
-            right: 70px;
-            top: 30px;
-        }
-
-        .btn-giris button {
-            border: none;
-            background-color: transparent;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-        }
-
-        .btn-giris button:hover {
-            background-color: #c0c0c0;
-        }
-
 
         .logo {
             position: absolute;
@@ -87,138 +57,106 @@
             height: auto;
         }
 
+        .card {
+            background: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
 
-        /* Ana İçerik */
-        h1 {
-            margin: 60px 0 20px;
-            font-size: 2.5em;
-            line-height: 1.4;
+        .btn-profile {
+            position: absolute;
+            right: 70px;
+            top: 30px;
+        }
+
+        .btn-profile button {
+            border: none;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-profile button:hover {
+            background-color: #c0c0c0;
         }
 
         .container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            margin: 120px auto;
-            padding: 30px;
+            gap: 20px;
             max-width: 1200px;
-            background-color: rgb(139, 156, 189);
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-section {
-            flex: 3;
-            margin-right: 20px;
+            margin: 50px auto;
         }
 
         .form-group {
             margin-bottom: 15px;
+            text-align: left;
         }
 
-        label {
+        .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
 
-        input,
-        textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
         }
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #64259e;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #2e142d;
-        }
-
-        .profile-edit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            border-left: 1px solid #ddd;
-            padding-left: 20px;
-        }
-
-        .profile-edit img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            border: 2px solid #ddd;
-        }
-
-        .profile-edit a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        .profile-edit a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .footer {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #444;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 20px;
-        }
-
-        .business-list {
-            flex: 2;
-            margin-left: 20px;
+        .business-list h2 {
+            margin-bottom: 20px;
         }
 
         .business-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #f9f9f9;
+            background: #f9f9f9;
             border: 1px solid #ddd;
+            padding: 10px;
             border-radius: 5px;
+            margin-bottom: 10px;
         }
 
-        .delete-button {
-            background-color: #FF6347;
+        .business-item button {
+            background: #717477;
             color: white;
             border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
             cursor: pointer;
+            border-radius: 5px;
         }
 
-        .delete-button:hover {
-            background-color: #FF4500;
+        .business-item button:hover {
+            background: #222a31;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
         }
     </style>
 </head>
 
 <body>
-    <!-- Logo ve Menü -->
-    <div class="logo">
-        <a href="index.html">
-            <img src="images/logo.png" alt="Logo">
-        </a>
-    </div>
+    <!-- Header -->
     <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
         <div class="menu">
             <button onclick="window.location.href='index.html'">Ana Sayfa</button>
             <button onclick="window.location.href='businesses.html'">İşletmeler</button>
@@ -226,115 +164,112 @@
             <button onclick="window.location.href='contact.html'">İletişim</button>
             <button onclick="window.location.href='purchase.html'">Satın Al</button>
         </div>
-        </div>
-        <div class="btn-giris">
-            <button onclick="window.location.href='login.html'">Giriş Yap</button>
-
+        <div class="btn-profile">
+            <button onclick="window.location.href='profil.html'">Profilim</button>
         </div>
     </header>
 
-    <!-- Ana İçerik -->
+    <!-- Main Content -->
     <div class="container">
-        <div class="form-section">
-            <h1>Yeni İşletme Ekle</h1>
+        <!-- Yeni İşletme Ekle -->
+        <div class="card">
+            <h2>Yeni İşletme Ekle</h2>
             <div class="form-group">
                 <label for="businessName">İşletme Adı</label>
                 <input type="text" id="businessName" placeholder="İşletme adını girin">
+            </div>
+            <div class="form-group">
+                <label for="businessPhoto">Fotoğraf</label>
+                <input type="file" id="businessPhoto" accept="image/*">
             </div>
             <div class="form-group">
                 <label for="businessDescription">Açıklama</label>
                 <textarea id="businessDescription" rows="4" placeholder="İşletme açıklamasını yazın"></textarea>
             </div>
             <div class="form-group">
-                <label for="businessLink">Bağlantı</label>
-                <input type="url" id="businessLink" placeholder="https://">
+                <label for="businessAddress">Adres</label>
+                <input type="text" id="businessAddress" placeholder="İşletme adresini girin">
+            </div>
+            <div class="form-group">
+                <label for="businessPhone">Telefon</label>
+                <input type="tel" id="businessPhone" placeholder="Telefon numarasını girin">
             </div>
             <button onclick="saveBusiness()">Kaydet</button>
         </div>
 
         <!-- İşletme Listesi -->
-        <div class="business-list">
+        <div class="card business-list">
             <h2>Kaydedilen İşletmeler</h2>
             <div id="businessesContainer"></div>
         </div>
-
-        <div class="profile-edit">
-            <img src="images/profil.jpg" alt="Profil Resmi">
-            <button onclick="window.location.href='profil.html'">Profil</button>
-        </div>
     </div>
 
+    <footer>
+        <p>&copy; 2025 Tüm Hakları Saklıdır.</p>
+    </footer>
+
     <script>
-        // kaydedicek işletmelrde ekleyevek
         function saveBusiness() {
             const name = document.getElementById('businessName').value;
+            const photo = document.getElementById('businessPhoto').files[0];
             const description = document.getElementById('businessDescription').value;
-            const link = document.getElementById('businessLink').value;
+            const address = document.getElementById('businessAddress').value;
+            const phone = document.getElementById('businessPhone').value;
 
-            if (!name || !description || !link) {
+            if (!name || !photo || !description || !address || !phone) {
                 alert('Lütfen tüm alanları doldurun!');
                 return;
             }
 
-            const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
-            const newBusiness = {
-                id: new Date().getTime(),
-                name,
-                description,
-                link
-            };
-            businesses.push(newBusiness);
-            localStorage.setItem('businesses', JSON.stringify(businesses));
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const photoData = e.target.result;
+                const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
+                const newBusiness = {
+                    id: new Date().getTime(),
+                    name,
+                    photo: photoData,
+                    description,
+                    address,
+                    phone
+                };
+                businesses.push(newBusiness);
+                localStorage.setItem('businesses', JSON.stringify(businesses));
 
-            alert('İşletme başarıyla kaydedildi!');
-            window.location.reload();
+                alert('İşletme başarıyla kaydedildi!');
+                window.location.reload();
+            };
+            reader.readAsDataURL(photo);
         }
 
-        // Listeleme 
         function displayBusinesses() {
             const businesses = JSON.parse(localStorage.getItem('businesses')) || [];
-            const businessesContainer = document.getElementById('businessesContainer');
-            businessesContainer.innerHTML = ''; // Listeyi temizleyelim
-
-            if (businesses.length === 0) {
-                businessesContainer.innerHTML = '<p>Henüz kaydedilmiş işletme yok.</p>';
-                return;
-            }
-
-            businesses.forEach(business => {
-                const businessItem = document.createElement('div');
-                businessItem.classList.add('business-item');
-                businessItem.innerHTML = `
-                    <div>
+            const container = document.getElementById('businessesContainer');
+            container.innerHTML = businesses.length
+                ? businesses.map(business => `
+                    <div class="business-item">
+                        <img src="${business.photo}" alt="${business.name}" style="width:100%; max-width:100px; border-radius:8px;">
                         <h3>${business.name}</h3>
                         <p>${business.description}</p>
-                        <a href="${business.link}" target="_blank">Linki Ziyaret Et</a>
+                        <p><strong>Adres:</strong> ${business.address}</p>
+                        <p><strong>Telefon:</strong> ${business.phone}</p>
+                        <button onclick="deleteBusiness(${business.id})">Sil</button>
                     </div>
-                    <button class="delete-button" onclick="deleteBusiness(${business.id})">Sil</button>
-                `;
-                businessesContainer.appendChild(businessItem);
-            });
+                `).join('')
+                : '<p>Henüz kaydedilmiş işletme yok.</p>';
         }
 
-        // Silme 
         function deleteBusiness(id) {
             let businesses = JSON.parse(localStorage.getItem('businesses')) || [];
-            businesses = businesses.filter(business => business.id !== id); // Seçilen işletmeyi çıkarıyoruz
+            businesses = businesses.filter(business => business.id !== id);
             localStorage.setItem('businesses', JSON.stringify(businesses));
 
             alert('İşletme başarıyla silindi!');
-            displayBusinesses(); // Listeyi tekrar göster
-        }
-
-        // Sayfa Yüklendiğinde İşletmeleri Göstercek
-        window.onload = function () {
             displayBusinesses();
         }
-    </script>
 
-    <div class="footer">
-        <p>© 2024 İşletme Rehberi</p>
-    </div>
+        window.onload = displayBusinesses;
+    </script>
 </body>
 
 </html>

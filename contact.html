@@ -234,6 +234,84 @@
         <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
     </footer>
 
+    <<<<<<< HEAD <script>
+        function login() {
+        localStorage.setItem('isLoggedIn', 'true');
+        updateAuthButtons();
+        }
+
+        function loginOrRedirect() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        } else {
+        updateAuthButtons();
+        }
+        }
+
+        function updateAuthButtons() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const authButtons = document.getElementById('auth-buttons');
+
+        if (isLoggedIn) {
+        authButtons.innerHTML = '<button onclick="window.location.href=\'profil.html\'">Profilim</button>';
+        } else {
+        authButtons.innerHTML = '<button id="login-button" onclick="loginOrRedirect()">Giriş Yap</button>';
+        }
+        }
+        function toggleAdField() {
+        var adField = document.querySelector('input[name="adsoyad"]');
+        var anonimCheckbox = document.querySelector('input[name="anonim"]');
+        if (anonimCheckbox.checked) {
+        adField.disabled = true;
+        adField.value = '';
+        } else {
+        adField.disabled = false;
+        }
+        }
+
+        function toggleCartPopup() {
+        const cartPopup = document.getElementById('cart-popup');
+        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+        updateCart();
+        }
+
+        function updateCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+
+        if (cartItems) {
+        cartItems.innerHTML = '';
+        cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
+        cartItems.appendChild(li);
+        });
+        }
+
+        if (cartTotal) {
+        cartTotal.textContent = total.toFixed(2);
+        }
+        }
+
+        function proceedToPayment() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+        alert('Sepetiniz boş!');
+        return;
+        }
+        window.location.href = 'payment.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', updateAuthButtons);
+        </script>
+
+        =======
+        >>>>>>> dca02210601393fbf45776348e974e8d5100cb56
 </body>
 
 </html>
@@ -241,31 +319,6 @@
 
 
 <script>
-    function login() {
-        localStorage.setItem('isLoggedIn', 'true');
-        updateAuthButtons();
-    }
-
-    function loginOrRedirect() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-        if (!isLoggedIn) {
-            window.location.href = 'login.html';
-        } else {
-            updateAuthButtons();
-        }
-    }
-
-    function updateAuthButtons() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-        const authButtons = document.getElementById('auth-buttons');
-
-        if (isLoggedIn) {
-            authButtons.innerHTML = '<button onclick="window.location.href=\'profil.html\'">Profilim</button>';
-        } else {
-            authButtons.innerHTML = '<button id="login-button" onclick="loginOrRedirect()">Giriş Yap</button>';
-        }
-    }
     function toggleAdField() {
         var adField = document.querySelector('input[name="adsoyad"]');
         var anonimCheckbox = document.querySelector('input[name="anonim"]');
@@ -312,8 +365,6 @@
         }
         window.location.href = 'payment.html';
     }
-
-    document.addEventListener('DOMContentLoaded', updateAuthButtons);
 </script>
 
 </body>
