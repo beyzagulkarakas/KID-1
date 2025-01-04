@@ -55,6 +55,64 @@
             background-color: #c0c0c0;
         }
 
+        .cart-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cart-button img {
+            width: 40px;
+            height: auto;
+        }
+
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 400px;
+        }
+
+        .cart-popup h3 {
+            margin-bottom: 15px;
+        }
+
+        .cart-popup ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cart-popup li {
+            margin-bottom: 10px;
+        }
+
+        .cart-popup .total {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .cart-popup button {
+            background-color: #00b894;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-popup button:hover {
+            background-color: #008f6b;
+        }
+
         .btn-giris {
             position: absolute;
             right: 90px;
@@ -75,13 +133,6 @@
             background-color: #c0c0c0;
         }
 
-        h1 {
-            text-align: center;
-            color: #ffffff;
-            margin-top: 70px;
-        }
-
-        /* Görüş ve öneri stili */
         .gorus-bildir {
             margin-top: 30px;
             background-color: #1c2335;
@@ -120,6 +171,12 @@
             cursor: pointer;
         }
 
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 70px;
+        }
+
         .iletisim {
             margin-top: 40px;
             background-color: #1c2335;
@@ -148,8 +205,6 @@
 </head>
 
 <body>
-
-    <!-- Logo -->
     <div class="logo">
         <a href="index.html">
             <img src="images/logo.png" alt="Logo">
@@ -163,6 +218,10 @@
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
             <button onclick="window.location.href='purchase.html'">Satın Al</button>
+            <button class="cart-button" onclick="toggleCartPopup()">
+                <img src="images/sepet.png" alt="Sepet">
+                <span>Sepet</span>
+            </button>
         </div>
         <div class="btn-giris" id="auth-buttons">
             <button id="login-button" onclick="loginOrRedirect()">Giriş Yap</button>
@@ -171,7 +230,6 @@
 
     <h1>İletişim Bilgileri</h1>
 
-    <!-- Görüş/Öneri/Şikayet Bildirimi Kartı -->
     <div class="gorus-bildir">
         <h2>Görüş, Öneri veya Şikayet Bildirimi</h2>
         <form>
@@ -183,7 +241,6 @@
             <button type="submit">Gönder</button>
         </form>
     </div>
-
     <!-- İletişim Bilgileri -->
     <div class="iletisim">
         <h3>İletişim Bilgilerimiz</h3>
@@ -192,18 +249,47 @@
         <p><strong>Adres:</strong> Cevizlibağ, İstanbul, Türkiye</p>
     </div>
 
+    <div id="cart-popup" class="cart-popup">
+        <h3>Sepetim</h3>
+        <ul id="cart-items"></ul>
+        <p class="total">Toplam: $<span id="cart-total">0</span></p>
+        <button onclick="proceedToPayment()">Ödemeye Geç</button>
+        <button onclick="toggleCartPopup()">Kapat</button>
+    </div>
+
     <footer>
         <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
     </footer>
+    <script src="scripts/completePayment.js"></script>
 
     <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
         function loginOrRedirect() {
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-            if (!isLoggedIn) {
-                window.location.href = 'login.html';
-            } else {
-                window.location.href = 'profil.html';
-            }
+            window.location.href = isLoggedIn ? 'profil.html' : 'login.html';
+        }
+
+        function toggleCartPopup() {
+            const popup = document.getElementById('cart-popup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+
+            cartTotal.textContent = total.toFixed(2);
         }
 
         function toggleAdField() {
@@ -213,12 +299,23 @@
             if (anonimCheckbox.checked) adField.value = '';
         }
 
+        function proceedToPayment() {
+            if (cart.length === 0) {
+                alert('Sepetiniz boş!');
+                return;
+            }
+            window.location.href = 'payment.html';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const authButtons = document.getElementById('auth-buttons');
             const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
             authButtons.innerHTML = isLoggedIn
                 ? '<button onclick="window.location.href=\'profil.html\'">Profilim</button>'
                 : '<button id="login-button" onclick="loginOrRedirect()">Giriş Yap</button>';
+
+            updateCart();
         });
     </script>
 </body>
