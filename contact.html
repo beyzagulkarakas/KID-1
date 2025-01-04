@@ -55,24 +55,6 @@
             background-color: #c0c0c0;
         }
 
-        .cart-button {
-            display: flex;
-            align-items: center;
-            border: none;
-            background-color: transparent;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            color: white;
-        }
-
-        .cart-button img {
-            width: 40px;
-            height: auto;
-            margin-right: 5px;
-        }
-
         .btn-giris {
             position: absolute;
             right: 90px;
@@ -93,40 +75,92 @@
             background-color: #c0c0c0;
         }
 
-        .contact-container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #2e3344;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-
         h1 {
             text-align: center;
             color: #ffffff;
             margin-top: 70px;
         }
 
-        h2 {
+        /* Görüş ve öneri stili */
+        .gorus-bildir {
+            margin-top: 30px;
+            background-color: #1c2335;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 55%;
+            margin: 20px auto;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .gorus-bildir:hover {
+            box-shadow: 0 0 15px rgba(114, 226, 174, 0.6);
+        }
+
+        .gorus-bildir label {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .gorus-bildir input[type="text"],
+        .gorus-bildir textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #999999;
+            border-radius: 50px;
+            transition: border-color 0.3s ease;
+        }
+
+        .gorus-bildir input[type="text"]:focus,
+        .gorus-bildir textarea:focus {
+            border-color: #72e2ae;
+        }
+
+        .gorus-bildir button {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            background-color: #00b894;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .gorus-bildir button:hover {
+            background-color: #008f6b;
+        }
+
+        .gorus-bildir h2 {
             color: white;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* İletişim Bilgileri Kartı */
+        .iletisim {
+            margin-top: 40px;
+            background-color: #1c2335;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 55%;
+            margin: 20px auto;
+            transition: box-shadow 0.3s ease;
         }
 
-        .contact-info p {
-            font-size: 1.1rem;
-            color: #ffffff;
+        .iletisim:hover {
+            box-shadow: 0 0 15px rgba(114, 226, 174, 0.6);
         }
 
-        .contact-info i {
-            margin-right: 10px;
+        .iletisim h3 {
+            font-size: 22px;
             color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .iletisim p {
+            font-size: 16px;
+            color: #dddddd;
         }
 
         footer {
@@ -140,98 +174,6 @@
             width: 100%;
             height: 5%;
             z-index: 10;
-        }
-
-        .cart-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255, 255, 255, 0.95);
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            width: 400px;
-        }
-
-        .cart-popup h3 {
-            margin-bottom: 15px;
-        }
-
-        .cart-popup ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .cart-popup li {
-            margin-bottom: 10px;
-        }
-
-        .cart-popup .total {
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        .cart-popup button {
-            background-color: #00b894;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .cart-popup button:hover {
-            background-color: #008f6b;
-        }
-
-        .gorus-bildir {
-            margin-top: 30px;
-            background-color: #2e3344;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 55%;
-            margin: 20px auto;
-        }
-
-        .gorus-bildir label {
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .gorus-bildir input[type="text"] {
-            width: 90%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 10px solid #999999;
-            border-radius: 50px;
-        }
-
-        .gorus-bildir textarea {
-            width: 90%;
-            padding: 15px;
-            margin-bottom: 10px;
-            border: 10px solid #999999;
-            border-radius: 20px;
-        }
-
-        .gorus-bildir button {
-            width: 50%;
-            padding: 10px;
-            border: none;
-            background-color: #c95757;
-            color: white;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .gorus-bildir button:hover {
-            background-color: #c0c0c0;
         }
     </style>
 </head>
@@ -252,10 +194,6 @@
             <button onclick="window.location.href='services.html'">Hizmetler</button>
             <button onclick="window.location.href='contact.html'">İletişim</button>
             <button onclick="window.location.href='purchase.html'">Satın Al</button>
-            <button class="cart-button" onclick="toggleCartPopup()">
-                <img src="images/sepet.png" alt="Sepet">
-                <span>Sepet</span>
-            </button>
         </div>
         <div class="btn-giris" id="auth-buttons">
             <button id="login-button" onclick="loginOrRedirect()">Giriş Yap</button>
@@ -264,43 +202,39 @@
 
     <h1>İletişim Bilgileri</h1>
 
-    <!-- iletişim bilgilerinin yazacaığı kısım -->
-    <div class="contact-container">
-        <h2>Bizimle İletişime Geçin</h2>
-
-        <div class="contact-info">
-            <p><i class='bx bxs-phone'></i> <strong>Telefon:</strong> +90 123 456 78 90</p>
-            <p><i class='bx bxs-envelope'></i> <strong>E-posta:</strong> info@example.com</p>
-            <p><i class='bx bxs-location-plus'></i> <strong>Adres:</strong> Örnek Mah. No: 123, İstanbul, Türkiye</p>
-        </div>
-    </div>
-
-    <!-- Görüş/Öneri/Şikayet Bildirme Kısmı -->
+    <!-- Görüş/Öneri/Şikayet Bildirimi Kartı -->
     <div class="gorus-bildir">
-        <h2>Görüş, Öneri veya Şikayet Bildirimi</h2>
+        <h2>Görüş, Öneri veya Şikayet Bildirimi </h2>
         <form>
             <label>Ad Soyad:</label>
             <input type="text" name="adsoyad" placeholder="Adınızı girin" class="form-control">
-            <label><input type="checkbox" name="anonim" class="checkbox" onclick="toggleAdField()"> Anonim olarak bildirmek istiyorum</label>
+            <label><input type="checkbox" name="anonim" class="checkbox" onclick="toggleAdField()"> Anonim olarak
+                bildirmek istiyorum</label>
             <label>Bildiriminiz:</label>
             <textarea name="bildirim" maxlength="500" placeholder="Bildiriminizi buraya yazın"></textarea>
             <button type="submit" class="btn btn-success">Gönder</button>
         </form>
     </div>
 
-    <!-- Sepet Popup pop up çoksel oluyo-->
-    <div id="cart-popup" class="cart-popup">
-        <h3>Sepetim</h3>
-        <ul id="cart-items"></ul>
-        <p class="total">Toplam: $<span id="cart-total">0</span></p>
-        <button onclick="proceedToPayment()">Ödemeye Geç</button>
-        <button onclick="toggleCartPopup()">Kapat</button>
+    <!-- İletişim Bilgileri Kartı -->
+    <div class="iletisim">
+        <h3>İletişim Bilgilerimiz</h3>
+        <p><strong>Telefon:</strong> +90 123 456 7890</p>
+        <p><strong>E-posta:</strong> iletisim@kid.harikasite.com</p>
+        <p><strong>Adres:</strong> Cevizlibağ, İstanbul, Türkiye</p>
+        <p><strong>Sosyal Medya:</strong></p>
+        <p> <a href="https://twitter.com/" style="color: #72e2ae;">Twitter</a><i class="bx bxl-twitter"></i></a>
+            <a href="https://facebook.com/" style="color: #72e2ae;">Facebook</a><i class="bx bxl-facebook"></i></a>
+            <a href="https://instagram.com/" style="color: #72e2ae;">Instagram</a>
+            <i class="bx bxl-instagram"></i></a>
+        </p>
     </div>
 
     <footer>
         <p>&copy; 2024 Tüm Hakları Saklıdır.</p>
     </footer>
 
+<<<<<<< HEAD
     <script>
              function login() {
             localStorage.setItem('isLoggedIn', 'true');
@@ -376,6 +310,63 @@
         
         document.addEventListener('DOMContentLoaded', updateAuthButtons);
     </script>
+
+=======
+>>>>>>> dca02210601393fbf45776348e974e8d5100cb56
+</body>
+
+</html>
+
+
+
+<script>
+    function toggleAdField() {
+        var adField = document.querySelector('input[name="adsoyad"]');
+        var anonimCheckbox = document.querySelector('input[name="anonim"]');
+        if (anonimCheckbox.checked) {
+            adField.disabled = true;
+            adField.value = '';
+        } else {
+            adField.disabled = false;
+        }
+    }
+
+    function toggleCartPopup() {
+        const cartPopup = document.getElementById('cart-popup');
+        cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+        updateCart();
+    }
+
+    function updateCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = parseFloat(localStorage.getItem('cartTotal')) || 0;
+
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+
+        if (cartItems) {
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${index + 1}. ${item.service} - $${item.price}`;
+                cartItems.appendChild(li);
+            });
+        }
+
+        if (cartTotal) {
+            cartTotal.textContent = total.toFixed(2);
+        }
+    }
+
+    function proceedToPayment() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+            alert('Sepetiniz boş!');
+            return;
+        }
+        window.location.href = 'payment.html';
+    }
+</script>
 
 </body>
 
